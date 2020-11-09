@@ -1,0 +1,49 @@
+#anh-nen {
+    background-image: url('background.jpg'); 
+    height: 200px; 
+    background-repeat: no-repeat; 
+    background-size: cover;
+}
+
+.entity {
+    margin-left: 2px;
+    width: 185px;
+    background-color: white;
+}
+
+.entity:focus {
+    background-color: #3A6FCF
+    box-shadow: 1px 1px #007bff;
+    background: #0f2f4f linear-gradient(180deg,#334e69,#0f2f4f) repeat-x;
+}
+
+.entity:hover {
+    background-color: #007bff;
+    box-shadow: 1px 1px #0f2f4f;
+    background: #0f2f4f linear-gradient(180deg,#334e69,#0f2f4f) repeat-x;
+    color: white !important;
+}
+
+.entityfocus {
+    background-color: #007bff;
+    box-shadow: 1px 1px #0f2f4f;
+    background: #0f2f4f linear-gradient(180deg,#334e69,#0f2f4f) repeat-x;
+    color: white !important;
+}
+
+
+.row .col-sm-4 {
+    margin-bottom: 30px;
+}
+
+#x {
+    position: absolute; 
+    left: 470px; 
+    z-index: 5; 
+    top: 15px; 
+    visibility: hidden;
+}
+
+.ketqua .row .col-sm-4 .card {
+    cursor: pointer;
+}

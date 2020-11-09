@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script language="javascript" src="http://code.jquery.com/jquery-2.0.0.min.js"></script>
+	<title>Document</title>
+</head>
+<body>
+	<div>
+		<input type="file" class="inp">
+		<input type="text" class="value" style="width: 400px">
+		<img id="img" src="" alt="">
+	</div>
+
+	<script type="text/javascript">
+		
+
+		// function readFile() {
+  
+		//   if (this.files && this.files[0]) {
+		    
+		//     var FR= new FileReader();
+		    
+		//     FR.addEventListener("load", function(e) {
+		//       $('#value').val(e.target.result);
+		//       $('img').attr('src', e.target.result);
+		//     }); 
+		    
+		//     FR.readAsDataURL( this.files[0] );
+
+
+		//       console.log("$('#value').val()");
+		//   }
+		  
+		// }
+		$('.inp').change(function(evt) {
+		  var f = evt.target.files[0]; 
+		  var reader = new FileReader();
+		  reader.onload = (function() {
+		    return function(e) {
+		      evt.target.parentNode.querySelector('.value').value = e.target.result;
+		    };
+		  })(f);
+		  reader.readAsDataURL(f);
+		});
+		
+
+
+		// $('.inp').load(function(e) {
+		// 	/* Act on the event */
+		// 	if (this.files && this.files[0]) {
+		    
+		//     var FR= new FileReader();
+		    
+		//     FR.addEventListener("load", function(e) {
+		//       e.target.parentNode.querySelector('.value').value = e.target.result;
+		      
+		//     }); 
+		    
+		//     FR.readAsDataURL( this.files[0] );
+		//   }
+		// });
+
+		
+	</script>
+</body>
+</html>
