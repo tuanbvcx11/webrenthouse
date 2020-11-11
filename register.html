@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv='cache-control' content='no-cache'> 
+    <meta http-equiv='expires' content='0'> 
+    <meta http-equiv='pragma' content='no-cache'> 
+
+    
+    <!-- Bootstrap 4 CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Thu vien animate -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <!-- Khai bao fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    
+    <link href='https://fonts.googleapis.com/css2?family=Chewy&family=Fira+Sans+Extra+Condensed&family=Asap+Condensed&family=Roboto+Condensed&family=Bungee+Inline&family=VT323&family=Fira+Sans+Extra+Condensed&family=IBM+Plex+Sans&family=Fira+Sans+Extra+Condensed&family=Bangers&family=Bungee+Inline&family=Asap&family=Pangolin&family=Francois+One&family=Cabin&family=Special+Elite&display=swap' rel="stylesheet">
+    <!-- Thu vien jquery -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap 4 js -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- Thu vien wow js -->
+    <script src="js/wow.min.js"></script>
+
+<!--     <link rel="stylesheet" type="text/css" href="./css/register.css"> -->
+    <title>Đăng ký</title>
+    
+    <style type="text/css">
+        .container {
+            background-color: #D5CECE;
+            width: 50%;
+        }
+
+        .title {
+            margin-top: 20px;
+            padding-top: 5px;
+            text-align: center;
+        }
+
+        .form-group {
+
+        }
+
+        .form-group label {
+            font-size: 20px;
+            margin-left: 10%;
+            margin-top: 10px;
+        }
+
+        .form-group input {
+            width: 80%;
+            margin: auto;
+        }
+
+        select {
+            margin-left: 10%;
+            width: 15%;
+        }
+
+        .submit {
+            margin-top: 30px; 
+            text-align: center; 
+            font-size: 20px; 
+        }
+
+        .submit button {
+            border-radius: 5px; 
+            width: 100px; 
+            margin-bottom: 10px; 
+            padding-bottom: 5px;
+            display: block;
+            margin: auto;
+            margin-bottom: 20px;
+        }
+
+
+    </style>
+        
+</head>
+<body>
+	<div class="container">
+        <div class="title"><h1>Đăng ký tài khoản</h1></div>
+
+        <form>
+            <div class="form-group">
+                <label for="hoten">Họ và tên</label>
+                <input class="form-control" type="text" name="hoten" id="hoten" >
+
+                <label for="sdt">Số điện thoại</label>
+                <input class="form-control" type="text" name="sdt" id="sdt" >
+
+                <label for="email">Email</label>
+                <input class="form-control" type="text" name="email" id="email" >
+
+                <label for="address">Địa chỉ</label>
+                <input class="form-control" type="text" name="address" id="address" >
+
+                <label for="username">Tên đăng nhập</label>
+                <input class="form-control" type="text" name="username" id="username" >
+
+                <label for="password">Mật khẩu</label>
+                <input class="form-control" type="password" name="password" id="password">
+
+                <label for="repassword">Nhập lại mật khẩu</label>
+                <input class="form-control" type="password" name="password" id="repassword">
+
+                <label for="vaitro">Vai trò</label>
+                <select id="vaitro" name="vaitro">
+                    <option value="guest">Khách</option>
+                    <option value="host">Chủ trọ</option>
+                </select>
+            </div>
+        </form>
+
+        <div class="submit">
+            <button id="submit" class="btn-success">Xác nhận</button>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+
+        //kiểm tra số điện thoại
+        $('#sdt').change(function(event) {
+            var vnf_regex = /((09|03|07|08|05)+([0-9]{8})\b)/g;
+            var mobile = $('#sdt').val();
+            if(mobile !==''){
+                if (vnf_regex.test(mobile) == false) 
+                {
+                    alert('Số điện thoại của bạn không đúng định dạng!');
+                    this.focus();
+                }
+            }else{
+                alert('Bạn chưa điền số điện thoại!');
+                this.focus();
+            }
+        });
+
+
+        // kiểm tra email
+        $('#email').change(function(event) {
+            /* Act on the event */
+            var email = $(this).val();
+            var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/; 
+            if (!filter.test(email)) { 
+                 alert('Hay nhap dia chi email hop le.\nExample@gmail.com');
+                 this.focus();
+            }
+        });
+
+        // kiểm tra nhập lại mật khẩu
+        $('#repassword').change(function(event) {
+            /* Act on the event */
+            var pass = $('#password').val();
+            var repass = $('#repassword').val();
+            if (repass != pass) {
+                alert("mật khẩu không giống nhau");
+                this.focus();
+            }
+        });
+
+        $('#submit').click(function(event) {
+
+            //kiểm tra nhập đầy đủ thông tin
+            var baoloi = "";
+            if ($('#hoten').val() == "") {
+                baoloi = "vui lòng nhập đầy đủ thông tin";
+            }
+
+            if ($('#sdt').val() == "") {
+                baoloi = "vui lòng nhập đầy đủ thông tin";
+            }
+            if ($('#address').val() == "") {
+                baoloi = "vui lòng nhập đầy đủ thông tin";
+            }
+            if ($('#username').val() == "") {
+                baoloi = "vui lòng nhập đầy đủ thông tin";
+            }
+            if ($('#email').val() == "") {
+                baoloi = "vui lòng nhập đầy đủ thông tin";
+            }
+            if ($('#password').val() == "") {
+                baoloi = "vui lòng nhập đầy đủ thông tin";
+            }
+            if ($('#repassword').val() == "") {
+                baoloi = "vui lòng nhập đầy đủ thông tin";
+            }
+            
+            if (baoloi != "") {
+                // nếu lỗi sẽ thông báo
+                alert(baoloi);
+            } else {
+
+                console.log($('#vaitro').val());
+                // nếu không lỗi sẽ gửi dữ liệu bằng ajax
+                // $.ajax({
+                //     url : 'module/function/update-thuoc.php',
+                //     type : 'post',
+                //     dataType : 'text',
+                //     data : {
+                //         id : id,
+                //         tenthuoc : $('#tenthuoc').val(),
+                //         sdki : $('#sdki').val(),
+                //         hoatchat : $('#hc').val(),
+                //         qcdg : $('#qcdg').val(),
+                //         baoche : $('#baoche').val(),
+                //         hsd : $('#hsd').val(),
+                //         gia : $('#gia').val(),
+                //         anh : $('#srcanh').val(),
+                //         cty : $('#cty').val(),
+                //         lhkd : $('#lhkd').val(),
+                //         sdt : $('#sdt').val(),
+                //         diachi : $('#diachi').val(),
+                //         dckd : $('#dckd').val()
+                //     },
+                //     success : function (result){
+                //         alert(result);
+                //         location.assign("admin.html?page=1");
+                //     },
+                //     error : function (result) {
+                //         alert("lỗi");
+                //     }
+                // });
+            }
+        });
+
+    </script>
+</body>
+</html>

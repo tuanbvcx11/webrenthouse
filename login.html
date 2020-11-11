@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv='cache-control' content='no-cache'> 
+    <meta http-equiv='expires' content='0'> 
+    <meta http-equiv='pragma' content='no-cache'> 
+
+    
+    <!-- Bootstrap 4 CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Thu vien animate -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <!-- Khai bao fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    
+    <link href='https://fonts.googleapis.com/css2?family=Chewy&family=Fira+Sans+Extra+Condensed&family=Asap+Condensed&family=Roboto+Condensed&family=Bungee+Inline&family=VT323&family=Fira+Sans+Extra+Condensed&family=IBM+Plex+Sans&family=Fira+Sans+Extra+Condensed&family=Bangers&family=Bungee+Inline&family=Asap&family=Pangolin&family=Francois+One&family=Cabin&family=Special+Elite&display=swap' rel="stylesheet">
+    <!-- Thu vien jquery -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap 4 js -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <!-- Thu vien wow js -->
+    <script src="js/wow.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="./css/login.css">
+    <title>Đăng nhập</title>
+    
+        
+</head>
+<body>
+	<div class="login-container">
+        <div class="title"><h1>Đăng nhập</h1></div>
+
+        <form>
+            <div class="form-group">
+                <label for="username">Tên đăng nhập</label>
+                <input class="form-control" type="text" name="username" id="username" >
+
+                <label for="password">Mật khẩu</label>
+                <input class="form-control" type="password" name="password" id="password" >
+            </div>
+        </form>
+
+        <div class="submit">
+            <button id="submit" class="btn-success">Login</button>
+            <a href="register.html" class="btn-info">Creat Account</a>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        $('#submit').click(function(event) {
+            /* Act on the event */
+            var user = $('#username').val();
+            var pass = $('#password').val();
+        });
+    </script>
+</body>
+</html>

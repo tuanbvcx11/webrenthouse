@@ -19,14 +19,107 @@
     <!-- Thu vien jquery -->
      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Bootstrap 4 js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.0.4/popper.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
     <!-- Thu vien wow js -->
-    <script src="../js/wow.min.js"></script>
-    <title>Fantastic 3 Cineplex</title>
-    
+    <script src="js/wow.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/header-footer.css">
+    <title>header-footer</title>
         
 </head>
 <body>
-	
+	<!-- header -->
+    <div class="container-fluid logo">
+        <div class="row">
+            <div class="col-4">
+                <img src="logo.png" alt="">
+            </div>
+            <div class="col-8">
+                <div class="row justify-content-end">
+                    <span id="hello"></span>
+                    <ul class="nav">
+                        <li class="nav-item yeuthich">
+                            <a class="nav-link" href="like.html">Yêu thích</a>
+                        </li>
+                        <li class="nav-item thongbao">
+                            <a class="nav-link" href="thongbao.html">Thông báo</a>
+                        </li>
+                        <li class="nav-item dangnhap">
+                            <a class="nav-link" href="login.html">Đăng nhập</a>
+                        </li>
+
+                        <li class="nav-item tuychon">
+                            <div class="dropdown">
+                                <button class="navbar-toggler"  data-toggle="collapse" data-target="#tuychon" aria-expanded="false" aria-controls="tuychon">
+                                    <span class="navbar-toggler-icon">
+                                        
+                                    </span>
+                                </button>
+                            </div>  
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="containers collapse" id="tuychon">
+        <div class="list-group entity">
+            <a href="#" class="list-group-item list-group-item-action">
+                Đăng bài
+            </a>
+            <a href="#" class="list-group-item list-group-item-action">Danh sách user</a>
+            <a href="#" class="list-group-item list-group-item-action">Danh sách bài viết</a>
+            <a href="#" class="list-group-item list-group-item-action">Chỉnh sửa thông tin</a>
+            <a href="#" class="list-group-item list-group-item-action">Đăng xuất</a>
+        </div>
+    </div>
+    
+
+    <!-- body -->
+
+
+
+
+    <!-- footer -->
+    <div class="container-fluid footer">
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <h5><u>HỖ TRỢ TRỰC TUYẾN</u></h5>
+                    <p>Chuyên viên tư vấn 1<br>
+                        <i class="fas fa-phone"></i>&nbsp0969666999
+                    </p>
+                    <p>Chuyên viên tư vấn 2<br>
+                        <i class="fas fa-phone"></i>&nbsp0969999666
+                    </p>
+                </div>
+                <div class="col-3">
+                    <h5><u>ĐIỀU KHOẢN SỬ DỤNG</u></h5>
+                    <p>Điều khoản chung</p>
+                    <p>Điều khoản giao dịch</p>
+                    <p>Chính sách thanh toán</p>
+                    <p>Chính sách bảo mật</p>
+                </div>
+                <div class="col-3">
+                    <h5><u>HOTLINE LIÊN HỆ</u></h5>
+                    <p id="hotline"><i class="fas fa-phone"></i>&nbsp0969666999</p>
+                    <p>(hỗ trợ tất cả các ngày trong tuần)</p>
+                </div>
+                <div class="col-3">
+                    <h5><u>HỆ THỐNG CÔNG TY</u></h5>
+                    <p>Công ty cổ phần TNHH BTV Continental</p>
+                    <p>Địa chỉ: Đại học Công Nghệ, Đại học Quốc gia Hà Nội</p>
+                    <p>Email: threeT@gmail.com</p>
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+
 </body>
 </html>

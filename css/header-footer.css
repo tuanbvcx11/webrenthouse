@@ -1,0 +1,107 @@
+body {
+    position: relative;
+}
+.logo {
+    background-color: #F2D9B9;
+}
+
+.logo .col-4 img {
+    padding-top: 10px;
+    width: 9rem;
+    height: auto;
+}
+
+.logo .col-8 img {
+    height: 30%;
+    width: auto;
+}
+
+.logo .row {
+    align-items: center;
+}
+
+.logo span {
+    margin-right: 10px
+}
+
+.logo .nav-item {
+    height: 100%;
+    color: white;
+    border-radius: 5px;
+    margin-right: 10px; 
+}
+
+.logo .nav-item a {
+    color: black;
+    font-size: larger;
+    font-weight: 700;
+}
+
+.logo .nav-item a:hover {
+    color: blue;
+}
+
+.
+
+
+
+/*.logo .nav-item:hover {
+    background-color: gray;
+}*/
+
+.thongbao .dropdown-menu {
+    background-color: black;
+    left: -100px !important;
+    width: 300px;
+    align-items: center;
+}
+
+.thongbao .dropdown-item {
+    height: 50px;
+    width: 300px;
+    border-radius: 5px;
+}
+
+.navbar-toggler-icon {
+    color: white;
+}
+
+.containers {
+    position: absolute;
+    right: 10px;
+}
+
+.tuychon .navbar-toggler-icon {
+    padding:0px;
+    margin-right: 0px;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+#tuychon {
+    z-index: 5;
+}
+
+#tuychon a {
+    font-size: larger;
+    font-weight: 600;
+}       
+
+.footer {
+    margin-top: 10px;
+    margin-right: 30px;
+    padding-top: 20px;
+    background-color: #F5F6ED;
+    padding-bottom: 20px;
+} 
+
+.footer h5 {
+    margin-bottom: 30px;
+}
+
+.footer p {
+    margin-bottom: 4px;
+}
+
+#hotline {
+    font-size: 20px;
+}
