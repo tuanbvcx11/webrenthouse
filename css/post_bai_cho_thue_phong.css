@@ -1,0 +1,104 @@
+.wrapper {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: sans-serif;
+    /* padding: 80px 255px 80px 289px; */
+    background-color: #f0f2f5;
+}
+
+.titlePost {
+    background-color: #55a9df;
+    height: 200px;
+    text-align: center;
+    font-family: serif, Courier, monospace;
+}
+
+.form_custom {
+    background: #ffffff;
+    color: black;
+    max-width: 758px;
+    margin: auto;
+    display: block;
+    position: relative;
+    top: -114px;
+}
+
+
+/* 
+.nong_lanh_margin {
+    margin-left: 49px;
+}
+
+.dieu_hoa_margin_co {
+    margin-left: 59px;
+}
+
+.dieu_hoa_margin_khong {
+    margin-left: 49px;
+}
+
+.ban_cong_margin_co {
+    margin-left: 55px;
+}
+
+.ban_cong_margin_khong {
+    margin-left: 50px;
+} */
+
+.select_color {
+    background-image: linear-gradient(to bottom, #dadada, #ffffff) !important;
+}
+
+.div_margin {
+    padding-top: 20px;
+}
+
+p {
+    color: red !important;
+    font-size: 14px;
+}
+
+@media (max-width: 1199px) {}
+
+@media (max-width: 991px) {
+    .wrapper {
+        padding: 0px;
+        position: relative;
+        padding: 44px;
+    }
+}
+
+@media (max-width: 767px) {
+    .form_custom {
+        padding: 27px 20px 37px;
+        border: none;
+        box-shadow: none;
+        top: 0px;
+        margin: 0px;
+        font-size: 12px;
+    }
+    .wrapper {
+        padding: 0px;
+    }
+    .titlePost {
+        background-color: #55a9df;
+        height: 72px;
+        text-align: center;
+    }
+    h1 {
+        font-size: 20px;
+    }
+    .select_color {
+        background-image: linear-gradient(to bottom, #dadada, #ffffff) !important;
+        height: 30px;
+        font-size: 12px;
+    }
+    .inputSize {
+        height: 30px;
+    }
+}
+
+._focus {
+    border-color: red;
+}
