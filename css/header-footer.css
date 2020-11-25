@@ -49,7 +49,7 @@ body {
 
 .logo span {
     margin-right: 10px;
-    font-size: larger;
+    font-size: large;
     font-weight: 700;
     align-items: center;
 }
@@ -79,7 +79,7 @@ body {
     top: 70px;
     width: 300px;
     border-radius: 5px;
-    height: 400px;
+    height: 70vh;
     overflow-y: hidden;
     box-shadow: 2px 2px 3px 3px #CACACA;
 }
@@ -124,9 +124,9 @@ body {
     border-radius: 5px;
 }
 
-.navbar-toggler-icon {
+/*.navbar-toggler-icon {
     color: white;
-}
+}*/
 
 
 
@@ -229,6 +229,19 @@ body {
 
     #menu {
         display: flex;
+    }
+}
+
+
+@media screen and (max-width: 500px) {
+    /*chỉnh từ đây*/
+    .logo span, .logo .nav-item a {
+        font-size: 15px;
+        font-weight: 600;
+    }
+
+    .list-thongbao {
+        width: 200px;
     }
 }
 
