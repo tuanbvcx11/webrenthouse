@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv='cache-control' content='no-cache'> 
+    <meta http-equiv='expires' content='0'> 
+    <meta http-equiv='pragma' content='no-cache'> 
+
+    
+    <!-- Bootstrap 4 CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Thu vien animate -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <!-- Khai bao fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    
+    <link href='https://fonts.googleapis.com/css2?family=Chewy&family=Fira+Sans+Extra+Condensed&family=Asap+Condensed&family=Roboto+Condensed&family=Bungee+Inline&family=VT323&family=Fira+Sans+Extra+Condensed&family=IBM+Plex+Sans&family=Fira+Sans+Extra+Condensed&family=Bangers&family=Bungee+Inline&family=Asap&family=Pangolin&family=Francois+One&family=Cabin&family=Special+Elite&display=swap' rel="stylesheet">
+    <!-- Thu vien jquery -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap 4 js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.0.4/popper.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+    <!-- Thu vien wow js -->
+    <script src="js/wow.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/header-footer.css">
+    <title>Thông tin chi tiết</title>
+    <link rel="stylesheet" type="text/css" href="./css/chi_tiet.css">
+
+   
+        
+</head>
+<body>
+	<!-- header -->
+     <div class="container-fluid logo">
+        <div class="row">
+            <div class="col-4">
+                <img src="logo.png" alt="">
+            </div>
+
+            <div class="col-8">
+                <div class="row justify-content-end">
+                    <span id="hello">Xin chào</span>
+                    
+                    <ul class="nav">
+                        <li class="nav-item thongbao">
+                            <a class="nav-link" title="thông báo"><i class="fas fa-bell"></i>(2)</a>
+                        </li>
+                        <div class="tuychonchinh">
+                            <li class="nav-item yeuthich">
+                                <a class="nav-link" href="" title="yêu thích"><i class="fas fa-heart"></i>(3)</a>
+                            </li>
+                        </div>
+
+                        <li class="nav-item dangnhap d-none">
+                            <a class="nav-link" href="login.html">Đăng nhập</a>
+                        </li>
+                        <span id="menu">Menu</span>
+                        <li class="nav-item tuychon">
+                            <div class="dropdown">
+                                <button class="navbar-toggler"  data-toggle="collapse" data-target="#tuychon" aria-expanded="false" aria-controls="tuychon">
+                                    <span class="navbar-toggler-icon">
+                                        
+                                    </span>
+                                </button>
+                            </div>  
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="containers collapse" id="tuychon">
+        <div class="list-group entity">
+            <span class="tuychonphu">
+                <a href="#" class="list-group-item list-group-item-action yeuthich">Yêu thích</a>
+            </span>
+            <a href="#" class="list-group-item list-group-item-action dangbai">Đăng bài</a>
+            <a href="#" class="list-group-item list-group-item-action update">Chỉnh sửa thông tin</a>
+            <a href="thong-ke.html" class="list-group-item list-group-item-action toadmin">Admin</a>
+            
+            <a href="#" class="list-group-item list-group-item-action logout">Đăng xuất</a>
+        </div>
+    </div>
+
+    <div class="list-thongbao scrollbar-chat">
+        <h3>Thông báo</h3><hr>
+        <div class="content-thongbao">
+            <div>Tuấn</div>
+            <div>vừa đăng bài viết mới</div>
+        </div>
+        <div class="content-thongbao">
+            <div>Tuấn</div>
+            <div>vừa báo cáo 1 bài viết</div>
+        </div>
+        <div class="content-thongbao">
+            <div>Admin</div>
+            <div>vừa phê duyệt bài viết của bạn</div>
+        </div>
+        <div class="content-thongbao">
+            <div>Tuấn</div>
+            <div>vừa đăng bài viết mới</div>
+        </div>
+    </div>
+    
+    <!-- body -->
+
+
+    <!--slide ảnh-->
+    <div class="slideshow-container" style="margin-top: 15px">
+        <div class="mySlides fade">
+            <img src="./picture/r1.png" style="width:100%">
+            <div class="text">ảnh 1</div>
+        </div>
+         
+        <div class="mySlides fade">
+            <img src="./picture/r2.png" style="width:100%">
+            <div class="text">ảnh 2</div>
+        </div>
+         
+        <div class="mySlides fade">
+            <img src="./picture/r3.png" style="width:100%">
+            <div class="text">ảnh 3</div>
+        </div>
+    </div>
+        <br>
+         
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(0)"></span> 
+        <span class="dot" onclick="currentSlide(1)"></span> 
+        <span class="dot" onclick="currentSlide(2)"></span> 
+    </div>
+
+    <!--thông tin phòng trọ-->
+    <div class="container">
+
+        <div class="row">
+        <div class="col-9">
+            <div id="rectangle_left">
+                <div class="container">
+                    <div class="titlebox">
+                        <h3 class="tieu_de">chính chủ cho thuê chung cư mini</h1>
+                    </div>
+                </div>
+
+                <div class="container_swap">
+                    <div class="div_left">
+                        <strong><p>Địa chỉ</p></strong>
+                    </div>
+                    <div class="div_right">144 xuân thủy cầu giấy hà nội</div>
+                </div>
+
+                <br><br>
+
+                <div class="container">
+                    <div id="rectangle">
+                        <div class="row">
+                            <div class="col-1"></div>
+                            
+                            <div class="col-2">
+                                <strong><p>Mức giá</p></strong>
+                                <p class="giathue">1 tỷ</p>
+                            </div>
+                            
+                            <div class="col-2">
+                                <strong><p>Diện tích</p></strong>
+                                <p class="dientich">1 hecta</p>
+                            </div>
+
+                            <div class="col-2">
+                                <strong><p>Tình trạng</p></strong>
+                                <p class="inf_trangthai">Còn phòng</p>
+                            </div>
+
+                            <div class="col-2">
+                                <strong><p>Lượt xem</p></strong>
+                                <p class="luotxem">10</p>
+                            </div>
+
+                            <div class="col-2">
+                                <strong><p>Lượt thích</p></strong>
+                                <p class="luotthich">10</p>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <!--Đánh giá sao-->
+                
+                    <div class="rateStar">
+                        
+                        
+                            
+                            <div class="starTitle">
+                                <p>Vui lòng cho chúng tôi biết đánh giá của bạn</p>
+                            </div>
+                            
+                            <div class="Star">
+                                <div class="rate">
+                                    <input type="radio" id="star5" name="rate" value="5" />
+                                    <label for="star5" title="text" id="rate5">5 stars</label>
+                                    <input type="radio" id="star4" name="rate" value="4" />
+                                    <label for="star4" title="text" id="rate4">4 stars</label>
+                                    <input type="radio" id="star3" name="rate" value="3" />
+                                    <label for="star3" title="text" id="rate3">3 stars</label>
+                                    <input type="radio" id="star2" name="rate" value="2" />
+                                    <label for="star2" title="text" id="rate2">2 stars</label>
+                                    <input type="radio" id="star1" name="rate" value="1" />
+                                    <label for="star1" title="text" id="rate1">1 star</label>
+                                </div>
+                            </div>
+                        
+                    </div>
+
+                <!--mô tả-->
+                
+                <div>
+                    <div class="card">
+                        <div class="card-body">
+                            <h4 class="card-title">Thông tin mô tả</h4>
+                            <p class="card-text">phòng trọ khép kín</p>
+                            <p class="card-text">Có nóng lạnh</p>
+                            <p class="card-text">Có bếp riêng</p>
+                            <p class="card-text">Có điều hòa</p>
+                            <p class="card-text">Có giường</p>
+                            <p class="card-text">mô tả thêm</p>
+                        </div>
+                    </div>
+                </div>
+                <br><br>
+                <!--thông tin bài đăng-->
+                <div class="container">
+                    <div id="rectangle">
+                        <div class="row">
+                            <div class="col-1"></div>
+                            
+                            <div class="col-2 idtin">
+                                <!--id bai dang-->
+                                <strong><p>Mã tin</p></strong>
+                                <p class="id_tin">19939432</p>
+                            </div>
+                            
+                            <div class="col-4 ngaydang">
+                                <strong><p>Ngày đăng tin</p></strong>
+                                <p class="ngay_dang">11/11/1111</p>
+                            </div>
+
+                            <div class="col-4 ngayhethan">
+                                <strong><p>Ngày hết hạn</p></strong>
+                                <p class="ngay_hethan">12/12/12</p>
+                            </div>
+
+                            
+                            
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="user">
+                    <span class="report">
+                            <i class="fa fa-exclamation-triangle baocao">Báo cáo</i>
+                    </span>  
+
+
+                    <span class="like">
+                        <i  class="fas fa-heart blackheart tim" class="tim">lưu tin</i>
+                    </span>   
+
+                </div>
+
+                <!--bình luận-->
+                <div class="comments">
+                    
+                    <div class="">
+                            <div class="form-group">
+                                <label for="comment">Comment:</label>
+                            <textarea class="form-control" rows="3" id="comment"></textarea>
+                            </div>
+                            <button id="submit_cmt">Bình luận</button>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+        <div class="col-3">
+            <div id="rectangle_right">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="card-title">Thông tin chủ trọ</h4>
+                        <p class="card-text">nguyen trung thu</p>
+                        <p class="card-text">0909239129</p>
+                        <p class="card-text">cty tnhh 3 thành viên</p>
+                    </div>
+                    <!--admin-->
+    
+                </div>
+            </div>
+            
+        </div>
+
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="quanli">
+            <div class="admin">
+                <span>
+                    <button class="duyet btn btn-primary">Duyệt bài</button>
+                </span>
+                <span>
+                    <button class="xoa btn btn-primary">Xóa bài</button>
+                </span>
+            </div>
+            <div class="owner">
+                <span>
+                    <button class="trangthai btn btn-primary">Thay đổi trạng thái phòng</button>
+                </span>
+                <span>
+                    <button class="sua btn btn-primary">Sửa bài</button>
+                </span>
+                <span>
+                    <button class="xoa btn btn-primary">Xóa bài</button>
+                </span>
+                <span>
+                    <button type="button" class="btn btn-primary p-1 mr-1 validateButton" id="validateButton" data-toggle="modal" data-target="#validateModal">Gia hạn</button>
+                </span>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Modal gia hạn -->
+            <div class="modal fade" id="validateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Gia hạn bài đăng</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="input-group">
+                                    <input type="number" class="form-control" id="thoi_gian_gia_han" placeholder="Nhập số ngày mà bạn muốn gia hạn thêm">
+                                    <div class="input-group-append">
+                                        <span class="input-group-text">Ngày</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+                                <button type="button" class="btn btn-primary">Xác nhận</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    <!-- footer -->
+    <div class="container-fluid footer">
+        
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <h5><u>HỖ TRỢ TRỰC TUYẾN</u></h5>
+                    <p>Chuyên viên tư vấn 1<br>
+                        <i class="fas fa-phone"></i>&nbsp0969666999
+                    </p>
+                    <p>Chuyên viên tư vấn 2<br>
+                        <i class="fas fa-phone"></i>&nbsp0969999666
+                    </p>
+                </div>
+                <div class="col-3">
+                    <h5><u>ĐIỀU KHOẢN SỬ DỤNG</u></h5>
+                    <p>Điều khoản chung</p>
+                    <p>Điều khoản giao dịch</p>
+                    <p>Chính sách thanh toán</p>
+                    <p>Chính sách bảo mật</p>
+                </div>
+                <div class="col-3">
+                    <h5><u>HOTLINE LIÊN HỆ</u></h5>
+                    <p id="hotline"><i class="fas fa-phone"></i>&nbsp0969696969</p>
+                    <p>(hỗ trợ tất cả các ngày trong tuần)</p>
+                </div>
+                <div class="col-3">
+                    <h5><u>HỆ THỐNG CÔNG TY</u></h5>
+                    <p>Công ty cổ phần TNHH BTV Continental</p>
+                    <p>Địa chỉ: Đại học Công Nghệ, Đại học Quốc gia Hà Nội</p>
+                    <p>Email: threeT@gmail.com</p>
+                </div>
+            </div>
+            
+
+        </div>
+    </div>
+
+<script type="text/javascript" src="./js/chi_tiet.js"></script>
+
+
+</body>
+</html>
