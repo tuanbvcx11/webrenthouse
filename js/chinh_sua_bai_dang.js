@@ -1,4 +1,9 @@
 $(document).ready(function() {
+
+    function load_data() {
+        // lấy idPost rồi tải dữ liệu về
+    }
+    load_data();
     $("#formPost").submit(function() {
         let announce = "";
 
