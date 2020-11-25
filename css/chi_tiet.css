@@ -1,0 +1,236 @@
+* {
+  box-sizing:border-box
+}
+h2 {
+  text-align: center;
+}
+/* Slideshow container */
+.slideshow-container {
+  max-width: 500px;
+  position: relative;
+  margin: auto;
+}
+/* Ẩn các slider */
+.mySlides {
+    display: none;
+}
+/* Định dạng nội dung Caption */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+ 
+/* định dạng các chấm chuyển đổi các slide */
+.dot {
+  cursor:pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+/* khi được hover, active đổi màu nền */
+.active, .dot:hover {
+  background-color: #717171;
+}
+ 
+/* Thêm hiệu ứng khi chuyển đổi các slide */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 3s;
+  animation-name: fade;
+  animation-duration: 3s;
+}
+ 
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+ 
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+#rectangle{
+    width:100%;
+    height:auto;
+    background-color: rgb(245,245,245);
+    border-top: darkgray solid 2px;
+    border-bottom: darkgray solid 2px;
+    position: relative;
+}
+#rectangle_left{
+    width:100%;
+    height:auto;
+    background-color: rgb(245,245,245);
+}
+
+#rectangle_right{
+    width: 100%;
+    height: auto;
+}
+
+.container_swap{
+padding-top: 10px;
+padding-bottom: 10px;
+position: relative;
+}
+
+.div_left{
+
+position: absolute;
+left: 50px;
+
+
+}
+
+.div_right{
+position: absolute;
+left: 120px;
+}
+
+.titlebox{
+  margin-top: 10px; 
+  padding-top: 10px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+}
+
+.idtin, .ngaydang, .ngayhethan{
+    position: relative;
+    
+    height: 80px;
+}
+
+.id_tin, .ngay_dang, .ngay_hethan{
+  margin: 0;
+  padding: 10px;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+}
+
+
+.comments{
+       
+       border:3px solid gray;
+       width: 100%;
+       height: 500px;
+       overflow-x: auto;
+       overflow-y: auto;
+}
+
+.rate {
+    float: left;
+    height: 46px;
+    padding: 0 10px;
+}
+.rate:not(:checked) > input {
+    position:absolute;
+    top:-9999px;
+}
+.rate:not(:checked) > label {
+    float:right;
+    width:1em;
+    overflow:hidden;
+    white-space:nowrap;
+    cursor:pointer;
+    font-size:30px;
+    color:#ccc;
+}
+.rate:not(:checked) > label:before {
+    content: '★ ';
+}
+.rate > input:checked ~ label {
+    color: #ffc700;    
+}
+.rate:not(:checked) > label:hover,
+.rate:not(:checked) > label:hover ~ label {
+    color: #deb217;  
+}
+.rate > input:checked + label:hover,
+.rate > input:checked + label:hover ~ label,
+.rate > input:checked ~ label:hover,
+.rate > input:checked ~ label:hover ~ label,
+.rate > label:hover ~ input:checked ~ label {
+    color: #c59b08;
+}
+
+.rateStar{
+    padding: 40px;
+    margin: 20px;
+    position:  relative;
+}
+
+.rateStar .starTitle{
+  position: absolute;
+  top: 0px;
+  left: 230px;
+}
+.rateStar .Star{
+  position: absolute;
+  bottom: 0px;
+  left: 300px;
+}
+
+.redheart{
+  color: red;
+}
+.blackheart{
+  color: black;
+}
+.baocao, .tim{ 
+  top: 30px;
+  left: 40px;
+  transform: scale(1.5,1.5);
+  outline: none;
+  outline-style: none;  
+  outline-width: 0; 
+}
+.like:hover, .report:hover{
+  cursor: pointer;
+}
+.user{
+  display: block;
+  margin: 10px;
+  padding: 10px;
+  position: relative;
+  height: 50px;
+}
+
+.user .report{
+  position: absolute;
+  margin: 2px;
+  display: block;
+  left: 50px;
+  bottom: 10px;
+}
+
+.user .like{
+  position: absolute;
+  margin: 2px;
+  display: block;
+  left: 250px;
+  bottom: 10px;
+}
+
+.quanli{
+  margin: 10px;
+  padding: 10px;
+}
+.quanli .admin, .quanli .owner{
+  display: block;
+  margin: 10px;
+  padding: 10px;
+}
+
+.quanli button{
+  display: inline-block;
+}

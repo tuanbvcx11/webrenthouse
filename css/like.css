@@ -1,0 +1,91 @@
+.sub_head {
+	padding: 15px;
+	padding-left: 1%;
+}
+
+.ad{
+	display: flex;
+	width: 48% !important;
+	height: 175px;
+	flex-wrap: wrap;
+	margin-bottom: 10px;
+	margin-right: 1%;
+	margin-left: 1%;
+	border: solid 2px lightgray;
+	cursor: pointer;
+	position: relative;
+}
+
+.ad:hover .title {
+	color: #4584ff
+}
+
+.ad .anh {
+	width: 40%;
+}
+
+.ad .anh img {
+	height: 100%;
+	object-fit: cover;
+	width: 100%;
+}
+
+.ad .content {
+	padding-left: 10px;
+	width: 60%;
+	font-size: 13px;
+}
+
+.ad .title {
+	font-size: 20px;
+}
+
+.ad .title .idpost {
+	display: none;
+}
+
+.ad .main-content .gia {
+	font-size: 20px;
+	font-weight: 600;
+	color: #4584ff;
+}
+
+.ad .like{
+	display: block;
+	position: absolute;
+	bottom: 5px;
+	right: 10px;
+	outline: none;
+}
+
+.flex_box{
+	display: flex; 
+	flex-wrap: wrap;
+}
+
+.redheart{
+	color: red;
+}
+.blackheart{
+	color: black;
+}
+.tim{
+	transform: scale(1.5,1.5);
+	outline: none;
+    outline-style: none;  
+    outline-width: 0; 
+}
+
+.ad .ngaydang{
+	position: absolute;
+	bottom: 4%;
+}
+
+@media screen and (max-width: 790px) {
+	.ad{
+		width: 98% !important;
+		height: 165px;
+		margin-right: 1%;
+		margin-left: 1%;
+	}
+}
