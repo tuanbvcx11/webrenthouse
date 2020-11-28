@@ -1,0 +1,343 @@
+body {
+  background-color: #f0f2f5;
+}
+.wrapper {
+  background-color: #f0f2f5;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+/* phan tim kiem*/
+.search-content {
+  height: 440px;
+  border: 1px solid #f0f2f5;
+  background-image: url("../background-search.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.display-flex {
+  display: flex;
+}
+.slogan {
+  font-size: 30px;
+  font-weight: 700;
+  color: #fff;
+  text-align: center;
+  display: block;
+  margin-top: 66px;
+}
+
+.form-content {
+  background-color: rgba(40, 40, 46, 0.6);
+  max-width: 909px;
+  margin: auto;
+  height: 200px;
+}
+.choose-area {
+  width: 30%;
+  border-right: 1px solid white;
+}
+.choose-room {
+  width: 40%;
+  border-right: 1px solid white;
+  padding-left: 101px;
+}
+.choose-prices {
+  width: 30%;
+}
+
+.choose-area label {
+  color: #fafafa;
+  font-weight: 600;
+  font-size: 16px;
+  margin-top: 16px;
+  display: block;
+}
+
+.choose-area select {
+  max-width: 209px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+label.label-choose-room {
+  font-size: 16px;
+  font-weight: 600;
+  color: #fafafa;
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 2px;
+}
+
+.form-check label {
+  color: #f0f2f5;
+  font-size: 13px;
+}
+
+.choose-prices > label {
+  color: #fafafa;
+  font-weight: 600;
+  font-size: 16px;
+  margin-top: 16px;
+}
+
+.select-minPrices label[for="minPrices"] {
+  display: block;
+  width: 94px;
+  font-size: 13px;
+  color: #f0f2f5;
+  padding-top: 4px;
+}
+
+.select-maxPrices label[for="maxPrices"] {
+  display: block;
+  width: 94px;
+  font-size: 13px;
+  color: #fafafa;
+  padding-top: 4px;
+}
+
+.select-minPrices select {
+  width: 135px;
+  height: 31px;
+  padding-top: 2px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.select-maxPrices select {
+  width: 135px;
+  height: 31px;
+  padding-top: 2px;
+  font-size: 15px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.post-content {
+  margin-bottom: 69px;
+}
+
+/* Danh sach bai dang moi nhat */
+.latest-post {
+  padding: 0px;
+}
+.latest-post > label {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.baidang {
+  height: 141px;
+  padding: 0px;
+}
+
+.img-div {
+  width: 35%;
+}
+
+.img-post {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.brief-div {
+  width: 66%;
+  position: relative;
+  padding-left: 8px;
+}
+
+.titlePost {
+  position: absolute;
+  text-decoration: none;
+  color: black;
+  /* font-weight: bold; */
+  font-size: 17px;
+}
+
+.Prices {
+  position: absolute;
+  top: 79px;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.datePost {
+  position: absolute;
+  top: 116px;
+  font-size: 12px;
+}
+
+.addressPost {
+  position: absolute;
+  top: 53px;
+  font-size: 14px;
+}
+
+.favorite {
+  position: absolute;
+  top: 115px;
+  left: 318px;
+}
+
+i.far.fa-heart {
+  color: red;
+}
+
+/* danh sach bai dang yeu thich nhat */
+.favorite-post {
+  padding: 0px;
+}
+
+.favorite-post > label {
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.titlePost:hover {
+  text-decoration: none;
+}
+
+@media (max-width: 1199px) {
+  .favorite {
+    position: absolute;
+    top: 115px;
+    left: 491px;
+  }
+}
+
+@media (max-width: 991px) {
+  .favorite {
+    position: absolute;
+    top: 115px;
+    left: 434px;
+  }
+}
+
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 0px;
+    border: none;
+  }
+  /* .display-flex {
+    display: block;
+  } */
+
+  .slogan {
+    font-size: 30px;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    display: block;
+    margin-top: 0;
+  }
+
+  .display-flex {
+    display: block;
+  }
+  .choose-area {
+    width: 100%;
+    border: none;
+  }
+  .choose-area select {
+    max-width: 95%;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  .choose-room {
+    width: 100%;
+    border: none;
+    padding-left: 25px;
+  }
+
+  .choose-prices {
+    width: 92%;
+    margin-bottom: 20px;
+  }
+  .select-minPrices select {
+    width: 100%;
+    height: 31px;
+    padding-top: 2px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .select-maxPrices select {
+    width: 100%;
+    height: 31px;
+    padding-top: 2px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .search-content {
+    padding: 0px;
+    background-image: none;
+    background-color: #3a3c40;
+    border: none;
+  }
+
+  .favorite {
+    top: 30px;
+    left: 20px;
+  }
+
+  .search-content {
+    padding: 0px;
+    height: 518px;
+  }
+  .favorite {
+    top: 114px;
+    left: 316px;
+  }
+  .titlePost {
+    position: absolute;
+    text-decoration: none;
+    color: black;
+    /* font-weight: bold; */
+    font-size: 15px;
+  }
+
+  .form-content {
+    background-color: rgb(58 60 64);
+    max-width: 909px;
+    height: 457px;
+  }
+  .latest-post > label {
+    margin-top: 63px;
+    font-size: 26px;
+    font-weight: 600;
+  }
+}
+
+@media (max-width: 425px) {
+  .favorite {
+    top: 114px;
+    left: 254px;
+  }
+
+  .Prices {
+    position: absolute;
+    top: 79px;
+    font-size: 18px;
+    font-weight: 600;
+  }
+
+  
+  .addressPost {
+    position: absolute;
+    top: 53px;
+    font-size: 12px;
+  }
+  .titlePost {
+    position: absolute;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 12px;
+  }
+}

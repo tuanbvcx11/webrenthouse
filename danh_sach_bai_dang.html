@@ -1,25 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta http-equiv='cache-control' content='no-cache'>
-    <meta http-equiv='expires' content='0'>
-    <meta http-equiv='pragma' content='no-cache'>
+    <meta http-equiv='cache-control' content='no-cache'> 
+    <meta http-equiv='expires' content='0'> 
+    <meta http-equiv='pragma' content='no-cache'> 
 
+    
     <!-- Bootstrap 4 CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- Thu vien animate -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <!-- Khai bao fontawesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
-
-
-    <link href='https://fonts.googleapis.com/css2?family=Chewy&family=Fira+Sans+Extra+Condensed&family=Asap+Condensed&family=Roboto+Condensed&family=Bungee+Inline&family=VT323&family=Fira+Sans+Extra+Condensed&family=IBM+Plex+Sans&family=Fira+Sans+Extra+Condensed&family=Bangers&family=Bungee+Inline&family=Asap&family=Pangolin&family=Francois+One&family=Cabin&family=Special+Elite&display=swap'
-        rel="stylesheet">
+    
+    
+    <link href='https://fonts.googleapis.com/css2?family=Chewy&family=Fira+Sans+Extra+Condensed&family=Asap+Condensed&family=Roboto+Condensed&family=Bungee+Inline&family=VT323&family=Fira+Sans+Extra+Condensed&family=IBM+Plex+Sans&family=Fira+Sans+Extra+Condensed&family=Bangers&family=Bungee+Inline&family=Asap&family=Pangolin&family=Francois+One&family=Cabin&family=Special+Elite&display=swap' rel="stylesheet">
     <!-- Thu vien jquery -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <!-- Bootstrap 4 js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.0.4/popper.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
@@ -28,318 +27,446 @@
     <!-- Thu vien wow js -->
     <script src="js/wow.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/header-footer.css">
-
-    <script src="js/danh_sach_dang_bai.js"></script>
-    <link href="css/danh_sach_bai_dang.css" rel="stylesheet" type="text/css">
+    
+    <link href="css/danh_sach_bai_dang.css" rel="stylesheet" type="text/css" />
 
     <title>Danh sách bài đăng</title>
+  </head>
 
-
-</head>
-
-<body>
+  <body>
     <!-- header -->
     <header>
-        <div class="container-fluid logo">
-            <div class="row">
-                <div class="col-4">
-                    <img src="logo.png" alt="">
-                </div>
-
-                <div class="col-8">
-                    <div class="row justify-content-end">
-                        <span id="hello">Xin chào</span>
-
-                        <ul class="nav">
-                            <li class="nav-item thongbao">
-                                <a class="nav-link" title="thông báo"><i class="fas fa-bell"></i>(2)</a>
-                            </li>
-                            <div class="tuychonchinh">
-                                <li class="nav-item yeuthich">
-                                    <a class="nav-link" href="" title="yêu thích"><i class="fas fa-heart"></i>(3)</a>
-                                </li>
-                            </div>
-
-                            <li class="nav-item dangnhap">
-                                <a class="nav-link" href="login.html">Đăng nhập</a>
-                            </li>
-                            <span id="menu">Menu</span>
-                            <li class="nav-item tuychon">
-                                <div class="dropdown">
-                                    <button class="navbar-toggler" data-toggle="collapse" data-target="#tuychon" aria-expanded="false" aria-controls="tuychon">
-                                        <span class="navbar-toggler-icon">
-                                            
-                                        </span>
-                                    </button>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="containers collapse" id="tuychon">
-            <div class="list-group entity">
-                <span class="tuychonphu">
-                    <a href="#" class="list-group-item list-group-item-action yeuthich">Yêu thích</a>
-                </span>
-                <a href="#" class="list-group-item list-group-item-action dangbai">Đăng bài</a>
-                <a href="#" class="list-group-item list-group-item-action update">Chỉnh sửa thông tin</a>
-                <a href="thong-ke.html" class="list-group-item list-group-item-action toadmin">Admin</a>
-
-                <a href="#" class="list-group-item list-group-item-action logout">Đăng xuất</a>
-            </div>
-        </div>
-
-        <div class="list-thongbao scrollbar-chat">
-            <h3>Thông báo</h3>
-            <hr>
-            <div class="content-thongbao">
-                <div>Tuấn</div>
-                <div>vừa đăng bài viết mới</div>
-            </div>
-            <div class="content-thongbao">
-                <div>Tuấn</div>
-                <div>vừa báo cáo 1 bài viết</div>
-            </div>
-            <div class="content-thongbao">
-                <div>Admin</div>
-                <div>vừa phê duyệt bài viết của bạn</div>
-            </div>
-            <div class="content-thongbao">
-                <div>Tuấn</div>
-                <div>vừa đăng bài viết mới</div>
-            </div>
-        </div>
-    </header>
+      <div class="container-fluid logo">
+          <div class="row">
+              <div class="col-4">
+                  <img src="logo.png" alt="">
+              </div>
+  
+              <div class="col-8">
+                  <div class="row justify-content-end">
+                      <span id="hello">Xin chào</span>
+                      
+                      <ul class="nav">
+                          <li class="nav-item thongbao">
+                              <a class="nav-link" title="thông báo"><i class="fas fa-bell"></i>(2)</a>
+                          </li>
+                          <div class="tuychonchinh">
+                              <li class="nav-item yeuthich">
+                                  <a class="nav-link" href="" title="yêu thích"><i class="fas fa-heart"></i>(3)</a>
+                              </li>
+                          </div>
+  
+                          <li class="nav-item dangnhap">
+                              <a class="nav-link" href="login.html">Đăng nhập</a>
+                          </li>
+                          <li class="nav-item tuychon">
+                              <div class="dropdown">
+                                  <button class="navbar-toggler"  data-toggle="collapse" data-target="#tuychon" aria-expanded="false" aria-controls="tuychon">
+                                      <span class="navbar-toggler-icon">
+                                          
+                                      </span>
+                                  </button>
+                              </div>  
+                          </li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  
+      <div class="containers collapse" id="tuychon">
+          <div class="list-group entity">
+              <span class="tuychonphu">
+                  <a href="#" class="list-group-item list-group-item-action yeuthich">Yêu thích</a>
+              </span>
+              <a href="#" class="list-group-item list-group-item-action dangbai">Đăng bài</a>
+              <a href="#" class="list-group-item list-group-item-action list-posted">Danh sách bài đăng</a>
+              <a href="#" class="list-group-item list-group-item-action host-chat">Chat với admin</a>
+              <a href="#" class="list-group-item list-group-item-action info-me">Thông tin cá nhân</a>
+              <a href="thong-ke.html" class="list-group-item list-group-item-action toadmin">Admin</a>
+              
+              <a href="./module/function/logout.php" class="list-group-item list-group-item-action logout">Đăng xuất</a>
+          </div>
+      </div>
+  
+      <div class="list-thongbao scrollbar-chat">
+          <h3>Thông báo</h3><hr>
+          <div class="content-thongbao">
+              <div>Tuấn</div>
+              <div>vừa đăng bài viết mới</div>
+          </div>
+          <div class="content-thongbao">
+              <div>Tuấn</div>
+              <div>vừa báo cáo 1 bài viết</div>
+          </div>
+          <div class="content-thongbao">
+              <div>Admin</div>
+              <div>vừa phê duyệt bài viết của bạn</div>
+          </div>
+          <div class="content-thongbao">
+              <div>Tuấn</div>
+              <div>vừa đăng bài viết mới</div>
+          </div>
+      </div>
+  </header>
 
     <div class="wrapper">
-        <!-- tiêu đề trang -->
-        <div class="pt-4 text-white titlePost">
-            <h1>Danh sách bài đăng</h1>
+      <!-- tiêu đề trang -->
+      <div class="pt-4 text-white titlePost">
+        <h1>Danh sách bài đăng</h1>
+      </div>
+
+      <div class="container-fluid rounded content_custom">
+        <!-- select option: tất cả, đã duyệt, chưa duyệt, hết hạn -->
+        <div class="form-group d-flex border-top border-bottom select_div">
+          <label for="listingStatus" class="mt-1 mr-2">Loại bài đăng:</label>
+          <select
+            class="form-control select_color select_size"
+            id="listingStatus"
+          >
+            <option value="Đã duyệt">Đã duyệt</option>
+            <option value="Chưa duyệt">Chưa duyệt</option>
+            <option value="Hết hạn">Hết hạn</option>
+          </select>
         </div>
 
-        <div class="container-fluid rounded content_custom">
-            <!-- select option: tất cả, đã duyệt, chưa duyệt, hết hạn -->
-            <div class="form-group d-flex border-top border-bottom select_div">
-                <label for="listingStatus" class="mt-1 mr-2" style="font-weight: bold; font-family:Arial, Helvetica, sans-serif;">Loại bài đăng:</label>
-                <select class="form-control select_color select_size" id="listingStatus">
-                  <option value="Đã duyệt">Đã duyệt</option>
-                  <option value="Chưa duyệt">Chưa duyệt</option>
-                  <option value="Hết hạn">Hết hạn</option>
-                </select>
-            </div>
+        <!-- bảng dữ liệu đã duyệt -->
+        <table
+          class="table table-bordered table-hover table-striped tableApproved"
+        >
+          <thead class="thead-dark border border-secondary">
+            <tr>
+              <th scope="col" width="5%">ID</th>
+              <th scope="col" width="63%">Tiêu đề</th>
+              <th scope="col" width="10%">Yêu thích</th>
+              <th scope="col" width="12%">Thời gian đăng</th>
+              <th scope="col" width="10%%">Chức năng</th>
+            </tr>
+          </thead>
+          <tbody class="bodyPost">
+            <tr>
+              <td class="idPost">1</td>
+              <td>Jacob</td>
+              <td>221</td>
+              <td>Thornton</td>
+              <td class="d-flex">
+                <button
+                  type="button"
+                  class="btn btn-primary p-1 m-auto detailButton"
+                  id="detailButton"
+                >
+                  Xem
+                </button>
+                <!-- <button type="button" class="btn btn-primary p-1 updateButton" id="updateButton">Cập nhật</button> -->
+              </td>
+            </tr>
+            <tr>
+              <td class="idPost">2</td>
+              <td>Jacob</td>
+              <td>221</td>
+              <td>Thornton</td>
+              <td class="d-flex pl-3">
+                <button
+                  type="button"
+                  class="btn btn-primary p-1 m-auto detailButton"
+                  id="detailButton"
+                >
+                  Xem
+                </button>
+                <!-- <button type="button" class="btn btn-primary p-1 updateButton" id="updateButton">Cập nhật</button> -->
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-            <!-- bảng dữ liệu đã duyệt -->
-            <table class="table table-bordered table-hover table-striped tableApproved">
-                <thead class="thead-dark border border-secondary">
-                    <tr>
-                        <th scope="col" width="5%">ID</th>
-                        <th scope="col" width="63%">Tiêu đề</th>
-                        <th scope="col" width="10%">Yêu thích</th>
-                        <th scope="col" width="12%">Thời gian đăng</th>
-                        <th scope="col" width="10%%">Chức năng</th>
-                    </tr>
-                </thead>
-                <tbody class="bodyPost">
-                    <tr>
-                        <td class="idPost">1</td>
-                        <td>Jacob</td>
-                        <td>221</td>
-                        <td>Thornton</td>
-                        <td class="d-flex">
-                            <button type="button" class="btn btn-primary p-1 m-auto detailButton" id="detailButton">Xem</button>
-                            <!-- <button type="button" class="btn btn-primary p-1 updateButton" id="updateButton">Cập nhật</button> -->
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="idPost">2</td>
-                        <td>Jacob</td>
-                        <td>221</td>
-                        <td>Thornton</td>
-                        <td class="d-flex pl-3">
+        <!-- bảng dữ liệu chưa duyệt -->
+        <table
+          class="table table-bordered table-hover table-striped tableUnapproved"
+        >
+          <thead class="thead-dark border border-secondary">
+            <tr>
+              <th scope="col" width="5%">ID</th>
+              <th scope="col" width="60%">Tiêu đề</th>
+              <th scope="col" width="10%">Yêu thích</th>
+              <th scope="col" width="12%">Thời gian đăng</th>
+              <th scope="col" width="13%">Chức năng</th>
+            </tr>
+          </thead>
+          <tbody class="bodyPost">
+            <tr>
+              <td class="idPost">1</td>
+              <td>Jacob</td>
+              <td>221</td>
+              <td>Thornton</td>
+              <td class="d-flex pl-3">
+                <button
+                  type="button"
+                  class="btn btn-primary p-1 mr-1 editButton"
+                  id="editButton"
+                >
+                  Chỉnh sửa
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary p-1 eraseButton"
+                  data-toggle="modal"
+                  data-target="#eraseModal"
+                >
+                  Xóa
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td class="idPost">2</td>
+              <td>Jacob</td>
+              <td>221</td>
+              <td>Thornton</td>
+              <td class="d-flex pl-3">
+                <button
+                  type="button"
+                  class="btn btn-primary p-1 mr-1 editButton"
+                  id="editButton"
+                >
+                  Chỉnh sửa
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary p-1 eraseButton"
+                  data-toggle="modal"
+                  data-target="#eraseModal"
+                >
+                  Xóa
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-                            <button type="button" class="btn btn-primary p-1 m-auto detailButton" id="detailButton">Xem</button>
-                            <!-- <button type="button" class="btn btn-primary p-1 updateButton" id="updateButton">Cập nhật</button> -->
+        <!-- bảng dữ liệu hết hạn -->
+        <table
+          class="table table-bordered table-hover table-striped tableExpired"
+        >
+          <thead class="thead-dark border border-secondary">
+            <tr>
+              <th scope="col" width="5%">ID</th>
+              <th scope="col" width="59%">Tiêu đề</th>
+              <th scope="col" width="10%">Yêu thích</th>
+              <th scope="col" width="10%">Thời gian đăng</th>
+              <th scope="col" width="16%">Chức năng</th>
+            </tr>
+          </thead>
 
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+          <tbody class="bodyPost">
+            <tr>
+              <td class="idPost">1</td>
+              <td>Jacob</td>
+              <td>221</td>
+              <td>Thornton</td>
+              <td class="d-flex pl-3">
+                <button
+                  type="button"
+                  class="btn btn-primary p-1 mr-1 detailButton"
+                  id="detailButton"
+                >
+                  Xem
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary p-1 mr-1 validateButton"
+                  id="validateButton"
+                  data-toggle="modal"
+                  data-target="#validateModal"
+                >
+                  Gia hạn
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary p-1 eraseButton"
+                  data-toggle="modal"
+                  data-target="#eraseModal"
+                >
+                  Xóa
+                </button>
+              </td>
+            </tr>
+            <tr>
+              <td class="idPost">2</td>
+              <td>Jacob</td>
+              <td>221</td>
+              <td>Thornton</td>
+              <td class="d-flex pl-3">
+                <button
+                  type="button"
+                  class="btn btn-primary p-1 mr-1 detailButton"
+                  id="detailButton"
+                >
+                  Xem
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary p-1 mr-1 validateButton"
+                  id="validateButton"
+                  data-toggle="modal"
+                  data-target="#validateModal"
+                >
+                  Gia hạn
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-secondary p-1 eraseButton"
+                  data-toggle="modal"
+                  data-target="#eraseModal"
+                >
+                  Xóa
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
 
-
-            <!-- bảng dữ liệu chưa duyệt -->
-            <table class="table table-bordered table-hover table-striped tableUnapproved">
-                <thead class="thead-dark border border-secondary">
-                    <tr>
-                        <th scope="col" width="5%">ID</th>
-                        <th scope="col" width="60%">Tiêu đề</th>
-                        <th scope="col" width="10%">Yêu thích</th>
-                        <th scope="col" width="12%">Thời gian đăng</th>
-                        <th scope="col" width="13%">Chức năng</th>
-                    </tr>
-                </thead>
-                <tbody class="bodyPost">
-                    <tr>
-                        <td class="idPost">1</td>
-                        <td>Jacob</td>
-                        <td>221</td>
-                        <td>Thornton</td>
-                        <td class="d-flex pl-3">
-
-                            <button type="button" class="btn btn-primary p-1 mr-1 editButton" id="editButton">Chỉnh sửa</button>
-                            <button type="button" class="btn btn-secondary p-1 eraseButton" data-toggle="modal" data-target="#eraseModal">Xóa</button>
-
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="idPost">2</td>
-                        <td>Jacob</td>
-                        <td>221</td>
-                        <td>Thornton</td>
-                        <td class="d-flex pl-3">
-
-                            <button type="button" class="btn btn-primary p-1 mr-1 editButton" id="editButton">Chỉnh sửa</button>
-                            <button type="button" class="btn btn-secondary p-1 eraseButton" data-toggle="modal" data-target="#eraseModal">Xóa</button>
-
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <!-- bảng dữ liệu hết hạn -->
-            <table class="table table-bordered table-hover table-striped tableExpired">
-                <thead class="thead-dark border border-secondary">
-                    <tr>
-                        <th scope="col" width="5%">ID</th>
-                        <th scope="col" width="59%">Tiêu đề</th>
-                        <th scope="col" width="10%">Yêu thích</th>
-                        <th scope="col" width="10%">Thời gian đăng</th>
-                        <th scope="col" width="16%">Chức năng</th>
-                </thead>
-                <tbody class="bodyPost">
-                    <tr>
-                        <td class="idPost">1</td>
-                        <td>Jacob</td>
-                        <td>221</td>
-                        <td>Thornton</td>
-                        <td class="d-flex pl-3">
-                            <button type="button" class="btn btn-primary p-1 mr-1 detailButton" id="detailButton">Xem</button>
-                            <button type="button" class="btn btn-primary p-1 mr-1 validateButton" id="validateButton" data-toggle="modal" data-target="#validateModal">Gia hạn</button>
-                            <button type="button" class="btn btn-secondary p-1 eraseButton" data-toggle="modal" data-target="#eraseModal">Xóa</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="idPost">2</td>
-                        <td>Jacob</td>
-                        <td>221</td>
-                        <td>Thornton</td>
-                        <td class="d-flex pl-3">
-                            <button type="button" class="btn btn-primary p-1 mr-1 detailButton" id="detailButton">Xem</button>
-                            <button type="button" class="btn btn-primary p-1 mr-1 validateButton" id="validateButton" data-toggle="modal" data-target="#validateModal">Gia hạn</button>
-                            <button type="button" class="btn btn-secondary p-1 eraseButton" data-toggle="modal" data-target="#eraseModal">Xóa</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <!-- Modal xóa -->
-            <div class="modal fade" id="eraseModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Xóa bài đăng</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            </div>
-                            <div class="modal-body">
-                                <!-- Bạn xác nhận xóa bài đăng này? -->
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
-                                <button type="button" class="btn btn-primary">Xác nhận</button>
-                            </div>
-                        </div>
-                    </div>
+        <!-- Modal xóa -->
+        <div
+          class="modal fade"
+          id="eraseModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">
+                    Xóa bài đăng
+                  </h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
                 </div>
-            </div>
-
-            <!-- Modal gia hạn -->
-            <div class="modal fade" id="validateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-dialog modal-dialog-centered">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="exampleModalLabel">Gia hạn bài đăng</h5>
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-                            </div>
-                            <div class="modal-body">
-                                <div class="input-group">
-                                    <input type="number" class="form-control" id="thoi_gian_gia_han" placeholder="Nhập số ngày mà bạn muốn gia hạn thêm">
-                                    <div class="input-group-append">
-                                        <span class="input-group-text">Ngày</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
-                                <button type="button" class="btn btn-primary">Xác nhận</button>
-                            </div>
-                        </div>
-                    </div>
+                <div class="modal-body">
+                  <!-- Bạn xác nhận xóa bài đăng này? -->
                 </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                  >
+                    Thoát
+                  </button>
+                  <button type="button" class="btn btn-primary">
+                    Xác nhận
+                  </button>
+                </div>
+              </div>
             </div>
-
+          </div>
         </div>
+
+        <!-- Modal gia hạn -->
+        <div
+          class="modal fade"
+          id="validateModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">
+                    Gia hạn bài đăng
+                  </h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Close"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <div class="input-group">
+                    <input
+                      type="number"
+                      class="form-control"
+                      id="thoi_gian_gia_han"
+                      placeholder="Nhập số ngày mà bạn muốn gia hạn thêm"
+                    />
+                    <div class="input-group-append">
+                      <span class="input-group-text">Ngày</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-dismiss="modal"
+                  >
+                    Thoát
+                  </button>
+                  <button type="button" class="btn btn-primary">
+                    Xác nhận
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <!-- footer -->
     <footer>
-        <div class="container-fluid footer">
+      <div class="container-fluid footer">
+      
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-3 col-sm-6">
+                      <h5><u>HỖ TRỢ TRỰC TUYẾN</u></h5>
+                      <p>Chuyên viên tư vấn 1<br>
+                          <i class="fas fa-phone"></i>&nbsp0969666999
+                      </p>
+                      <p>Chuyên viên tư vấn 2<br>
+                          <i class="fas fa-phone"></i>&nbsp0969999666
+                      </p>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                      <h5><u>ĐIỀU KHOẢN SỬ DỤNG</u></h5>
+                      <p>Điều khoản chung</p>
+                      <p>Điều khoản giao dịch</p>
+                      <p>Chính sách thanh toán</p>
+                      <p>Chính sách bảo mật</p>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                      <h5><u>HOTLINE LIÊN HỆ</u></h5>
+                      <p id="hotline"><i class="fas fa-phone"></i>&nbsp0969696969</p>
+                      <p>(hỗ trợ tất cả các ngày trong tuần)</p>
+                  </div>
+                  <div class="col-md-3 col-sm-6">
+                      <h5><u>HỆ THỐNG CÔNG TY</u></h5>
+                      <p>Công ty cổ phần TNHH BTV Continental</p>
+                      <p>Địa chỉ: Đại học Công Nghệ, Đại học Quốc gia Hà Nội</p>
+                      <p>Email: threeT@gmail.com</p>
+                  </div>
+              </div>
+              
+  
+          </div>
+      </div>
+  
+      <script src="js/header-footer.js"></script>
+  
+  </footer>
 
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3 col-sm-6">
-                        <h5><u>HỖ TRỢ TRỰC TUYẾN</u></h5>
-                        <p>Chuyên viên tư vấn 1<br>
-                            <i class="fas fa-phone"></i>&nbsp0969666999
-                        </p>
-                        <p>Chuyên viên tư vấn 2<br>
-                            <i class="fas fa-phone"></i>&nbsp0969999666
-                        </p>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <h5><u>ĐIỀU KHOẢN SỬ DỤNG</u></h5>
-                        <p>Điều khoản chung</p>
-                        <p>Điều khoản giao dịch</p>
-                        <p>Chính sách thanh toán</p>
-                        <p>Chính sách bảo mật</p>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <h5><u>HOTLINE LIÊN HỆ</u></h5>
-                        <p id="hotline"><i class="fas fa-phone"></i>&nbsp0969696969</p>
-                        <p>(hỗ trợ tất cả các ngày trong tuần)</p>
-                    </div>
-                    <div class="col-md-3 col-sm-6">
-                        <h5><u>HỆ THỐNG CÔNG TY</u></h5>
-                        <p>Công ty cổ phần TNHH BTV Continental</p>
-                        <p>Địa chỉ: Đại học Công Nghệ, Đại học Quốc gia Hà Nội</p>
-                        <p>Email: threeT@gmail.com</p>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-
-        <script src="js/header-footer.js"></script>
-
-    </footer>
-</body>
-
+    <script src="js/danh_sach_dang_bai.js"></script>
+  </body>
 </html>
