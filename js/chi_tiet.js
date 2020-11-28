@@ -22,7 +22,7 @@
         slideIndex = 0
       }    
       //tự động chuyển đổi slide sau 5s
-      setTimeout(showSlides, 5000);
+      setTimeout(showSlides, 3000);
   }
   //mặc định hiển thị slide đầu tiên 
   showSlides(slideIndex = 0);
@@ -31,68 +31,63 @@
   function currentSlide(n) {
     showSlides(slideIndex = n);
   }
-  $('#rate5').click(function(event){
-    var ss = $('#rate5').text();
-  alert(ss);
-  });
-  $('#rate4').click(function(event){
-    var ss = $('#rate4').text();
-  alert(ss);
-  });
-  $('#rate3').click(function(event){
-    var ss = $('#rate3').text();
-  alert(ss);
-  });
-  $('#rate2').click(function(event){
-    var ss = $('#rate2').text();
-  alert(ss);
-  });
-  $('#rate1').click(function(event){
-    var ss = $('#rate1').text();
-  alert(ss);
-  });
 
-
+  $('.Star .rate input').click(function(event){
+    var label = $("label[for='" + $(this).attr('id') + "']")
+    var ss = label.text();
+    console.log(ss);
+  });
 
 
   $('#submit_cmt').click(function(event){
     var cmt = $('#comment').val();
-    alert(cmt);
+    var users = $('.ten_user:last').text();
+    if (cmt != "")
+    $('.binhluan').append('<div class="user_comment dan_le"><div><p class="ten_user">'+users+'</p></div><div><p class="content">'+cmt+'</p></div></div>');
+    $('#comment').val('');
   });
 
-$('.like').click(function(event){
-            if ($(this).children('i').hasClass("blackheart") ){
-                $(this).children('i').removeClass("blackheart");
-                $(this).children('i').addClass("redheart");
-                $(this).children('i').text('đã lưu');
-            } else{
-                $(this).children('i').removeClass("redheart");
-                $(this).children('i').addClass("blackheart");
-                $(this).children('i').text('lưu tin');
-            }     
-        });
+  $('.like').click(function(event){
+          if ($(this).children('i').hasClass("blackheart") ){
+              $(this).children('i').removeClass("blackheart");
+              $(this).children('i').addClass("redheart");
+              $(this).children('i').text('đã lưu');
+          } else{
+              $(this).children('i').removeClass("redheart");
+              $(this).children('i').addClass("blackheart");
+              $(this).children('i').text('lưu tin');
+          }     
+  });
 
-$('.report').click(function(event){
-    alert($('.id_tin').text());   
+
+$('#submit_report').click(function(event){
+  var id = $('.id_tin').text();
+  var content = $('#inp_report').val();
+    alert(id+content);   
 });
 
 
 $('.duyet').click(function(event){
-  alert($('.duyet').text());
+  alert($('.id_tin').text()); 
   $(this).css("display","none");
+  $('.sua').css("display","none");
+
 });
 
 $('.xoa').click(function(event){
-  alert($('.xoa').text());
+  var id = $('.id_tin').text();
+  var text = "Bạn có thực sự muốn xóa bài viết";
+  var accept = confirm(text);
+  if (accept = false){
+    alert(id+" xóa cmnr");
+  } 
 });
 
-$('.giahan').click(function(event){
-  alert($('.giahan').text());
-  $(this).css("display","none");
-});
+$('#submit_giahan').click(function(event){
+  var id = $('.id_tin').text();
+  var time = $('#thoi_gian_gia_han').val();
+  alert(id+time); 
 
-$('.ycgiahan').click(function(event){
-  alert($('.ycgiahan').text());
 });
 
 $('.trangthai').click(function(event){
@@ -107,8 +102,9 @@ $('.trangthai').click(function(event){
   var accept = confirm(text);
   if (accept == true){
     $('.inf_trangthai').text(change);
-  } else{
-    $('.inf_trangthai').text(change);
   }
+});
+
+$('.sua').click(function(event){
 });
 

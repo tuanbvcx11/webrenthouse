@@ -4,9 +4,15 @@
 h2 {
   text-align: center;
 }
+body{
+  background-color: white;
+  font-family: -apple-system;
+}
+
+
 /* Slideshow container */
 .slideshow-container {
-  max-width: 500px;
+  max-width: 800px;
   position: relative;
   margin: auto;
 }
@@ -40,60 +46,66 @@ h2 {
 .active, .dot:hover {
   background-color: #717171;
 }
- 
+.slideanh{
+  width: 100%;
+}
+
 /* Thêm hiệu ứng khi chuyển đổi các slide */
 .fade {
   -webkit-animation-name: fade;
-  -webkit-animation-duration: 3s;
+  -webkit-animation-duration: 10s;
   animation-name: fade;
   animation-duration: 3s;
 }
  
 @-webkit-keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .1} 
   to {opacity: 1}
 }
  
 @keyframes fade {
-  from {opacity: .4} 
+  from {opacity: .1} 
   to {opacity: 1}
 }
 #rectangle{
     width:100%;
     height:auto;
-    background-color: rgb(245,245,245);
-    border-top: darkgray solid 2px;
-    border-bottom: darkgray solid 2px;
+    border-top: rgb(235,235,235) solid 2px;
+    border-bottom: rgb(235,235,235) solid 2px;
     position: relative;
 }
+
+#user_box{
+  width:100%;
+    height:auto;
+    
+    position: relative;
+}
+
 #rectangle_left{
     width:100%;
     height:auto;
-    background-color: rgb(245,245,245);
+    /*box-shadow: 0 2px 7px 0 rgba(0,0,0,.5);*/
+   
 }
 
 #rectangle_right{
     width: 100%;
     height: auto;
+    position: sticky;
+    top: 20px;
+    box-shadow: 0 2px 7px 0 rgba(0,0,0,.3);
+    border-radius: 5px;
 }
 
-.container_swap{
-padding-top: 10px;
-padding-bottom: 10px;
-position: relative;
+.dan_le{
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
-.div_left{
-
-position: absolute;
-left: 50px;
-
-
-}
-
-.div_right{
-position: absolute;
-left: 120px;
+#dia_chi{
+  margin-left: 3%;
+  font-size: 20px;
 }
 
 .titlebox{
@@ -101,11 +113,12 @@ left: 120px;
   padding-top: 10px;
   padding-bottom: 20px;
   text-transform: uppercase;
+  margin-left: 2%;
+  margin-right: 2%;
 }
 
 .idtin, .ngaydang, .ngayhethan{
     position: relative;
-    
     height: 80px;
 }
 
@@ -117,25 +130,26 @@ left: 120px;
   left: 0;
 }
 
-
-.comments{
-       
-       border:3px solid gray;
+.binhluan{
+       background-color: white;
+       border:3px solid white;
        width: 100%;
-       height: 500px;
+       height: auto;
+       max-height: 500px;
        overflow-x: auto;
        overflow-y: auto;
 }
 
 .rate {
-    float: left;
+    display: inline-block;
+    width: 170px;
     height: 46px;
     padding: 0 10px;
 }
 .rate:not(:checked) > input {
     position:absolute;
     top:-9999px;
-}
+} 
 .rate:not(:checked) > label {
     float:right;
     width:1em;
@@ -164,45 +178,61 @@ left: 120px;
 }
 
 .rateStar{
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
     padding: 40px;
     margin: 20px;
+    text-align: center;
     position:  relative;
+    border-bottom: solid 2px rgb(235,235,235);
 }
 
 .rateStar .starTitle{
-  position: absolute;
-  top: 0px;
-  left: 230px;
+  width: 100%;
+  text-align: center;
+  margin: auto;
 }
 .rateStar .Star{
-  position: absolute;
-  bottom: 0px;
-  left: 300px;
+  display: block;
+  margin: auto;
+  width: 100%;
 }
 
 .redheart{
   color: red;
 }
 .blackheart{
-  color: black;
+  color: gray;
 }
+
 .baocao, .tim{ 
   top: 30px;
   left: 40px;
+  padding: 5px;
   transform: scale(1.5,1.5);
   outline: none;
   outline-style: none;  
   outline-width: 0; 
+  border: solid 1px rgb(220,220,220);
+  border-radius: 20px;
+}
+
+.baocao{
+  color: gray;
 }
 .like:hover, .report:hover{
   cursor: pointer;
 }
 .user{
   display: block;
-  margin: 10px;
-  padding: 10px;
+  margin-top: 0px;
+  margin-bottom: 10px; 
+  padding-top: 30px;
+  padding-bottom: 30px;
   position: relative;
   height: 50px;
+  background-color: white;
 }
 
 .user .report{
@@ -233,4 +263,91 @@ left: 120px;
 
 .quanli button{
   display: inline-block;
+}
+
+.comment_none{
+  display: block;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.comments{
+  display: flex;
+  margin-left: 10px;
+  margin-right: 10px;
+  padding-right: 10px;
+  margin-left: 10px;
+}
+
+.title{
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 10px;
+  font-family: -apple-system;
+}
+
+.comments #comment{
+  width: 95%;
+}
+
+.comments #submit_cmt{
+  width: 5%;
+  transform: scale(2,2);
+}
+.user_comment{
+  background-color: rgb(230,230,230);
+  border-radius: 5px;
+  margin: 2%;
+  
+}
+
+.hoten_user, .ten_user{
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.star_title{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.hoten_user, .ten_user, .content{
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 0%;
+
+}
+
+.content{
+  word-wrap: break-word;
+}
+
+.box_comment{
+  box-shadow: 0 2px 7px 0 rgba(0,0,0,.3);
+}
+
+.mo_ta{
+  width: 50%;
+  margin: 2%;
+}
+
+.mo_ta_chi_tiet{
+  margin: 2%;
+}
+.flex_box{
+  display: flex;
+}
+.sub_title{
+  color: gray;
+}
+.sua{
+  display: none;
+}
+
+#gia{
+  margin-left: 3%;
+  font-size: 30px;
+  color: #009177;
+  font-weight: 700;
+  text-decoration-line: underline;
 }
