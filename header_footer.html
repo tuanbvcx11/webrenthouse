@@ -31,122 +31,130 @@
         
 </head>
 <body>
-	<!-- header -->
-    <div class="container-fluid logo">
-        <div class="row">
-            <div class="col-4">
-                <img src="logo.png" alt="">
-            </div>
-
-            <div class="col-8">
-                <div class="row justify-content-end">
-                    <span id="hello">Xin chào</span>
-                    
-                    <ul class="nav">
-                        <li class="nav-item thongbao">
-                            <a class="nav-link" title="thông báo"><i class="fas fa-bell"></i>(2)</a>
-                        </li>
-                        <div class="tuychonchinh">
-                            <li class="nav-item yeuthich">
-                                <a class="nav-link" href="" title="yêu thích"><i class="fas fa-heart"></i>(3)</a>
+    <!-- header -->
+    
+    <header>
+        <div class="container-fluid logo">
+            <div class="row">
+                <div class="col-4">
+                    <img src="logo.png" alt="">
+                </div>
+    
+                <div class="col-8">
+                    <div class="row justify-content-end">
+                        <span id="hello">Xin chào</span>
+                        
+                        <ul class="nav">
+                            <li class="nav-item thongbao">
+                                <a class="nav-link" title="thông báo"><i class="fas fa-bell"></i>(2)</a>
                             </li>
-                        </div>
-
-                        <li class="nav-item dangnhap">
-                            <a class="nav-link" href="login.html">Đăng nhập</a>
-                        </li>
-                        <li class="nav-item tuychon">
-                            <div class="dropdown">
-                                <button class="navbar-toggler"  data-toggle="collapse" data-target="#tuychon" aria-expanded="false" aria-controls="tuychon">
-                                    <span class="navbar-toggler-icon">
-                                        
-                                    </span>
-                                </button>
-                            </div>  
-                        </li>
-                    </ul>
+                            <div class="tuychonchinh">
+                                <li class="nav-item yeuthich">
+                                    <a class="nav-link" href="" title="yêu thích"><i class="fas fa-heart"></i>(3)</a>
+                                </li>
+                            </div>
+    
+                            <li class="nav-item dangnhap">
+                                <a class="nav-link" href="login.html">Đăng nhập</a>
+                            </li>
+                            <li class="nav-item tuychon">
+                                <div class="dropdown">
+                                    <button class="navbar-toggler"  data-toggle="collapse" data-target="#tuychon" aria-expanded="false" aria-controls="tuychon">
+                                        <span class="navbar-toggler-icon">
+                                            
+                                        </span>
+                                    </button>
+                                </div>  
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="containers collapse" id="tuychon">
-        <div class="list-group entity">
-            <span class="tuychonphu">
-                <a href="#" class="list-group-item list-group-item-action yeuthich">Yêu thích</a>
-            </span>
-            <a href="#" class="list-group-item list-group-item-action dangbai">Đăng bài</a>
-            <a href="#" class="list-group-item list-group-item-action list-posted">Danh sách bài đăng</a>
-            <a href="#" class="list-group-item list-group-item-action host-chat">Chat với admin</a>
-            <a href="#" class="list-group-item list-group-item-action info-me">Thông tin cá nhân</a>
-            <a href="thong-ke.html" class="list-group-item list-group-item-action toadmin">Admin</a>
-            
-            <a href="./module/function/logout.php" class="list-group-item list-group-item-action logout">Đăng xuất</a>
+    
+        <div class="containers collapse" id="tuychon">
+            <div class="list-group entity">
+                <span class="tuychonphu">
+                    <a href="#" class="list-group-item list-group-item-action yeuthich">Yêu thích</a>
+                </span>
+                <a href="#" class="list-group-item list-group-item-action dangbai">Đăng bài</a>
+                <a href="#" class="list-group-item list-group-item-action list-posted">Danh sách bài đăng</a>
+                <a href="#" class="list-group-item list-group-item-action host-chat">Chat với admin</a>
+                <a href="#" class="list-group-item list-group-item-action info-me">Thông tin cá nhân</a>
+                <a href="thong-ke.html" class="list-group-item list-group-item-action toadmin">Admin</a>
+                
+                <a href="./module/function/logout.php" class="list-group-item list-group-item-action logout">Đăng xuất</a>
+            </div>
         </div>
-    </div>
-
-    <div class="list-thongbao scrollbar-chat">
-        <h3>Thông báo</h3><hr>
-        <div class="content-thongbao">
-            <div>Tuấn</div>
-            <div>vừa đăng bài viết mới</div>
+    
+        <div class="list-thongbao scrollbar-chat">
+            <h3>Thông báo</h3><hr>
+            <div class="content-thongbao">
+                <div>Tuấn</div>
+                <div>vừa đăng bài viết mới</div>
+            </div>
+            <div class="content-thongbao">
+                <div>Tuấn</div>
+                <div>vừa báo cáo 1 bài viết</div>
+            </div>
+            <div class="content-thongbao">
+                <div>Admin</div>
+                <div>vừa phê duyệt bài viết của bạn</div>
+            </div>
+            <div class="content-thongbao">
+                <div>Tuấn</div>
+                <div>vừa đăng bài viết mới</div>
+            </div>
         </div>
-        <div class="content-thongbao">
-            <div>Tuấn</div>
-            <div>vừa báo cáo 1 bài viết</div>
-        </div>
-        <div class="content-thongbao">
-            <div>Admin</div>
-            <div>vừa phê duyệt bài viết của bạn</div>
-        </div>
-        <div class="content-thongbao">
-            <div>Tuấn</div>
-            <div>vừa đăng bài viết mới</div>
-        </div>
-    </div>
+    </header>
+    
     
 
     <!-- body -->
     
     <!-- footer -->
-    <div class="container-fluid footer">
+
+    <footer>
+        <div class="container-fluid footer">
         
-        <div class="container">
-            <div class="row">
-                <div class="col-md-3 col-sm-6">
-                    <h5><u>HỖ TRỢ TRỰC TUYẾN</u></h5>
-                    <p>Chuyên viên tư vấn 1<br>
-                        <i class="fas fa-phone"></i>&nbsp0969666999
-                    </p>
-                    <p>Chuyên viên tư vấn 2<br>
-                        <i class="fas fa-phone"></i>&nbsp0969999666
-                    </p>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3 col-sm-6">
+                        <h5><u>HỖ TRỢ TRỰC TUYẾN</u></h5>
+                        <p>Chuyên viên tư vấn 1<br>
+                            <i class="fas fa-phone"></i>&nbsp0969666999
+                        </p>
+                        <p>Chuyên viên tư vấn 2<br>
+                            <i class="fas fa-phone"></i>&nbsp0969999666
+                        </p>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <h5><u>ĐIỀU KHOẢN SỬ DỤNG</u></h5>
+                        <p>Điều khoản chung</p>
+                        <p>Điều khoản giao dịch</p>
+                        <p>Chính sách thanh toán</p>
+                        <p>Chính sách bảo mật</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <h5><u>HOTLINE LIÊN HỆ</u></h5>
+                        <p id="hotline"><i class="fas fa-phone"></i>&nbsp0969696969</p>
+                        <p>(hỗ trợ tất cả các ngày trong tuần)</p>
+                    </div>
+                    <div class="col-md-3 col-sm-6">
+                        <h5><u>HỆ THỐNG CÔNG TY</u></h5>
+                        <p>Công ty cổ phần TNHH BTV Continental</p>
+                        <p>Địa chỉ: Đại học Công Nghệ, Đại học Quốc gia Hà Nội</p>
+                        <p>Email: threeT@gmail.com</p>
+                    </div>
                 </div>
-                <div class="col-md-3 col-sm-6">
-                    <h5><u>ĐIỀU KHOẢN SỬ DỤNG</u></h5>
-                    <p>Điều khoản chung</p>
-                    <p>Điều khoản giao dịch</p>
-                    <p>Chính sách thanh toán</p>
-                    <p>Chính sách bảo mật</p>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <h5><u>HOTLINE LIÊN HỆ</u></h5>
-                    <p id="hotline"><i class="fas fa-phone"></i>&nbsp0969696969</p>
-                    <p>(hỗ trợ tất cả các ngày trong tuần)</p>
-                </div>
-                <div class="col-md-3 col-sm-6">
-                    <h5><u>HỆ THỐNG CÔNG TY</u></h5>
-                    <p>Công ty cổ phần TNHH BTV Continental</p>
-                    <p>Địa chỉ: Đại học Công Nghệ, Đại học Quốc gia Hà Nội</p>
-                    <p>Email: threeT@gmail.com</p>
-                </div>
+                
+    
             </div>
-            
-
         </div>
-    </div>
-
-    <script src="js/header-footer.js"></script>
-
+    
+        <script src="js/header-footer.js"></script>
+    
+    </footer>
+    
 </body>
 </html>
