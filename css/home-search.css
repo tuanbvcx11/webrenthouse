@@ -132,6 +132,7 @@ span {
 .baidang {
   border-bottom: 1px solid #bdbdbd;
   padding-bottom: 13px;
+  margin-top: 13px;
 }
 
 .img-div {
@@ -318,7 +319,6 @@ i.far.fa-heart {
     max-width: 909px;
     height: 457px;
   }
-  
 }
 
 @media (max-width: 425px) {
