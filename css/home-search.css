@@ -114,29 +114,33 @@ label.label-choose-room {
   cursor: pointer;
 }
 
+/* phan danh sach bai dang */
 .post-content {
-  margin-bottom: 69px;
+  padding: 60px 120px 32px 120px;
 }
 
-/* Danh sach bai dang moi nhat */
-.latest-post {
-  padding: 0px;
+span {
+  display: none;
 }
-.latest-post > label {
-  font-size: 26px;
-  font-weight: 600;
+
+.post-content label {
+  font-size: 24px;
+  font-weight: 400;
+  padding-bottom: 20px;
 }
 
 .baidang {
-  height: 141px;
-  padding: 0px;
+  border-bottom: 1px solid #bdbdbd;
+  padding-bottom: 13px;
 }
 
 .img-div {
-  width: 35%;
+  width: 237px;
+  height: 166px;
+  border-radius: 5px;
 }
 
-.img-post {
+img.img-post {
   width: 100%;
   height: 100%;
   object-fit: cover;
@@ -144,7 +148,7 @@ label.label-choose-room {
 }
 
 .brief-div {
-  width: 66%;
+  width: 100%;
   position: relative;
   padding-left: 8px;
 }
@@ -154,65 +158,67 @@ label.label-choose-room {
   text-decoration: none;
   color: black;
   /* font-weight: bold; */
-  font-size: 17px;
+  font-size: 19px;
+}
+
+.Prices-div {
+  position: absolute;
+  top: 106px;
 }
 
 .Prices {
-  position: absolute;
-  top: 79px;
   font-size: 20px;
   font-weight: 600;
+  color: #427bff;
 }
 
 .datePost {
   position: absolute;
-  top: 116px;
+  top: 149px;
   font-size: 12px;
 }
 
-.addressPost {
+.telephone-div {
   position: absolute;
-  top: 53px;
+  top: 145px;
+  left: 567px;
+}
+
+.address-div {
+  position: absolute;
+  top: 70px;
+}
+
+.addressPost {
   font-size: 14px;
+  color: gray;
 }
 
 .favorite {
-  position: absolute;
-  top: 115px;
-  left: 318px;
+  align-self: flex-end;
 }
 
 i.far.fa-heart {
   color: red;
 }
 
-/* danh sach bai dang yeu thich nhat */
-.favorite-post {
-  padding: 0px;
-}
-
-.favorite-post > label {
-  font-size: 26px;
-  font-weight: 600;
-}
+/* thanh phan trang */
 
 .titlePost:hover {
   text-decoration: none;
 }
 
 @media (max-width: 1199px) {
-  .favorite {
+  .telephone-div {
     position: absolute;
-    top: 115px;
-    left: 491px;
+    top: 145px;
+    left: 394px;
   }
 }
 
 @media (max-width: 991px) {
-  .favorite {
-    position: absolute;
-    top: 115px;
-    left: 434px;
+  .post-content {
+    padding: 20px 0px 20px 0px;
   }
 }
 
@@ -221,10 +227,15 @@ i.far.fa-heart {
     padding: 0px;
     border: none;
   }
-  /* .display-flex {
-    display: block;
-  } */
+  .post-content {
+    padding: 20px 0px 20px 0px;
+  }
 
+  .telephone-div {
+    position: absolute;
+    top: 145px;
+    left: 233px;
+  }
   .slogan {
     font-size: 30px;
     font-weight: 700;
@@ -285,10 +296,6 @@ i.far.fa-heart {
     padding: 0px;
     height: 518px;
   }
-  .favorite {
-    top: 114px;
-    left: 316px;
-  }
   .titlePost {
     position: absolute;
     text-decoration: none;
@@ -310,33 +317,8 @@ i.far.fa-heart {
 }
 
 @media (max-width: 425px) {
-  .favorite {
-    top: 114px;
-    left: 254px;
-  }
-
-  .Prices {
-    position: absolute;
-    top: 79px;
-    font-size: 18px;
-    font-weight: 600;
-  }
-
-  .addressPost {
-    position: absolute;
-    top: 53px;
-    font-size: 12px;
-  }
-  .titlePost {
-    position: absolute;
-    text-decoration: none;
-    color: black;
-    font-weight: bold;
-    font-size: 12px;
+  .telephone-div {
+    top: 129px;
+    left: 8px;
   }
 }
-
-.idPost{
-  display: none;
-}
-
