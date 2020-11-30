@@ -173,6 +173,7 @@
           >
           <input
             type="text"
+            name="dia_chi_chi_tiet"
             class="form-control"
             id="dia_chi_chi_tiet"
             required
@@ -209,6 +210,7 @@
           <input
             type="number"
             class="form-control"
+            name="so_luong_phong"
             id="so_luong_phong"
             required
           />
@@ -221,7 +223,7 @@
             <p>*</p></label
           >
           <div class="input-group mb-3">
-            <input type="number" class="form-control" id="dien_tich" required />
+            <input type="number" name="dien_tich" class="form-control" id="dien_tich" required />
             <div class="input-group-append">
               <span class="input-group-text">m2</span>
             </div>
@@ -391,7 +393,7 @@
           <label for="tien_ich_khac" class="title_lable"
             >Tiện ích khác(tủ, giường, thang máy,...)</label
           >
-          <input type="text" class="form-control" id="tien_ich_khac" />
+          <input type="text" name="tien_ich_khac" class="form-control" id="tien_ich_khac" />
         </div>
 
         <!-- Điện nước -->
@@ -403,7 +405,7 @@
           >
 
           <div class="input-group mb-3">
-            <input type="number" class="form-control" id="gia_dien" required />
+            <input type="number" name="gia_dien" class="form-control" id="gia_dien" required />
             <div class="input-group-append">
               <span class="input-group-text">VNĐ/Số</span>
             </div>
@@ -416,7 +418,7 @@
             <p>*</p></label
           >
           <div class="input-group mb-3">
-            <input type="number" class="form-control" id="gia_nuoc" required />
+            <input type="number" name="gia_nuoc" class="form-control" id="gia_nuoc" required />
             <div class="input-group-append">
               <span class="input-group-text">VNĐ/Khối</span>
             </div>
@@ -430,7 +432,7 @@
             <p>*</p></label
           >
           <div class="input-group mb-3">
-            <input type="number" class="form-control" id="Prices" required />
+            <input type="number" name="Prices" class="form-control" id="Prices" required />
             <div class="input-group-append">
               <span class="input-group-text">VNĐ/Tháng</span>
             </div>
@@ -446,6 +448,7 @@
           <input
             type="text"
             class="form-control"
+            name="postTitle"
             id="postTitle"
             minlength="10"
             maxlength="70"
@@ -462,6 +465,7 @@
           <textarea
             class="form-control"
             id="descriptionPost"
+            name="descriptionPost"
             rows="6"
             placeholder=" Mô tả"
             required
@@ -478,6 +482,7 @@
           <input
             type="file"
             multiple
+            name="upload_picture"
             id="upload_picture"
             accept="image/*"
             onchange="preview_image(event)"
@@ -496,6 +501,7 @@
           <div class="input-group mb-3">
             <input
               type="number"
+              name="thoi_gian_dang_bai"
               class="form-control"
               id="thoi_gian_dang_bai"
               required
@@ -514,6 +520,7 @@
           <div class="input-group mb-3">
             <input
               type="text"
+              name="phi_thue_bai"
               class="form-control"
               id="phi_thue_bai"
               readonly

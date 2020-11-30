@@ -309,11 +309,7 @@ i.far.fa-heart {
     max-width: 909px;
     height: 457px;
   }
-  .latest-post > label {
-    margin-top: 63px;
-    font-size: 26px;
-    font-weight: 600;
-  }
+  
 }
 
 @media (max-width: 425px) {
