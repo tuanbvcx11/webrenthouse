@@ -159,6 +159,10 @@ body{
     font-size:30px;
     color:#ccc;
 }
+
+.dot_slide{
+  text-align: center;
+}
 .rate:not(:checked) > label:before {
     content: '★ ';
 }

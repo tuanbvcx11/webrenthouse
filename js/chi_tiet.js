@@ -32,48 +32,52 @@
     showSlides(slideIndex = n);
   }
 
+/*đánh giá sao*/
   $('.Star .rate input').click(function(event){
     var label = $("label[for='" + $(this).attr('id') + "']")
     var ss = label.text();
     console.log(ss);
   });
 
-
+/*bình luận*/
   $('#submit_cmt').click(function(event){
     var cmt = $('#comment').val();
     var users = $('.ten_user:last').text();
     if (cmt != "")
     $('.binhluan').append('<div class="user_comment dan_le"><div><p class="ten_user">'+users+'</p></div><div><p class="content">'+cmt+'</p></div></div>');
-    $('#comment').val('');
+  // khi m nhapaj nos phair load laij nuawx
+    $('.binhluan').scrollTop($(document).height(),1);
+    /*$('#comment').val('');*/
   });
 
+
+/*Yêu thích và lưu tin*/
   $('.like').click(function(event){
           if ($(this).children('i').hasClass("blackheart") ){
               $(this).children('i').removeClass("blackheart");
               $(this).children('i').addClass("redheart");
-              $(this).children('i').text('đã lưu');
+              $(this).children('i').text(' Đã lưu');
           } else{
               $(this).children('i').removeClass("redheart");
               $(this).children('i').addClass("blackheart");
-              $(this).children('i').text('lưu tin');
+              $(this).children('i').text(' Lưu tin');
           }     
   });
 
-
+/*xác nhận báo cáo bài viết*/
 $('#submit_report').click(function(event){
   var id = $('.id_tin').text();
   var content = $('#inp_report').val();
     alert(id+content);   
 });
 
-
+/*duyệt bài viết*/
 $('.duyet').click(function(event){
   alert($('.id_tin').text()); 
   $(this).css("display","none");
   $('.sua').css("display","none");
-
 });
-
+ /*xóa bài viết*/
 $('.xoa').click(function(event){
   var id = $('.id_tin').text();
   var text = "Bạn có thực sự muốn xóa bài viết";
@@ -83,13 +87,14 @@ $('.xoa').click(function(event){
   } 
 });
 
+/*gia hạn bài viết*/
 $('#submit_giahan').click(function(event){
   var id = $('.id_tin').text();
   var time = $('#thoi_gian_gia_han').val();
   alert(id+time); 
 
 });
-
+/*thay đổi trạng thái phòng*/
 $('.trangthai').click(function(event){
   var trangthai = $('.inf_trangthai').text();
   var change;
@@ -107,4 +112,9 @@ $('.trangthai').click(function(event){
 
 $('.sua').click(function(event){
 });
-
+/*
+$(document).ready(function(){
+  console.log($('.binhluan').height());
+  $('.binhluan').scrollTop($(document).height(),1);
+});
+*/

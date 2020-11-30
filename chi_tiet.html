@@ -127,7 +127,7 @@
         </div>
     </div>
          
-    <div style="text-align:center">
+    <div class="dot_slide">
         <span class="dot" onclick="currentSlide(0)"></span> 
         <span class="dot" onclick="currentSlide(1)"></span> 
         <span class="dot" onclick="currentSlide(2)"></span> 
@@ -203,7 +203,7 @@
                                             <p class="sub_title">Số phòng:</p>
                                         </span>
                                         <span class="mo_ta">
-                                            <p class="dientich">1 tỉ</p>
+                                            <p class="so_phong">1 tỉ</p>
                                         </span>
                                     </span>
 
@@ -260,17 +260,7 @@
 
                                 </span>
                                 <span class="mo_ta">
-                                    <span class="flex_box">
-
-                <!--phòng bếp-->
-                                        <span class="mo_ta">
-                                            <p class="sub_title">Có phòng tắm:</p>
-                                        </span>
-                                        <span class="mo_ta">
-                                            <p class="phong_tam">khép kín</p>
-                                        </span>
-                                    </span>
-                 
+                                    
                 <!--nóng lạnh-->                   
                                     <span class="flex_box">
                                         <span class="mo_ta">
@@ -294,7 +284,7 @@
                 <!--phòng bếp-->
                                     <span class="flex_box">
                                         <span class="mo_ta">
-                                            <p class="sub_title">Phòng bếp tắm:</p>
+                                            <p class="sub_title">Phòng bếp:</p>
                                         </span>
                                         <span class="mo_ta">
                                             <p class="phong_bep">Không nấu ăn</p>
@@ -369,8 +359,6 @@ Full tiện nghi, Chỉ việc xách va li đến ở. Giá trọn gói chỉ t�
                                         <strong><p>Ngày hết hạn</p></strong>
                                         <p class="ngay_hethan">12/12/12</p>
                                     </div>
-
-                                    
                                     
                                 </div>
                             </div>
@@ -382,46 +370,18 @@ Full tiện nghi, Chỉ việc xách va li đến ở. Giá trọn gói chỉ t�
                             <div class="user" id="user_box">
 
                                 <span class="report">
-                                    <i class="fa fa-exclamation-triangle baocao" id="report" data-toggle="modal" data-target="#reportModal">Báo cáo</i>
+                                    <i class="fa fa-exclamation-triangle baocao" id="report" data-toggle="modal" data-target="#reportModal">&nbsp;Báo cáo</i>
                                 </span>  
 
                                 <span class="like">
-                                    <i  class="fas fa-heart blackheart tim" >lưu tin</i>
+                                    <i  class="fas fa-heart blackheart tim" >&nbsp;Lưu tin</i>
                                 </span>   
 
                             </div>
                         </div>
 
                     </div>   
-        <!--modal tố cáo-->
-                    <div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-dialog modal-dialog-centered">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="report">Báo cáo</h5>
-                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                        <span aria-hidden="true">&times;</span>
-                                    </button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control" id="inp_report" placeholder="Lí do...">
-                                            
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
-                                        <button type="button" class="btn btn-primary" id="submit_report">Xác nhận</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div> 
-
-
-
-
+        
                     <div>
                         <div class="box_comment" id="rectangle">
                             <!--Đánh giá sao-->
@@ -448,7 +408,7 @@ Full tiện nghi, Chỉ việc xách va li đến ở. Giá trọn gói chỉ t�
 
                                     <div>
                                         <p class="star_title">đánh giá chung</p>
-                                        <p>5.1/5.0 sao</p>
+                                        <p class="sao_chung">5.1/5.0 sao</p>
                                     </div>
                                 
                             </div>
@@ -560,6 +520,32 @@ Full tiện nghi, Chỉ việc xách va li đến ở. Giá trọn gói chỉ t�
                     </div>
                 </div>
             </div>
+<!--modal tố cáo-->
+            <div class="modal fade" id="reportModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="report">Báo cáo</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="inp_report" placeholder="Lí do...">
+                                                
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Thoát</button>
+                                <button type="button" class="btn btn-primary" id="submit_report">Xác nhận</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
 
 
     <!-- footer -->
@@ -600,7 +586,10 @@ Full tiện nghi, Chỉ việc xách va li đến ở. Giá trọn gói chỉ t�
         </div>
     </div>
 
+
+
 <script type="text/javascript" src="./js/chi_tiet.js"></script>
+<script src="js/header-footer.js"></script>
 
 
 </body>
