@@ -203,11 +203,20 @@ i.far.fa-heart {
 }
 
 /* thanh phan trang */
+.paging-bar {
+  height: 40px;
+}
+.currPage {
+  background-color: #636569;
+  color: white;
+}
 
 .titlePost:hover {
   text-decoration: none;
 }
-
+.paging-bar li:hover {
+  cursor: pointer;
+}
 @media (max-width: 1199px) {
   .telephone-div {
     position: absolute;

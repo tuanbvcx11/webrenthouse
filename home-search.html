@@ -160,19 +160,19 @@
       <!-- phần hình nền có thanh tìm kiếm -->
       <div class="search-content">
         <label class="slogan">Tìm trọ thật đơn giản</label>
-        <form id="formSearch" action="" class="rounded form-content">
+        <div id="formSearch" action="" class="rounded form-content">
           <div class="display-flex">
             <!-- chọn khu vực -->
             <div class="choose-area pl-4">
               <label>Chọn khu vực</label>
               <!-- chọn thành phố -->
-              <select class="form-control mb-2" id="city">
+              <select class="form-control mb-2" class="city" id="city">
                 <option value="Thành phố" hidden>Thành phố</option>
                 <option value="Hà Nội">Hà Nội</option>
                 <option value="HCM">HCM</option>
               </select>
               <!-- chọn quận huyện -->
-              <select class="form-control" id="district">
+              <select class="form-control" name="district" id="district">
                 <option value="Quân(Huyện)" hidden>Quận/Huyện</option>
                 <option value="Quất Lâm">Quất Lâm</option>
                 <option value="Trần Duy Hưng">Trần Duy Hưng</option>
@@ -240,7 +240,7 @@
                 <!-- giá thấp nhất -->
                 <div class="d-flex select-minPrices">
                   <label for="minPrices">Giá thấp nhất</label>
-                  <select class="form-control" id="minPrices">
+                  <select class="form-control" name="minPrices" id="minPrices">
                     <option value="Tất cả">Tất cả</option>
                     <option value="1">1 triệu</option>
                     <option value="2">2 triệu</option>
@@ -253,7 +253,7 @@
                 <!-- giá cao nhất -->
                 <div class="d-flex mt-3 select-maxPrices">
                   <label for="maxPrices">Giá cao nhất</label>
-                  <select class="form-control" id="maxPrices">
+                  <select class="form-control" name="maxPrices" id="maxPrices">
                     <option value="Tất cả">Tất cả</option>
                     <option value="1">1 triệu</option>
                     <option value="2">2 triệu</option>
@@ -267,15 +267,17 @@
           </div>
 
           <div class="div-submit mt-2">
-            <input
+            <button
               id="submit"
-              type="submit"
               name="search"
-              value="Tìm kiếm"
               class="btn btn-primary text-white d-block m-auto"
-            />
+              value="Tìm kiếm"
+              type="button"
+            >
+              Tìm kiếm
+            </button>
           </div>
-        </form>
+        </div>
       </div>
 
       <!-- phần danh sách các bài đăng -->
@@ -295,7 +297,7 @@
             </div>
             <!-- tóm tắt -->
             <div class="brief-div">
-              <span>1</span>
+              <span class="idPost">1</span>
               <a class="titlePost" href="#">
                 Căn phòng cho thuê ở số 69, ngõ 157, chùa láng, Đống Đa, Hà Nội,
                 sieu dep, tuyet voi
@@ -344,7 +346,7 @@
             </div>
             <!-- tóm tắt -->
             <div class="brief-div">
-              <span>2</span>
+              <span class="idPost">2</span>
               <a class="titlePost" href="#">
                 Căn phòng cho thuê ở số 69, ngõ 157, chùa láng, Đống Đa, Hà Nội,
                 sieu dep, tuyet voi
@@ -393,7 +395,7 @@
             </div>
             <!-- tóm tắt -->
             <div class="brief-div">
-              <span>3</span>
+              <span class="idPost">3</span>
               <a class="titlePost" href="#">
                 Căn phòng cho thuê ở số 69, ngõ 157, chùa láng, Đống Đa, Hà Nội,
                 sieu dep, tuyet voi
@@ -435,14 +437,14 @@
               <a class="link-img" href="#">
                 <img
                   class="img-post"
-                  src="./download.jpg"
+                  src="./postTest.jpg"
                   alt="hình ảnh căn phòng cho thuê ở số 69, ngõ 157, chùa láng, Đống Đa, Hà Nội"
                 />
               </a>
             </div>
             <!-- tóm tắt -->
             <div class="brief-div">
-              <span>4</span>
+              <span class="idPost">4</span>
               <a class="titlePost" href="#">
                 Căn phòng cho thuê ở số 69, ngõ 157, chùa láng, Đống Đa, Hà Nội,
                 sieu dep, tuyet voi
@@ -484,15 +486,22 @@
       <div class="container paging">
         <div class="d-flex justify-content-center paging-bar">
           <ul class="list-group list-group-horizontal">
-            <li class="list-group-item previus">
+            <!-- nút đến page 1 -->
+            <li class="list-group-item pt-2 goPageHead">
+              <i class="fas fa-angle-double-left"></i>
+            </li>
+            <!-- nút đến page trước curr -->
+            <li class="list-group-item pt-2 previus">
               <i class="fas fa-caret-left"></i>
             </li>
-            <li class="list-group-item">1</li>
-            <li class="list-group-item">2</li>
-            <li class="list-group-item">3</li>
-            <li class="list-group-item">4</li>
-            <li class="list-group-item next">
+            <li class="list-group-item pt-2 currPage">1</li>
+            <!-- nút đến page sau curr -->
+            <li class="list-group-item pt-2 next">
               <i class="fas fa-caret-right"></i>
+            </li>
+            <!-- nút đến page cuối cùng -->
+            <li class="list-group-item pt-2 goPageTail">
+              <i class="fas fa-angle-double-right"></i>
             </li>
           </ul>
         </div>
