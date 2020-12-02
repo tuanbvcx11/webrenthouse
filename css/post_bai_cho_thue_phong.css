@@ -57,6 +57,41 @@
   font-weight: 900;
 }
 
+
+
+.divs {
+    position: relative;
+    display: inline-block;
+}
+
+.inputs {
+    position:absolute;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    background: #00f;
+    z-index:2;
+}
+
+.icons {
+    position:relative;
+}
+
+.preview {
+  margin-top: 10px;
+}
+
+.img {
+  position: relative;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.img img {
+  height: 200px; width: auto;
+}
+
 @media (max-width: 1199px) {
 }
 

@@ -1,0 +1,40 @@
+.body {
+	margin-top: 20px;
+}
+
+.body h1 {
+	margin-bottom: 10px;
+}
+
+.tab {
+	margin-top: 10px;
+}
+
+.chuyenhuong {
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.chuyenhuong a {
+	border: none;
+	border-radius: 5px;
+	padding: 8px ;
+	margin-right: 5px;
+	color: black;
+	text-decoration: none;
+}
+
+.btnactive {
+	background-color: #4584ff;
+	box-shadow: 1px 1px 1px 1px rgb(49,192,209, 0.5);
+}
+
+#hoten {width: 15%;}
+
+#id {width: 3%}
+
+#user,#phone {width: 13%;}
+
+#pass{ width: 15%; }
+
+#status {width: 7%;}

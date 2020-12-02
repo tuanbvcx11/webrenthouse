@@ -1,0 +1,47 @@
+
+.thongke {
+	margin-top: 20px;
+}
+
+.container-total {
+	display: flex;
+	flex-direction: row;
+}
+
+.thongke .total {
+	position: relative;
+	border: 1px solid black;
+	border-radius: 5px;
+	flex: 30%;
+	padding: 10px;
+	margin-right: 2%;
+	margin-left: 1%;
+}
+
+.thongke .total span {
+	position: absolute;
+	right: 4%;
+}
+
+hr {
+	margin-bottom: 20px;
+}
+
+.countpost .input-group {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.countpost .input-group .input-group-text {
+	width: 150px;
+}
+
+@media screen and (max-width: 900px) {
+	.container-total {
+		flex-direction: column;
+	}
+
+	.total {
+		margin-bottom: 20px;
+	}
+}

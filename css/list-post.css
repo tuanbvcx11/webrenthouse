@@ -1,0 +1,40 @@
+.body {
+	margin-top: 20px;	
+}
+
+.select_post {
+	margin-bottom: 30px;
+}
+
+.select_post label{
+	font-size: 20px;
+	margin-right: 15px;
+}
+
+.select_post select {
+	padding: 5px;
+	border-radius: 5px;
+}
+
+#hoten {width: 13%;}
+
+#id {width: 3%}
+
+#time-live {width: 10%;}
+
+#time {width: 13%;}
+
+.unapproved #status {width: 20%	}
+
+.approved #status {width: 7%;}
+
+.deleted #status {width: 12%;}
+
+.unapproved .del, .unapproved .accept {
+	margin-left: 4px;
+}
+
+
+@media screen and (max-width: ) {
+	
+}

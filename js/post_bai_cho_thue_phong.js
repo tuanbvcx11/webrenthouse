@@ -1,4 +1,139 @@
+// hàm cho xem ảnh khi chọn ảnh 
+function previewFiles() {
+    $('.preview').empty();
+
+    var preview = document.querySelector('.preview');
+    var files   = document.querySelector('input[type=file]').files;
+
+    function readAndPreview(file) {
+
+        var html = "";
+
+        // Make sure `file.name` matches our extensions criteria
+        if ( /\.(jpe?g|png|gif)$/i.test(file.name) ) {
+            var reader = new FileReader();
+
+            reader.addEventListener("load", function () {
+
+                html = `<div class="img">
+                            <img src="`+ this.result + `">
+                        </div>`;
+                preview.innerHTML += html;
+            }, false);
+
+            reader.readAsDataURL(file);
+    }
+
+  }
+
+  if (files) {
+    [].forEach.call(files, readAndPreview);
+  }
+}
+
+// hàm convert tiền về string
+function convertPrice(money) {
+    let ans = "";
+    if(money >= 1000000000) {
+      let billions = parseInt(money/1000000000);
+      ans += billions + " tỉ ";
+      let millions = parseInt((money - billions*1000000000)/1000000);
+      if(millions == 0) {
+        return ans;
+      }
+      ans += millions + " triệu ";
+      /* let thousands = parseInt((money - billions*1000000000 - millions*1000000)/1000);
+      ans += thousands + " nghìn"; */
+    } else if(money >= 1000000) {
+      let millions = parseInt(money/1000000);
+      ans += millions + " triệu ";
+      let thousands = parseInt((money - millions*1000000)/1000);
+      if(thousands == 0) {
+        return ans;
+      }
+      ans += thousands + " nghìn";
+    } else if(money >= 1000) {
+      let thousands = parseInt(money/1000);
+      ans += thousands + " nghìn";
+    } else {
+      return "số tiền nhỏ hơn 1000";
+    }
+    return ans;
+  }
+
 $(document).ready(function() {
+
+    // kiểm tra phiên đăng nhập
+    $.ajax({
+        url : 'module/function/checkss-header.php',
+        type : 'post',
+        dataType : 'text',
+        data : {
+        },
+        success : function (result){
+            if (result == 'nologin' || result == 'guest') {
+                location.assign("./home.html")
+            }
+        },
+        error : function (result) {
+            alert("lỗi");
+        }
+    });
+
+
+    // ajax lấy các tỉnh trên database
+    $.ajax({
+        url : 'module/function/getprovince.php',
+        type : 'post',
+        dataType : 'json',
+        data : {
+        },
+        success : function (result){
+            var province = '<option value="Chưa chọn">-- Chưa chọn --</option>';
+            $.each(result, function (key, item){
+                province += '<option value="' + item.name + '">' + item.name + '</option>';
+            });
+
+            $('#tinh_thanh_pho').html(province);
+        },
+        error : function (result) {
+            alert("lỗi");
+        }
+    });
+
+    // khi chọn 1 tỉnh thì sẽ hiện các huyện của tỉnh đó
+    $("body").on("change", "#tinh_thanh_pho", function(){
+
+        $.ajax({
+            url : 'module/function/getdistrict.php',
+            type : 'post',
+            dataType : 'json',
+            data : {
+                province : $(this).val()
+            },
+            success : function (result){
+                var district = '<option value="Chưa chọn">-- Chưa chọn --</option>';
+                $.each(result, function (key, item){
+                    district += '<option value="' + item.prefix + ' ' + item.name + '">' + item.prefix + ' ' + item.name + '</option>';
+                });
+
+                $('#quan_huyen').html(district);
+            },
+            error : function (result) {
+                alert("lỗi");
+            }
+        });
+    });
+
+    $('.inputs').change(function(){
+        var files = this.files;
+        if(files.length < 3){
+            alert("Vui lòng nhập tối thiểu 3 ảnh");
+        }
+    });
+
+
+
     $("#formPost").submit(function() {
         let announce = "";
 
@@ -58,6 +193,11 @@ $(document).ready(function() {
         }
         if ($("#thoi_gian_dang_bai").val() <= 0) {
             announce += "thời gian đăng bài phải lớn hơn 0 \n";
+        }
+
+        var fi = document.getElementsByClassName('inputs');
+        if(fi.files.length < 3){
+            announce += "Vui lòng chọn tối thiểu 3 ảnh \n";
         }
 
         if (announce !== "") {
@@ -128,10 +268,10 @@ $(document).ready(function() {
         }
     });
 
-    $("#thoi_gian_dang_bai").change(function() {
+    $("#thoi_gian_dang_bai").keyup(function() {
         let timePost = $("#thoi_gian_dang_bai").val();
         if (timePost > 0) {
-            let phithuebai = timePost * 20000;
+            let phithuebai = timePost * 2000;
             $("#phi_thue_bai").val(phithuebai);
         } else {
             $("#phi_thue_bai").val("");

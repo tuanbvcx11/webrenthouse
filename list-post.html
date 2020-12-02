@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv='cache-control' content='no-cache'> 
+    <meta http-equiv='expires' content='0'> 
+    <meta http-equiv='pragma' content='no-cache'> 
+
+    
+    <!-- Bootstrap 4 CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Thu vien animate -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <!-- Khai bao fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    
+    <link href='https://fonts.googleapis.com/css2?family=Chewy&family=Fira+Sans+Extra+Condensed&family=Asap+Condensed&family=Roboto+Condensed&family=Bungee+Inline&family=VT323&family=Fira+Sans+Extra+Condensed&family=IBM+Plex+Sans&family=Fira+Sans+Extra+Condensed&family=Bangers&family=Bungee+Inline&family=Asap&family=Pangolin&family=Francois+One&family=Cabin&family=Special+Elite&display=swap' rel="stylesheet">
+    <!-- Thu vien jquery -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap 4 js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.0.4/popper.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+    <!-- Thu vien wow js -->
+    <script src="js/wow.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/header-footer.css">
+    <link rel="stylesheet" type="text/css" href="./css/admin.css">
+    <link rel="stylesheet" type="text/css" href="./css/list-post.css">
+    <title>Danh sách bài viết</title>
+        
+</head>
+<body>
+	<!-- header -->
+    <header>
+        <div class="container-fluid logo">
+            <div class="row">
+                <div class="col-4">
+                    <img src="logo.png" alt="">
+                </div>
+    
+                <div class="col-8">
+                    <div class="row justify-content-end">
+                        <span id="hello">Xin chào</span>
+                        
+                        <ul class="nav">
+                            <li class="nav-item thongbao">
+                                <a class="nav-link" title="thông báo"><i class="fas fa-bell"></i>(2)</a>
+                            </li>
+                            <div class="tuychonchinh">
+                                <li class="nav-item yeuthich">
+                                    <a class="nav-link" href="" title="yêu thích"><i class="fas fa-heart"></i>(3)</a>
+                                </li>
+                            </div>
+    
+                            <li class="nav-item dangnhap">
+                                <a class="nav-link" href="login.html">Đăng nhập</a>
+                            </li>
+                            <li class="nav-item tuychon">
+                                <div class="dropdown">
+                                    <button class="navbar-toggler"  data-toggle="collapse" data-target="#tuychon" aria-expanded="false" aria-controls="tuychon">
+                                        <span class="navbar-toggler-icon">
+                                            
+                                        </span>
+                                    </button>
+                                </div>  
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="containers collapse" id="tuychon">
+            <div class="list-group entity">
+                <span class="tuychonphu">
+                    <a href="#" class="list-group-item list-group-item-action yeuthich">Yêu thích</a>
+                </span>
+                <a href="#" class="list-group-item list-group-item-action dangbai">Đăng bài</a>
+                <a href="#" class="list-group-item list-group-item-action list-posted">Danh sách bài đăng</a>
+                <a href="#" class="list-group-item list-group-item-action host-chat">Chat với admin</a>
+                <a href="#" class="list-group-item list-group-item-action info-me">Thông tin cá nhân</a>
+                <a href="thong-ke.html" class="list-group-item list-group-item-action toadmin">Admin</a>
+                
+                <a href="./module/function/logout.php" class="list-group-item list-group-item-action logout">Đăng xuất</a>
+            </div>
+        </div>
+    
+        <div class="list-thongbao scrollbar-chat">
+            <h3>Thông báo</h3><hr>
+            <div class="content-thongbao">
+                <div>Tuấn</div>
+                <div>vừa đăng bài viết mới</div>
+            </div>
+            <div class="content-thongbao">
+                <div>Tuấn</div>
+                <div>vừa báo cáo 1 bài viết</div>
+            </div>
+            <div class="content-thongbao">
+                <div>Admin</div>
+                <div>vừa phê duyệt bài viết của bạn</div>
+            </div>
+            <div class="content-thongbao">
+                <div>Tuấn</div>
+                <div>vừa đăng bài viết mới</div>
+            </div>
+        </div>
+    </header>
+
+    
+    <!-- body -->
+    <div class="w-100 d-flex bodyadmin">
+        <!-- các chức năng của admin -->
+        <div class="list-function">
+            <h1>Admin</h1>
+            <div class="list-group">
+                <a href="thong-ke.html" class="list-group-item list-group-item-action">Thống kê dữ liệu</a>
+                <a href="approved-host.html" class="list-group-item list-group-item-action">Quản lý user</a>
+                <a href="list-post.html" class="list-group-item list-group-item-action active">Quản lý bài viết</a>
+                <a href="admin-chat.html" class="list-group-item list-group-item-action ">Chat</a>
+                <a href="#" class="list-group-item list-group-item-action">Đổi mật khẩu</a>
+            </div>
+        </div>
+
+        <!-- danh sách các bài viết -->
+        <div class="content-function">
+            <div class="container body">
+                <h2>Quản lý bài viết</h2><hr>
+                <div class="select_post">
+                    <label for="type_post">Loại bài viết</label>
+                    <select id="type_post" name="type_post">
+                        <option value="approved">Đã được duyệt</option>
+                        <option value="unapproved">Chưa được duyệt</option>
+                        <option value="banned">Bị xóa</option>
+                    </select>
+                </div>
+
+                <!-- danh sách các bài viết -->
+                <div class="each-post">
+
+                    <!-- bài viết đã được duyệt -->
+                    <!-- <table class="table table-striped table-bordered approved">
+                        <thead>
+                            <tr>
+                                <th id="id">ID</th>
+                                <th id="hoten">Tên chủ trọ</th>
+                                <th id="content-post">Tiêu đề bài viết</th>
+                                <th id="time">Thời gian đăng</th>
+                                <th id="time-live">Hiển thị</th>
+                                <th id="status"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="bodypost">
+                            <tr>
+                                <td class="idpost">1</td>
+                                <td>Lê Minh Tuấn</td>
+                                <td>tuancules</td>
+                                <td>tuancules</td>
+                                <td>tuancules</td>
+                                <td><button class="btn btn-primary xem">Xem</button></td>
+                            </tr>
+                        </tbody>
+                    </table> -->
+
+                    <!-- bài viết chưa được duyệt -->
+                    <!-- <table class="table table-striped table-bordered unapproved">
+                        <thead>
+                            <tr>
+                                <th id="id">ID</th>
+                                <th id="hoten">Tên chủ trọ</th>
+                                <th id="content-post">Tiêu đề bài viết</th>
+                                <th id="time">Thời gian đăng</th>
+                                <th id="time-live">Hiển thị</th>
+                                <th id="status"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="bodypost">
+                            <tr>
+                                <td class="idpost">1</td>
+                                <td>Lê Minh Tuấn</td>
+                                <td>tuancules</td>
+                                <td>tuancules</td>
+                                <td>tuancules</td>
+                                <td><button class="btn btn-primary xem">Xem</button><button class="btn btn-primary accept" data-toggle="modal" data-target="#duyet">Duyệt</button><button class="btn btn-secondary del"data-toggle="modal" data-target="#xoa">Xóa</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+ -->
+                    <!-- bài viết đã xóa -->
+                    <!-- <table class="table table-striped table-bordered deleted">
+                        <thead>
+                            <tr>
+                                <th id="id">ID</th>
+                                <th id="hoten">Tên chủ trọ</th>
+                                <th id="content-post">Tiêu đề bài viết</th>
+                                <th id="time">Thời gian đăng</th>
+                                <th id="time-live">Hiển thị</th>
+                                <th id="status"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="bodypost">
+                            <tr>
+                                <td class="idpost">1</td>
+                                <td>Lê Minh Tuấn</td>
+                                <td>tuancules</td>
+                                <td>tuancules</td>
+                                <td>tuancules</td>
+                                <td><button class="btn btn-primary" data-toggle="modal" data-target="#khoiphuc">Khôi phục</button></td>
+                            </tr>
+                            <tr>
+                                <td class="idpost">2</td>
+                                <td>Lê Minh Tuấn</td>
+                                <td>tuancules</td>
+                                <td>tuancules</td>
+                                <td>tuancules</td>
+                                <td><button class="btn btn-primary" data-toggle="modal" data-target="#khoiphuc">Khôi phục</button></td>
+                            </tr>
+                        </tbody>
+                    </table>
+ -->
+
+                    <!-- các model -->
+
+                    <!-- modal duyệt bài -->
+                    <div class="modal fade duyet" id="duyet" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Bạn có chắc chắn muốn duyệt</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            duyệt nè
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                            <button type="button" class="btn btn-primary">Duyệt</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <!-- modal xóa bài -->
+                    <div class="modal fade xoa" id="xoa" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Bạn có chắc chắn muốn xóa</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            xóa nè
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                            <button type="button" class="btn btn-primary">Xóa</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- modal khôi phục bài -->
+                    <div class="modal fade khoiphuc" id="khoiphuc" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Bạn có chắc chắn muốn khôi phục</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            xóa nè
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                            <button type="button" class="btn btn-primary">Khôi phục</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+
+    <script src="js/header-footer.js"></script>
+    <script src="js/list-post.js"></script>
+
+</body>
+</html>
