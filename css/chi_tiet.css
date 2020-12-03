@@ -85,10 +85,15 @@ body{
 #rectangle_left{
     width:100%;
     height:auto;
+    margin-bottom: 10px!important;
+    padding-bottom: 10px; 
     /*box-shadow: 0 2px 7px 0 rgba(0,0,0,.5);*/
    
 }
 
+#rectangle_right:hover{
+  cursor: pointer;
+}
 #rectangle_right{
     width: 100%;
     height: auto;
@@ -111,7 +116,6 @@ body{
 .titlebox{
   margin-top: 10px; 
   padding-top: 10px;
-  padding-bottom: 20px;
   text-transform: uppercase;
   margin-left: 2%;
   margin-right: 2%;
@@ -354,4 +358,19 @@ body{
   color: #009177;
   font-weight: 700;
   text-decoration-line: underline;
+}
+i.fa.fa-arrow-circle-right {
+    margin-top: 11px;
+    cursor: pointer;
+    margin-left: 10px;
+}
+.card{
+  margin-top:10px; 
+}
+p {
+    margin-top: 0;
+    margin-bottom: 0rem;
+}
+.idOwner{
+  display: none;
 }
