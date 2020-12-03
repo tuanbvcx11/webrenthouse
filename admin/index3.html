@@ -1,9 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Index 3</title>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv='cache-control' content='no-cache'> 
+    <meta http-equiv='expires' content='0'> 
+    <meta http-equiv='pragma' content='no-cache'> 
+
+    
+    <!-- Bootstrap 4 CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Thu vien animate -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <!-- Khai bao fontawesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+    
+    
+    <link href='https://fonts.googleapis.com/css2?family=Chewy&family=Fira+Sans+Extra+Condensed&family=Asap+Condensed&family=Roboto+Condensed&family=Bungee+Inline&family=VT323&family=Fira+Sans+Extra+Condensed&family=IBM+Plex+Sans&family=Fira+Sans+Extra+Condensed&family=Bangers&family=Bungee+Inline&family=Asap&family=Pangolin&family=Francois+One&family=Cabin&family=Special+Elite&display=swap' rel="stylesheet">
+    <!-- Thu vien jquery -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!-- Bootstrap 4 js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.0.4/popper.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+    <!-- Thu vien wow js -->
+    <script src="js/wow.min.js"></script>
+    <title>header-footer</title>
+        
 </head>
 <body>
-<p>Xin chào 3</p>
+	
+
+    <!-- body -->
+    <input type="" name="" value="">
+    <a class="next">next</a>
+
+    <div class="select_post">
+        <label for="type_post">Loại bài viết</label>
+        <select id="type_post" name="type_post">
+            <option value="approved">Đã được duyệt</option>
+            <option value="unapproved">Chưa được duyệt</option>
+            <option value="banned">Bị xóa</option>
+        </select>
+    </div>
+
+    <script type="text/javascript">
+        
+        var getUrlParameter = function getUrlParameter(sParam) {
+            var sPageURL = window.location.search.substring(1),
+                sURLVariables = sPageURL.split('&'),
+                sParameterName,
+                i;
+         
+            for (i = 0; i < sURLVariables.length; i++) {
+                sParameterName = sURLVariables[i].split('=');
+            
+                if (sParameterName[0] === sParam) {
+                    return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                }
+            }
+        };
+        var page = getUrlParameter('page');
+
+        if(page == undefined) {
+            page = 0;
+        }
+
+        $('input').val(page);
+
+        function test() {
+            // body... 
+            page = new Number(page) + 1;
+            window.history.pushState(page, '', '?page=' + page);
+            $('input').val(page);
+        }
+        $('.next').click(function(event) {
+            /* Act on the event */
+            test();            
+            // history.pushState(page, '', '?page=' + page);
+        });
+    </script>
+
 </body>
 </html>

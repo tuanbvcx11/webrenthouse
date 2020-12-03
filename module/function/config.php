@@ -12,6 +12,8 @@
 	// $stmt->execute([$ad]); 
 	// //Các thao tác cơ sở dữ liệu: truy vấn, cập nhật
 	// // $stmt = $db->query("SELECT * FROM user where username = 'alo'");
+	// $count = $stmt->fetchColumn();
+	// echo $count;
 	// while ($row = $stmt->fetch()) {
 	//     echo $row['username']."<br />\n";
 	// }
@@ -20,12 +22,17 @@
 	// echo "oke nha";
 
 
-	// $name = 'admin1';
-	// $surname = 'tuancules';
-	// $sex = '0912345678';
+	// $name = 'lê minh tuấn';
+ //    $sdt = '0987654321';
+ //    $add = '70 ngách 332/7 Hoàng Công Chất';
+ //    $username = 'tuancules';
+ //    $pass = '123123';
+ //    $email = 'tuancules24@gmail.com';
+ //    $vaitro = 'host';
+ //    $status = 1;
 
-	// $sql = "INSERT INTO user (name, username, sdt) VALUES (?,?,?)";
+	// $sql = "INSERT INTO user (username, password, name, dia_chi, sdt, email, vai_tro, status) VALUES (?,?,?,?,?,?,?,?)";
 	// $stmt= $db->prepare($sql);
-	// $stmt->execute([$name, $surname, $sex]);
+	// $stmt->execute([$username, $pass, $name, $add, $sdt, $email, $vaitro, $status]);
 
  ?>

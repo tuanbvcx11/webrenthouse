@@ -1,10 +1,20 @@
+:root{
+    background-image:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(../picture/background.jpg);
+    background-size: cover;
+}
+
+body {
+    background: transparent;
+}
+
 .login-container {
-    background-color: gray; 
-    width: 30%; 
+    background-color: rgb(240, 242, 245, 0.8); 
+    width: 500px; 
     margin: auto;
     margin-top: 30px; 
-    box-shadow: 5px 5px; 
+    box-shadow: 0 2px 7px 0 rgba(0,0,0,.3);
     border-radius: 5%;
+    height: 400px;
 }
 
 .title {
@@ -22,28 +32,34 @@
     margin: auto; 
 }
 
+.quen-mk {
+    text-align: right;
+    margin-right: 10%;
+}
+
+.quen-mk a {
+    text-decoration: none;
+    font-size: 20px;
+}
+
 .submit {
-    margin-top: 30px; 
+    margin-top: 20px; 
     text-align: center; 
     font-size: 20px; 
+    margin-bottom: 40px;
 }
 
 .submit button {
-    border-radius: 5px; 
-    width: 100px; 
-    margin-bottom: 10px; 
-    padding-bottom: 5px;
     display: block;
     margin: auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    border-radius: 5px; 
+    width: auto;  
+    padding-bottom: 5px;
 }
 .submit a {
     border-radius: 5px; 
-    width: 150px; 
-    margin-bottom: 10px; 
-    padding-bottom: 5px;
-    display: block;
-    margin: auto;
+    width: 150px;
+    padding: 5px;
     text-decoration: none;
-    margin-bottom: 10px;
 }

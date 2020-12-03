@@ -121,6 +121,8 @@
         class="rounded pt-5 pr-5 pb-5 pl-5 form_custom"
         id="formPost"
         method="POST"
+        enctype="multipart/form-data"
+        action = "module/function/dang-bai.php"
       >
         <!-- Địa chỉ -->
         <label class="tieu_de_dia_chi">Địa chỉ cho thuê</label>
@@ -320,9 +322,9 @@
             id="kitchen"
           >
             <option value="Chưa chọn">-- Chưa chọn --</option>
-            <option name="Khu bếp riêng">Khu bếp riêng</option>
-            <option name="Khu bếp chung">Khu bếp chung</option>
-            <option name="Không nấu ăn">Không nấu ăn</option>
+            <option value="Khu bếp riêng">Khu bếp riêng</option>
+            <option value="Khu bếp chung">Khu bếp chung</option>
+            <option value="Không nấu ăn">Không nấu ăn</option>
           </select>
         </div>
 
@@ -473,21 +475,22 @@
         </div>
 
         <!-- Hình ảnh về phòng trọ cho thuê -->
-        <div class="div_margin">
+        <div class="div_margin divs">
           <label class="title_lable"
             >Một số ảnh về phòng trọ(tối thiểu 3 hình ảnh)
             <p>*</p></label
           >
           <br />
           <input
+          class="inputs"
             type="file"
             multiple
-            name="upload_picture"
+            name="file[]"
             id="upload_picture"
-            accept="image/*"
-            onchange="preview_image(event)"
+            onchange="previewFiles()"
           />
-          <img id="output_image" />
+          <i class="fa fa-image fa-2x icons"></i>
+          <div class="preview"></div>
         </div>
 
 
@@ -535,7 +538,7 @@
         <input
           id="submit"
           type="submit"
-          name="post_bai"
+          name="submit"
           value="Đăng bài"
           class="btn btn-primary text-white d-block m-auto"
         />
