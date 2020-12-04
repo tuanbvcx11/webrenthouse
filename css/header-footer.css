@@ -40,7 +40,7 @@ button.navbar-toggler:focus {
 
 #tuychon {
     border-radius: 5px;
-    box-shadow: 2px 2px 3px 3px #CACACA;
+    box-shadow: 0 3px 6px #CACACA;
 }
 
 #tuychon .entity a{
@@ -86,7 +86,7 @@ button.navbar-toggler:focus {
     border-radius: 5px;
     height: 70vh;
     overflow-y: hidden;
-    box-shadow: 2px 2px 3px 3px #CACACA;
+    box-shadow: 0 3px 10px #CACACA;
 }
 
 .list-thongbao:hover {

@@ -28,7 +28,7 @@
 
 .approved #status {width: 7%;}
 
-.deleted #status {width: 12%;}
+.banned #status {width: 12%;}
 
 .unapproved .del, .unapproved .accept {
 	margin-left: 4px;

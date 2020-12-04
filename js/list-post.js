@@ -2,6 +2,8 @@ $(document).ready(function() {
 	var idpost;
 	var action;
 
+
+	// hàm load các bài viết tùy theo loại bài viết
 	function load_post () {
 		// body... 
 		var type = $('#type_post').val();
@@ -110,18 +112,37 @@ $(document).ready(function() {
 	            alert("sai");
 	        }
 	    });
-
-		
-
 	}
 
+
+	// hàm update status của từng bài viết
 	function update_post (idpost, action) {
 		// body... 
 		// gọi ajax để update idpost với action
-
-
-		
-		alert(idpost + ' ' + action);
+		$.ajax({
+	        url : "module/function/update-post.php",
+	        type : 'post',
+	        dataType : 'text',
+	        data : {
+	        	idpost : idpost,
+	        	action : action
+	        },
+	        success : function (result){
+	        	var thongbao = "";
+	        	if (action == "duyet") {
+	        		thongbao = "Duyệt thành công";
+	        	} else if (action == 'xoa') {
+	        		thongbao = 'Xóa thành công';
+	        	} else thongbao = "Khôi phục thành công";
+	        	if (result == "ok") {
+	        		alert(thongbao);
+	        	}
+	        	load_post();
+	        },
+	        error : function (result) {
+	            alert("sai");
+	        }
+	    });
 	}
 
 	load_post();
@@ -132,7 +153,7 @@ $(document).ready(function() {
 		// load về trang 1
 	});
 
-	$('.bodypost button').click(function(event) {
+	$("body").on("click", ".bodypost button", function(){
 		/* Act on the event */
 		idpost = $(this).parent().parent().children('.idpost').text();
 
@@ -150,7 +171,6 @@ $(document).ready(function() {
 		/* Act on the event */
 		action = 'duyet';
 		update_post(idpost, action);
-		load_post();
 	});
 
 	$('#xoa .btn-primary').click(function(event) {
@@ -161,9 +181,19 @@ $(document).ready(function() {
 
 	$('#khoiphuc .btn-primary').click(function(event) {
 		/* Act on the event */
+		// alert($('#type_post').val());
 		action = 'khoiphuc';
 		update_post(idpost, action);
 	});
 
+
+	var pusher = new Pusher('b06168af2fefdf2d1ba2', {
+      cluster: 'ap1'
+    });
+
+    var channel = pusher.subscribe('my-channel');
+    channel.bind('my-event', function(data) {
+      load_post();
+    });
 
 });

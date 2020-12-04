@@ -5,6 +5,19 @@
 	header('Content-Type: text/html; charset=UTF-8');
     include_once("config.php");
 
+    require __DIR__ . '/vendor/autoload.php';
+
+      $options = array(
+        'cluster' => 'ap1',
+        'useTLS' => true
+      );
+      $pusher = new Pusher\Pusher(
+        'b06168af2fefdf2d1ba2',
+        '9ef860455aad59edbbb3',
+        '1117334',
+        $options
+      );
+
     // hàm chuyển tiền thành string
     function convertPrice($money) {
         $ans = "";
@@ -77,6 +90,8 @@
 		$stmt= $db->prepare($sql);
 		$stmt->execute([$iduser, $province, $district, $spe_add, $tieu_de, $loai_phong, $gia_phong, $dien_tich, $gia_dien, $gia_nuoc, $so_luong_phong, $bathroom, $chung_chu, $nong_lanh, $kitchen, $dieu_hoa, $ban_cong, $tien_ich_khac, $mo_ta, $tg_hienthi, $tg_dang_bai, $status_phong, $status_post]);
 
+        
+
 
 
     	// sau khi insert vào database, sẽ lấy lại id của bài viết vừa insert, để insert vào bảng ảnh
@@ -85,6 +100,9 @@
         while ($row = $stmt->fetch()) {
             $id_post = $row['id_post'];
         }
+
+        $data['message'] = $id_post;
+        $pusher->trigger('my-channel', 'my-event', $data);
 
 
     	//ở đây sẽ là ảnh từ form và insert vào bảng ảnh
