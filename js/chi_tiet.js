@@ -47,7 +47,7 @@
     $('.binhluan').append('<div class="user_comment dan_le"><div><p class="ten_user">'+users+'</p></div><div><p class="content">'+cmt+'</p></div></div>');
   // khi m nhapaj nos phair load laij nuawx
     $('.binhluan').scrollTop($(document).height(),1);
-    /*$('#comment').val('');*/
+    $('#comment').val('');
   });
 
 
@@ -112,9 +112,8 @@ $('.trangthai').click(function(event){
 
 $('.sua').click(function(event){
 });
-/*
-$(document).ready(function(){
-  console.log($('.binhluan').height());
-  $('.binhluan').scrollTop($(document).height(),1);
+
+$('#rectangle_right').click(function(event){
+  var idOwner = $(this).find('.idOwner').text();
+  alert(idOwner);
 });
-*/

@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
+<head>
+    <meta charset="UTF-8">
+   
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
@@ -45,14 +46,13 @@
     <!-- Thu vien wow js -->
     <script src="js/wow.min.js"></script>
     <link rel="stylesheet" type="text/css" href="./css/header-footer.css" />
+    <link rel="stylesheet" type="text/css" href="./css/personalinfo.css">
 
-    <!-- thêm css -->
-    <link rel="stylesheet" href="./css/like.css" />
-
-    <title>Danh sách yêu thích của bạn</title>
-  </head>
-  <body>
-    <!-- header -->
+    <title>Trang cá nhân</title>
+    
+</head>
+<body>
+<!-- header -->
     <header>
       <div class="container-fluid logo">
         <div class="row">
@@ -155,13 +155,87 @@
       </div>
     </header>
 
-    <!-- body -->
-    <div class="wrapper">
-      
+<!--body-->
+<div class='card-container'>
+    <div class='card'>
+        <div class='front'>
+            <div class='cover'>
+            </div>
+            <div class='user'>
+                <img class='img-circle' src='http://sv1.upsieutoc.com/2017/10/13/22155088_1927065407308839_1186379486_n.jpg'/>
+            </div>
+            <div class='content'>
+              <div class='main'>
+                <h3 class='name'>Nguyễn Trung Thứ</h3>
+                <p class='front-motto text-center'>0912345678</p>
+              </div>
+            </div>
 
-      <!-- phần danh sách các bài đăng -->
-      <div class="container post-content">
-        <label>Danh sách yêu thích</label>
+            <!--thông tin-->
+            <div class="container">
+              <div class="infor">
+                <div class="dan_le">
+                            
+                <!--tên-->
+                                    <span class="flex_box">
+                                        <span class="mo_ta">
+                                            <p class="sub_title">Họ tên:</p>
+                                        </span>
+                                        <span class="mo_ta">
+                                            <p class="ho_ten">Nguyễn Trung Thứ</p>
+                                        </span>
+                                    </span>
+
+                <!--số chứng minh nhân dân/ căn cước-->
+                                    <span class="flex_box">
+                                        <span class="mo_ta">
+                                            <p class="sub_title">CMND/CCCD:</p>
+                                        </span>
+                                        <span class="mo_ta">
+                                            <p class="chung_minh">012345678901</p>
+                                        </span>
+                                    </span>
+
+                <!--điện thoại-->
+                                    <span class="flex_box">
+                                        <span class="mo_ta">
+                                            <p class="sub_title">Số điện thoại:</p>
+                                        </span>
+                                        <span class="mo_ta">
+                                            <p class="dien_thoai">097165465454</p>
+                                        </span>
+                                    </span>
+
+                <!--email-->
+                                    <span class="flex_box">
+                                        <span class="mo_ta">
+                                            <p class="sub_title">Email:</p>
+                                        </span>
+                                        <span class="mo_ta">
+                                            <p class="email">anxin3sao@gmail.com</p>
+                                        </span>
+                                    </span>
+
+                <!--địa chỉ-->                    
+                                    <span class="flex_box">
+                                        <span class="mo_ta">
+                                            <p class="sub_title">Địa chỉ thường trú:</p>
+                                        </span>
+                                        <span class="mo_ta">
+                                            <p class="dia_chi">số 1 xã 2 huyện 3 tỉnh 4</p>
+                                        </span>
+                                    </span>
+
+                </div>
+                <div>
+                    <button class="btn btn-primary change_info">Chỉnh sửa trang cá nhân</button>
+                </div>
+              </div>
+            </div>
+
+
+        <div class="container post-content">
+        <label>Danh sách bài đăng của chủ trọ</label>
         <div class="list-table">
           <div class="d-flex baidang">
             <!-- ảnh -->
@@ -197,10 +271,13 @@
                 </div>
                 <div class="Prices">3 triệu 800 nghìn</div>
               </div>
-            </div>
 
-            <div class="dislike">
-              <button class="btn btn-primary">Xóa</button>
+              <div class="datePost">Ngày đăng: 22/11/2020</div>
+
+              
+            </div>
+            <div class="favorite">
+              <i class="far fa-heart"></i>
             </div>
           </div>
 
@@ -238,10 +315,13 @@
                 </div>
                 <div class="Prices">3 triệu 800 nghìn</div>
               </div>
-            </div>
 
-            <div class="dislike">
-              <button class="btn btn-primary">Xóa</button>
+              <div class="datePost">Ngày đăng: 22/11/2020</div>
+
+              
+            </div>
+            <div class="favorite">
+              <i class="far fa-heart"></i>
             </div>
           </div>
 
@@ -284,9 +364,8 @@
 
               
             </div>
-
-            <div class="dislike">
-              <button class="btn btn-primary">Xóa</button>
+            <div class="favorite">
+              <i class="far fa-heart"></i>
             </div>
           </div>
 
@@ -310,11 +389,9 @@
               </a>
 
               <div class="d-flex address-div">
-
                 <div class="mr-1 address-icon">
                   <i class="fas fa-map-marker-alt"></i>
                 </div>
-
                 <div class="addressPost">
                   số 69, ngõ 157, chùa láng, Đống Đa, Hà Nội
                 </div>
@@ -326,42 +403,25 @@
                 </div>
                 <div class="Prices">3 triệu 800 nghìn</div>
               </div>
-            </div>
 
-            <div class="dislike">
-              <button class="btn btn-primary">Xóa</button>
+              <div class="datePost">Ngày đăng: 22/11/2020</div>
+
+              
+            </div>
+            <div class="favorite">
+              <i class="far fa-heart"></i>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- phan anh sach cac trang -->
-      <div class="container paging">
-        <div class="d-flex justify-content-center paging-bar">
-          <ul class="list-group list-group-horizontal">
-            <!-- nút đến page 1 -->
-            <li class="list-group-item pt-2 goPageHead">
-              <i class="fas fa-angle-double-left"></i>
-            </li>
-            <!-- nút đến page trước curr -->
-            <li class="list-group-item pt-2 previus">
-              <i class="fas fa-caret-left"></i>
-            </li>
-            <li class="list-group-item pt-2 currPage">1</li>
-            <!-- nút đến page sau curr -->
-            <li class="list-group-item pt-2 next">
-              <i class="fas fa-caret-right"></i>
-            </li>
-            <!-- nút đến page cuối cùng -->
-            <li class="list-group-item pt-2 goPageTail">
-              <i class="fas fa-angle-double-right"></i>
-            </li>
-          </ul>
+
         </div>
-      </div>
     </div>
-    <!-- footer -->
-    <footer>
+</div>
+
+<!--footer-->
+<footer>
       <div class="container-fluid footer">
         <div class="container">
           <div class="row">
@@ -398,10 +458,7 @@
         </div>
       </div>
 
-      <script src="js/header-footer.js"></script>
+      <script src="js/personalinfo.js"></script>
     </footer>
-
-    <!-- thêm js -->
-    <script src="js/like.js"></script>
-  </body>
+</body>
 </html>

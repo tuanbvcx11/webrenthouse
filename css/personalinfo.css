@@ -1,0 +1,217 @@
+
+.card-container {
+   -webkit-perspective: 800px;
+   -moz-perspective: 800px;
+     -o-perspective: 800px;
+        perspective: 800px;
+        background-color: lightgray;
+}
+.card{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border-radius: 4px;
+    color: #444444;
+    background-color: rgb(250,250,250);
+}
+.card-container, .front{
+ width: 100%;
+ 
+ border-radius: 4px;
+}
+.card .cover{
+    height: 105px;
+}
+.cover{
+    border-bottom: solid 1px lightgray;
+}
+
+.card .user{
+    border-radius: 50%;
+    display: block;
+    height: 120px;
+    margin: -55px auto 0;
+    width: 120px;
+}
+.card .user img{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 4px solid #FFFFFF;
+    width: 100%;
+    border-radius: 100%;
+}
+
+.card .content{
+    background-color: rgba(0, 0, 0, 0);
+    box-shadow: none;
+    padding: 10px 20px 20px;
+    border-top: solid 1px lightgray;
+}
+.card .content .main {
+    min-height: 50px;
+}
+.card .back .content .main {
+    height: 100px;
+    text-align: center;
+}
+.card .name {
+    font-size: 34px;
+    font-weight: 300;
+    line-height: 28px;
+    margin: 10px 0 12px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.card .profession{
+    color: #999999;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.card .footer {
+    border-top: 1px solid #EEEEEE;
+    color: #999999;
+    margin: 30px 0 0;
+    padding: 10px 0 0;
+    margin: 13px;
+    text-align: center;
+}
+.card .footer .social-links{
+    font-size: 18px;
+}
+.card .footer .social-links a{
+    margin: 0 7px;
+}
+.card .header {
+    padding: 15px 20px;
+    height: 90px;
+}
+.card .motto{
+    border-bottom: 1px solid #EEEEEE;
+    color: #999999;
+    font-size: 14px;
+    font-weight: 400;
+    padding-bottom: 10px;
+    text-align: center;
+}
+.mo_ta{
+  width: 50%;
+}
+
+.ho_ten, .chung_minh, .dien_thoai, .email, .dia_chi{
+    float: right;
+}
+
+.flex_box{
+  display: flex;
+}
+/*p {
+    margin-top: 0;
+    margin-bottom: 0rem;
+}*/
+.baidang {
+  border-bottom: 1px solid #bdbdbd;
+  padding-bottom: 13px;
+  margin-top: 13px;
+}
+
+
+.img-div {
+  width: 237px;
+  height: 166px;
+  border-radius: 5px;
+}
+
+img.img-post {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.brief-div {
+  width: 100%;
+  position: relative;
+  padding-left: 8px;
+}
+
+.titlePost {
+  position: absolute;
+  text-decoration: none;
+  color: black;
+  /* font-weight: bold; */
+  font-size: 19px;
+}
+
+.Prices-div {
+  position: absolute;
+  top: 106px;
+}
+
+.Prices {
+  font-size: 20px;
+  font-weight: 600;
+  color: #427bff;
+}
+
+.datePost {
+  position: absolute;
+  top: 149px;
+  font-size: 12px;
+}
+
+.telephone-div {
+  position: absolute;
+  top: 145px;
+  left: 567px;
+}
+
+.address-div {
+  position: absolute;
+  top: 70px;
+}
+
+.addressPost {
+  font-size: 14px;
+  color: gray;
+}
+
+.favorite {
+  align-self: flex-end;
+}
+
+i.far.fa-heart {
+  color: red;
+}
+.idPost{
+    display: none;
+}
+
+.post-content {
+  padding: 60px 120px 32px 120px;
+}
+
+@media (max-width: 991px) {
+  .post-content {
+    padding: 20px 0px 20px 0px;
+  }
+}
+.post-content label {
+  font-size: 24px;
+  font-weight: 400;
+  padding-bottom: 20px;
+}
+
+
+.infor{
+    width: 60%;
+    margin: auto;
+    font-size: 20px;
+}
+@media (max-width: 991px) {
+  .infor{
+    width: 100%;
+  }
+}
+
+.change_info{
+    margin-left: 35%;
+    margin-right: 35%;
+}
