@@ -84,13 +84,13 @@ button.navbar-toggler:focus {
     top: 50px;
     width: 300px;
     border-radius: 5px;
-    height: 70vh;
+    max-height: 70vh;
     overflow-y: hidden;
     box-shadow: 0 3px 10px #CACACA;
 }
 
 .list-thongbao:hover {
-    overflow-y: scroll;
+    overflow-y: overlay;
 }
 
 .list-thongbao h3 {
@@ -99,12 +99,18 @@ button.navbar-toggler:focus {
     border-radius: 5px;
 }
 
+.list-thongbao .no-thongbao {
+    padding-left: 10px;
+    padding-bottom: 20px;
+}
+
 .list-thongbao .content-thongbao {
     width: 90%;
     padding: 5px;
     margin-left: 5%;
     margin-bottom: 10px;
     border-radius: 5px;
+    font-size: 17px;
 }
 
 .list-thongbao .content-thongbao:hover {
@@ -112,8 +118,18 @@ button.navbar-toggler:focus {
     cursor: pointer;
 }
 
-.list-thongbao .content-thongbao div:first-child {
-    font-size: 1.3rem;
+.list-thongbao .content-thongbao span:first-child {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.list-thongbao .content-thongbao span:nth-child(3) {
+    display: none;
+}
+
+.list-thongbao .content-thongbao span:nth-child(4) {
+    font-weight: 560;
+    font-size: 17px;
 }
 
 .thongbao .dropdown-menu {

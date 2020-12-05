@@ -1,10 +1,46 @@
 $(document).ready(function() {
-	
-	//hiển thi thông báo
-	$('.thongbao').click(function(event) {
-		/* Act on the event */
-		$('.list-thongbao').fadeToggle(200);
-	});
+
+    function jsUcfirst(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
+    function load_thong_bao () {
+        // body... 
+        $.ajax({
+            url : 'module/function/thong-bao.php',
+            type : 'post',
+            dataType : 'json',
+            data : {
+            },
+            success : function (result){
+                var html = `<h3>Thông báo</h3><hr>`;
+                var html_con = ``;
+                $.each(result, function (key, item){
+                    html_con += `<div class="content-thongbao">
+                                    <span>` + jsUcfirst(item.name) + `</span>
+                                    <span>` + item.content + `:</span>
+                                    <span class="id_bai_viet">` + item.id_bai_viet +`</span>
+                                    <span>` + jsUcfirst(item.tieu_de) + `</span>
+                                </div>`;
+                    
+                });
+
+                if (html_con == ``) {
+                    html_con = `<div class="no-thongbao">
+                                    <h5>Bạn chưa có thông báo nào</h5>
+                                </div>`;
+                }
+
+                html += html_con;
+
+                $('.list-thongbao').html(html);
+
+            },
+            error : function (result) {
+                alert("lỗi");
+            }
+        });
+    }
 
 	//kiểm tra đăng nhập
     $.ajax({
@@ -44,4 +80,15 @@ $(document).ready(function() {
             //alert("lỗi");
         }
     });
+
+
+
+    //hiển thi thông báo
+    $('.thongbao').click(function(event) {
+        /* Act on the event */
+        $('.list-thongbao').fadeToggle(200);
+        load_thong_bao();
+    });
+
+    
 });
