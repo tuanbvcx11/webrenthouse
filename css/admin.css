@@ -7,7 +7,7 @@
 	border-right: 1px solid gray;
 	border-bottom: 1px solid gray;
 	background-color: rgb(69, 132, 255, 0.8);
-	height: 92vh;
+	height: 89.5vh;
 	box-shadow: 0 0 3px #f0f2f5;
 }
 
@@ -40,7 +40,7 @@
 	background-color: #f0f2f5;
 	width: 80%;
 	overflow-y: scroll;
-	height: 92vh;
+	height: 89.5vh;
 	padding-bottom: 30px;
 	border-bottom: 2px solid gray;
 }

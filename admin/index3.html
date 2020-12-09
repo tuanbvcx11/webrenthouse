@@ -36,41 +36,64 @@
     <input type="" name="" value="">
     <a class="next">next</a>
 
-    <div class="select_post">
+    <!-- <div class="select_post">
         <label for="type_post">Loại bài viết</label>
         <select id="type_post" name="type_post">
             <option value="approved">Đã được duyệt</option>
             <option value="unapproved">Chưa được duyệt</option>
             <option value="banned">Bị xóa</option>
         </select>
-    </div>
+    </div> -->
 
     <script type="text/javascript">
-        
-        var getUrlParameter = function getUrlParameter(sParam) {
-            var sPageURL = window.location.search.substring(1),
-                sURLVariables = sPageURL.split('&'),
-                sParameterName,
-                i;
-         
-            for (i = 0; i < sURLVariables.length; i++) {
-                sParameterName = sURLVariables[i].split('=');
-            
-                if (sParameterName[0] === sParam) {
-                    return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-                }
-            }
-        };
-        var page = getUrlParameter('page');
 
-        if(page == undefined) {
-            page = 0;
-        }
+        $(document).ready(function() {
+            var getUrlParameter = function getUrlParameter(sParam) {
+                var sPageURL = window.location.search.substring(1),
+                    sURLVariables = sPageURL.split('&'),
+                    sParameterName,
+                    i;
+             
+                for (i = 0; i < sURLVariables.length; i++) {
+                    sParameterName = sURLVariables[i].split('=');
+                
+                    if (sParameterName[0] === sParam) {
+                        return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                    }
+                }
+            };
+            var page = getUrlParameter('page');
+
+            if(page == undefined) {
+                page = 0;
+            }
+            alert(page);
+        
 
         $('input').val(page);
 
         function test() {
             // body... 
+
+            var getUrlParameter = function getUrlParameter(sParam) {
+                var sPageURL = window.location.search.substring(1),
+                    sURLVariables = sPageURL.split('&'),
+                    sParameterName,
+                    i;
+             
+                for (i = 0; i < sURLVariables.length; i++) {
+                    sParameterName = sURLVariables[i].split('=');
+                
+                    if (sParameterName[0] === sParam) {
+                        return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+                    }
+                }
+            };
+            var page = getUrlParameter('page');
+
+            if(page == undefined) {
+                page = 0;
+            }
             page = new Number(page) + 1;
             window.history.pushState(page, '', '?page=' + page);
             $('input').val(page);
@@ -80,6 +103,8 @@
             test();            
             // history.pushState(page, '', '?page=' + page);
         });
+        });
+            
     </script>
 
 </body>
