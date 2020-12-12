@@ -130,24 +130,31 @@
           </select>
         </div>
 
+        <div class="each-post"></div>
         <!-- bảng dữ liệu đã duyệt -->
-        <table
+         <!-- <table
           class="table table-bordered table-hover table-striped tableApproved"
         >
           <thead class="thead-dark border border-secondary">
             <tr>
               <th scope="col" width="5%">ID</th>
-              <th scope="col" width="63%">Tiêu đề</th>
+              <th scope="col" width="48%">Bài đăng</th>
               <th scope="col" width="10%">Yêu thích</th>
-              <th scope="col" width="12%">Thời gian đăng</th>
+              <th scope="col" width="12%">Thời gian duyệt</th>
+              <th scope="col" width="15%">Thời gian hiển thị</th>
               <th scope="col" width="10%%">Chức năng</th>
             </tr>
           </thead>
           <tbody class="bodyPost">
             <tr>
               <td class="idPost">1</td>
-              <td>Jacob</td>
+              <td>
+                <div class="tieude">Phòng đẹp giá rẻ, chất lượng số 69, ngõ 185, chùa láng số 69, ngõ 185, chùa láng</div>
+                <i class="fas fa-map-marked-alt d-inline mr-1"></i><div class="chitiet"><i class="fas fa-map-marked-alt mr-1"></i>số 69, ngõ 185, chùa láng</div>
+                <div class="Prices">3 triệu 800 nghìn</div>
+              </td>
               <td>221</td>
+              <td>Thornton</td>
               <td>Thornton</td>
               <td class="d-flex">
                 <button
@@ -157,7 +164,6 @@
                 >
                   Xem
                 </button>
-                <!-- <button type="button" class="btn btn-primary p-1 updateButton" id="updateButton">Cập nhật</button> -->
               </td>
             </tr>
             <tr>
@@ -173,14 +179,14 @@
                 >
                   Xem
                 </button>
-                <!-- <button type="button" class="btn btn-primary p-1 updateButton" id="updateButton">Cập nhật</button> -->
+                
               </td>
             </tr>
           </tbody>
-        </table>
+        </table>   -->
 
         <!-- bảng dữ liệu chưa duyệt -->
-        <table
+        <!-- <table
           class="table table-bordered table-hover table-striped tableUnapproved"
         >
           <thead class="thead-dark border border-secondary">
@@ -240,10 +246,11 @@
               </td>
             </tr>
           </tbody>
-        </table>
+        </table> -->
 
+        
         <!-- bảng dữ liệu hết hạn -->
-        <table
+       <!--  <table
           class="table table-bordered table-hover table-striped tableExpired"
         >
           <thead class="thead-dark border border-secondary">
@@ -322,7 +329,7 @@
               </td>
             </tr>
           </tbody>
-        </table>
+        </table> -->
 
         <!-- Modal xóa -->
         <div
@@ -359,7 +366,7 @@
                   >
                     Thoát
                   </button>
-                  <button type="button" class="btn btn-primary">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">
                     Xác nhận
                   </button>
                 </div>
@@ -413,7 +420,7 @@
                   >
                     Thoát
                   </button>
-                  <button type="button" class="btn btn-primary">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">
                     Xác nhận
                   </button>
                 </div>
