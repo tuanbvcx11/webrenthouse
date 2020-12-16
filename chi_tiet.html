@@ -141,18 +141,15 @@
     <!--slide ảnh-->
     <div class="slideshow-container" class="dan_le">
         <div class="mySlides fade">
-            <img src="./picture/r1.png" class="slideanh">
-            <div class="text">ảnh 1</div>
+            <img src="./picture/background.jpg" class="slideanh">
         </div>
          
         <div class="mySlides fade">
-            <img src="./picture/r2.png" class="slideanh">
-            <div class="text">ảnh 2</div>
+            <img src="./picture/background.jpg" class="slideanh">
         </div>
          
         <div class="mySlides fade">
-            <img src="./picture/r3.png" class="slideanh">
-            <div class="text">ảnh 3</div>
+            <img src="./upload/images.jpg" class="slideanh">
         </div>
     </div>
          
@@ -171,7 +168,7 @@
                     <div id="rectangle_left">
                         <!--tiêu đề-->
                         <div class="titlebox">
-                            <h3 class="tieu_de">chính chủ cho thuê chung cư mini</h1>
+                            <h3 class="tieu_de" id="tieu_de">a</h1>
                         </div>
 
                         <!--địa chỉ-->
@@ -270,7 +267,7 @@
                 <!--điện nước-->
                                     <span class="flex_box">
                                         <span class="mo_ta">
-                                            <p class="sub_title">Giá điện:</p>
+                                            <p class="sub_title">Giá nước:</p>
                                         </span>
                                         <span class="mo_ta">
                                             <p class="gia_nuoc">12,000VND/khối</p>
@@ -317,7 +314,7 @@
                                             <p class="sub_title">Phòng bếp:</p>
                                         </span>
                                         <span class="mo_ta">
-                                            <p class="phong_bep">Không nấu ăn</p>
+                                            <p class="phong_bep">Không nấu</p>
                                         </span>
                                     </span>
                                     
@@ -448,22 +445,28 @@ Full tiện nghi, Chỉ việc xách va li đến ở. Giá trọn gói chỉ t�
                                     </div>
                     <!--bình luận-->            
                                 <div class="binhluan">
-                                    <div class="user_comment dan_le">
+                                    <!--<div class="user_comment dan_le">
                                         <div>
+                                            
                                             <strong>
-                                                <p class="ten_user">Nguyễn Trung Thứ</p>
+                                                <p class="ten_user_cmt">Nguyễn Trung Thứ</p>
                                             </strong>  
                                         </div> 
                                         <div>
                                             <p class="content">ádsad</p>
                                         </div>
-                                    </div>
+                                    </div>-->
                                 </div>
                                 
                                 <div class="dan_le">
+                                    <div class="id_user">
+                                                0
+                                    </div>
+
                                     <div>
                                             <p class="ten_user">Nguyễn Trung Thứ</p>
-                                    </div>                          
+                                    </div>   
+
                                     <span class="comments">
                                         
                                         <input class="form-control" id="comment"></input>
@@ -480,11 +483,11 @@ Full tiện nghi, Chỉ việc xách va li đến ở. Giá trọn gói chỉ t�
                         <div id="rectangle_right">
                             <div class="card" >
                                 <div class="card-body">
-                                    <span class="idOwner">1</span>
+                                    <span class="idOwner">0</span>
                                     <h4 class="card-title">Thông tin chủ trọ</h4>
-                                    <p class="card-text">nguyen trung thu</p>
-                                    <p class="card-text">0909239129</p>
-                                    <p class="card-text">cty tnhh 3 thành viên</p>
+                                    <p class="ten_host">nguyen trung thu</p>
+                                    <p class="sdt_host">0909239129</p>
+                                    <p class="dia_chi_host">cty tnhh 3 thành viên</p>
                                 </div>
                             </div>
                         </div>
@@ -522,7 +525,9 @@ Full tiện nghi, Chỉ việc xách va li đến ở. Giá trọn gói chỉ t�
             </div>
         </div>
     </div>
-
+    <div class="trang_thai_bai_dang">
+        <p>0</p>
+    </div>
 
     <!-- Modal gia hạn -->
             <div class="modal fade" id="validateModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

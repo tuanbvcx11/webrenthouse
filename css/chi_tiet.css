@@ -19,6 +19,8 @@ body{
 /* Ẩn các slider */
 .mySlides {
     display: none;
+     width: 100%;
+  height: 500px;
 }
 /* Định dạng nội dung Caption */
 .text {
@@ -48,6 +50,8 @@ body{
 }
 .slideanh{
   width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 /* Thêm hiệu ứng khi chuyển đổi các slide */
@@ -200,6 +204,7 @@ body{
   width: 100%;
   text-align: center;
   margin: auto;
+  display: block;
 }
 .rateStar .Star{
   display: block;
@@ -264,7 +269,7 @@ body{
   padding: 10px;
 }
 .quanli .admin, .quanli .owner{
-  display: block;
+  display: none;
   margin: 10px;
   padding: 10px;
 }
@@ -371,6 +376,13 @@ p {
     margin-top: 0;
     margin-bottom: 0rem;
 }
-.idOwner{
+.idOwner, .id_user{
+  display: none;
+}
+
+.duyet, .xoa, .trangthai, .sua, .xoa, #validateButton{
+  display: block;
+}
+.trang_thai_bai_dang{
   display: none;
 }
