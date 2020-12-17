@@ -168,15 +168,15 @@
               <label>Chọn khu vực</label>
               <!-- chọn thành phố -->
               <select class="form-control mb-2" name="city" id="city">
-                <option value="Thành phố" hidden>Thành phố</option>
+                <!-- <option value="Thành phố" hidden>Thành phố</option>
                 <option value="Hà Nội">Hà Nội</option>
-                <option value="HCM">HCM</option>
+                <option value="HCM">HCM</option> -->
               </select>
               <!-- chọn quận huyện -->
               <select class="form-control" name="district" id="district">
                 <option value="Quân(Huyện)" hidden>Quận/Huyện</option>
-                <option value="Quất Lâm">Quất Lâm</option>
-                <option value="Trần Duy Hưng">Trần Duy Hưng</option>
+                <!-- <option value="Quất Lâm">Quất Lâm</option>
+                <option value="Trần Duy Hưng">Trần Duy Hưng</option> -->
               </select>
             </div>
 
@@ -244,10 +244,11 @@
                   <select class="form-control" name="minPrices" id="minPrices">
                     <option value="Tất cả">Tất cả</option>
                     <option value="1">1 triệu</option>
-                    <option value="2">2 triệu</option>
                     <option value="3">3 triệu</option>
-                    <option value="4">4 triệu</option>
                     <option value="5">5 triệu</option>
+                    <option value="7">7 triệu</option>
+                    <option value="10">10 triệu</option>
+                    <option value="20">20 triệu</option>
                   </select>
                 </div>
 
@@ -257,10 +258,11 @@
                   <select class="form-control" name="maxPrices" id="maxPrices">
                     <option value="Tất cả">Tất cả</option>
                     <option value="1">1 triệu</option>
-                    <option value="2">2 triệu</option>
                     <option value="3">3 triệu</option>
-                    <option value="4">4 triệu</option>
                     <option value="5">5 triệu</option>
+                    <option value="7">7 triệu</option>
+                    <option value="10">10 triệu</option>
+                    <option value="20">20 triệu</option>
                   </select>
                 </div>
               </div>
@@ -288,8 +290,8 @@
           <label>Danh sách bài đăng mới nhất</label>
           <div class="container">
             <div class="row">
-              <div class="col-12 col-xl-6 mt-4 d-flex baidang">
-                <!-- ảnh -->
+              <!-- <div class="col-12 col-xl-6 mt-4 d-flex baidang">
+                
                 <div class="img-div">
                   <a class="link-img" href="#">
                     <img
@@ -299,18 +301,29 @@
                     />
                   </a>
                 </div>
-                <!-- tóm tắt -->
+                
                 <div class="brief-div">
                   <div class="idPost">1</div>
                   <a class="titlePost" href="#">
                     Căn phòng cho thuê ở số 69, ngõ 157, chùa láng, Đống Đa, Hà
                     Nội ahahahahahahahahaha
                   </a>
-                  <div class="addressPost">
-                    số 69, ngõ 157, chùa láng, Đống Đa, Hà Nội
+
+                  <div class="d-flex address-div">
+                    <div class="mr-1 address-icon">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="addressPost">
+                      số 69, ngõ 157, chùa láng, Đống Đa, Hà Nội
+                    </div>
                   </div>
 
-                  <div class="Prices">3 triệu 800 nghìn</div>
+                  <div class="d-flex Prices-div">
+                    <div class="mt-1 mr-1 Prices-icon">
+                      <i class="fas fa-coins"></i>
+                    </div>
+                    <div class="Prices">3 triệu 800 nghìn</div>
+                  </div>
 
                   <div class="datePost">Ngày đăng: 22/11/2020</div>
 
@@ -318,98 +331,8 @@
                     <i class="far fa-heart"></i>
                   </div>
                 </div>
-              </div>
-              <div class="col-12 col-xl-6 mt-4 d-flex baidang">
-                <!-- ảnh -->
-                <div class="img-div">
-                  <a class="link-img" href="#">
-                    <img
-                      class="img-post"
-                      src="./download.jpg"
-                      alt="hình ảnh căn phòng cho thuê ở số 69, ngõ 157, chùa láng, Đống Đa, Hà Nội"
-                    />
-                  </a>
-                </div>
-                <!-- tóm tắt -->
-                <div class="brief-div">
-                  <div class="idPost">2</div>
-                  <a class="titlePost" href="#">
-                    Căn phòng cho thuê ở số 69, ngõ 157, chùa láng, Đống Đa, Hà
-                    Nội, hahahahahahaha
-                  </a>
-                  <div class="addressPost">
-                    số 69, ngõ 157, chùa láng, Đống Đa, Hà Nội
-                  </div>
-
-                  <div class="Prices">3 triệu 800 nghìn</div>
-
-                  <div class="datePost">Ngày đăng: 22/11/2020</div>
-
-                  <div class="favorite">
-                    <i class="far fa-heart"></i>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-xl-6 mt-4 d-flex baidang">
-                <!-- ảnh -->
-                <div class="img-div">
-                  <a class="link-img" href="#">
-                    <img
-                      class="img-post"
-                      src="./postTest.jpg"
-                      alt="hình ảnh căn phòng cho thuê ở số 69, ngõ 157, chùa láng, Đống Đa, Hà Nội"
-                    />
-                  </a>
-                </div>
-                <!-- tóm tắt -->
-                <div class="brief-div">
-                  <div class="idPost">3</div>
-                  <a class="titlePost" href="#">
-                    69, ngõ 157, chùa láng, Đống Đa, Hà Nội
-                  </a>
-                  <div class="addressPost">
-                    số 69, ngõ 157, chùa láng, Đống Đa, Hà Nội
-                  </div>
-
-                  <div class="Prices">3 triệu 800 nghìn</div>
-
-                  <div class="datePost">Ngày đăng: 22/11/2020</div>
-
-                  <div class="favorite">
-                    <i class="far fa-heart"></i>
-                  </div>
-                </div>
-              </div>
-              <div class="col-12 col-xl-6 mt-4 d-flex baidang">
-                <!-- ảnh -->
-                <div class="img-div">
-                  <a class="link-img" href="#">
-                    <img
-                      class="img-post"
-                      src="./postTest.jpg"
-                      alt="hình ảnh căn phòng cho thuê ở số 69, ngõ 157, chùa láng, Đống Đa, Hà Nội"
-                    />
-                  </a>
-                </div>
-                <!-- tóm tắt -->
-                <div class="brief-div">
-                  <div class="idPost">4</div>
-                  <a class="titlePost" href="#">
-                    số 69, ngõ 157, chùa láng, Đống Đa, Hà Nội
-                  </a>
-                  <div class="addressPost">
-                    số 69, ngõ 157, chùa láng, Đống Đa, Hà Nội
-                  </div>
-
-                  <div class="Prices">3 triệu 800 nghìn</div>
-
-                  <div class="datePost">Ngày đăng: 22/11/2020</div>
-
-                  <div class="favorite">
-                    <i class="far fa-heart"></i>
-                  </div>
-                </div>
-              </div>
+              </div> -->
+              
             </div>
           </div>
         </div>
@@ -425,7 +348,7 @@
                   <a class="link-img" href="#">
                     <img
                       class="img-post"
-                      src="./unnamed.jpg"
+                      src="./upload/121987866_371714757522559_2438549309379066074_n.jpg"
                       alt="hình ảnh căn phòng cho thuê ở số 69, ngõ 157, chùa láng, Đống Đa, Hà Nội"
                     />
                   </a>
@@ -437,11 +360,21 @@
                     Căn phòng cho thuê ở số 69, ngõ 157, chùa láng, Đống Đa, Hà
                     Nội ahahahahahahahahaha
                   </a>
-                  <div class="addressPost">
-                    số 69, ngõ 157, chùa láng, Đống Đa, Hà Nội
+                  <div class="d-flex address-div">
+                    <div class="mr-1 address-icon">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="addressPost">
+                      số 69, ngõ 157, chùa láng, Đống Đa, Hà Nội
+                    </div>
                   </div>
 
-                  <div class="Prices">3 triệu 800 nghìn</div>
+                  <div class="d-flex Prices-div">
+                    <div class="mt-1 mr-1 Prices-icon">
+                      <i class="fas fa-coins"></i>
+                    </div>
+                    <div class="Prices">3 triệu 800 nghìn</div>
+                  </div>
 
                   <div class="datePost">Ngày đăng: 22/11/2020</div>
 
@@ -451,7 +384,7 @@
                 </div>
               </div>
               <div class="col-12 col-xl-6 mt-4 d-flex baidang">
-                <!-- ảnh -->
+                
                 <div class="img-div">
                   <a class="link-img" href="#">
                     <img
@@ -461,18 +394,28 @@
                     />
                   </a>
                 </div>
-                <!-- tóm tắt -->
+
                 <div class="brief-div">
                   <div class="idPost">6</div>
                   <a class="titlePost" href="#">
                     Căn phòng cho thuê ở số 69, ngõ 157, chùa láng, Đống Đa, Hà
                     Nội, hahahahahahaha
                   </a>
-                  <div class="addressPost">
-                    số 69, ngõ 157, chùa láng, Đống Đa, Hà Nội
+                  <div class="d-flex address-div">
+                    <div class="mr-1 address-icon">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="addressPost">
+                      số 69, ngõ 157, chùa láng, Đống Đa, Hà Nội
+                    </div>
                   </div>
 
-                  <div class="Prices">3 triệu 800 nghìn</div>
+                  <div class="d-flex Prices-div">
+                    <div class="mt-1 mr-1 Prices-icon">
+                      <i class="fas fa-coins"></i>
+                    </div>
+                    <div class="Prices">3 triệu 800 nghìn</div>
+                  </div>
 
                   <div class="datePost">Ngày đăng: 22/11/2020</div>
 
@@ -482,7 +425,7 @@
                 </div>
               </div>
               <div class="col-12 col-xl-6 mt-4 d-flex baidang">
-                <!-- ảnh -->
+               
                 <div class="img-div">
                   <a class="link-img" href="#">
                     <img
@@ -492,17 +435,27 @@
                     />
                   </a>
                 </div>
-                <!-- tóm tắt -->
+                
                 <div class="brief-div">
                   <div class="idPost">7</div>
                   <a class="titlePost" href="#">
                     69, ngõ 157, chùa láng, Đống Đa, Hà Nội
                   </a>
-                  <div class="addressPost">
-                    số 69, ngõ 157, chùa láng, Đống Đa, Hà Nội
+                  <div class="d-flex address-div">
+                    <div class="mr-1 address-icon">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="addressPost">
+                      số 69, ngõ 157, chùa láng, Đống Đa, Hà Nội
+                    </div>
                   </div>
 
-                  <div class="Prices">3 triệu 800 nghìn</div>
+                  <div class="d-flex Prices-div">
+                    <div class="mt-1 mr-1 Prices-icon">
+                      <i class="fas fa-coins"></i>
+                    </div>
+                    <div class="Prices">3 triệu 800 nghìn</div>
+                  </div>
 
                   <div class="datePost">Ngày đăng: 22/11/2020</div>
 
@@ -512,7 +465,8 @@
                 </div>
               </div>
               <div class="col-12 col-xl-6 mt-4 d-flex baidang">
-                <!-- ảnh -->
+                
+                
                 <div class="img-div">
                   <a class="link-img" href="#">
                     <img
@@ -522,17 +476,28 @@
                     />
                   </a>
                 </div>
-                <!-- tóm tắt -->
+                
+                
                 <div class="brief-div">
                   <div class="idPost">8</div>
                   <a class="titlePost" href="#">
                     số 69, ngõ 157, chùa láng, Đống Đa, Hà Nội
                   </a>
-                  <div class="addressPost">
-                    số 69, ngõ 157, chùa láng, Đống Đa, Hà Nội
+                  <div class="d-flex address-div">
+                    <div class="mr-1 address-icon">
+                      <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="addressPost">
+                      số 69, ngõ 157, chùa láng, Đống Đa, Hà Nội
+                    </div>
                   </div>
 
-                  <div class="Prices">3 triệu 800 nghìn</div>
+                  <div class="d-flex Prices-div">
+                    <div class="mt-1 mr-1 Prices-icon">
+                      <i class="fas fa-coins"></i>
+                    </div>
+                    <div class="Prices">3 triệu 800 nghìn</div>
+                  </div>
 
                   <div class="datePost">Ngày đăng: 22/11/2020</div>
 

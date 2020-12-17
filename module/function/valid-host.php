@@ -12,7 +12,7 @@
 	$stmt->execute([$iduser, $vaitro]);
 	$row = $stmt->fetch();
 
-    if($vaitro == "host" && $row["status"] == '1') {
+    if(($vaitro == "host" || $vaitro == "admin") && $row["status"] == '1') {
         $result = "ok";
     } 
 

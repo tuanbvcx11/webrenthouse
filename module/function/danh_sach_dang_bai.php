@@ -62,3 +62,4 @@
 	$db = null;
 
 	die(json_encode($result));
+?>
