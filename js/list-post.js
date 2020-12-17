@@ -1,4 +1,12 @@
 $(document).ready(function() {
+
+	$("#myInput").on("keyup", function() {
+	    var value = $(this).val().toLowerCase();
+	    $("table tbody tr").filter(function() {
+	      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+	    });
+	  });
+
 	var idpost;
 	var action;
 
@@ -6,6 +14,7 @@ $(document).ready(function() {
 	// hàm load các bài viết tùy theo loại bài viết
 	function load_post () {
 		// body... 
+		$("#myInput").val('');
 		var type = $('#type_post').val();
 		// gửi type lên server để hiển thị các bài viết có loại đó
 		$.ajax({
@@ -185,6 +194,8 @@ $(document).ready(function() {
 		action = 'khoiphuc';
 		update_post(idpost, action);
 	});
+
+
 
 
 	var pusher = new Pusher('b06168af2fefdf2d1ba2', {

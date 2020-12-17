@@ -33,7 +33,21 @@ hr {
 }
 
 .countpost .input-group .input-group-text {
-	width: 150px;
+	width: 100px;
+}
+
+.countpost .input-group input {
+	padding: 10px;
+}
+
+.countpost #result-check {
+	margin-left: 10px;
+}
+
+.chart-container .chart {
+	position: relative;
+	width: 45vw;
+	margin: auto;
 }
 
 @media screen and (max-width: 900px) {

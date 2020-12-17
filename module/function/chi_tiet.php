@@ -50,6 +50,7 @@
 	            'ngay-dang' => $row['tg_dang_bai'],
 	            'ngay-hethan' => $row['ngay_hethan'],
 	            'status-post' => $row['status_post'],
+	            'time_hien_thi' => $row['tg_hien_thi'],
 
 	            //'id-user' => $_SESSION["iduser"]
 	        );

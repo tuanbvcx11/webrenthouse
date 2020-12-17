@@ -28,7 +28,7 @@
     <link rel="stylesheet" type="text/css" href="./css/header-footer.css">
     <link rel="stylesheet" type="text/css" href="./css/admin.css">
     <link rel="stylesheet" type="text/css" href="./css/list-post.css">
-    <title>Danh sách bài viết</title>
+    <title>Quản lý bài viết</title>
         
 </head>
 <body>
@@ -141,15 +141,21 @@
         <!-- danh sách các bài viết -->
         <div class="content-function">
             <div class="container body">
-                <h2>Quản lý bài viết</h2><hr>
-                <div class="select_post">
-                    <label for="type_post">Loại bài viết</label>
-                    <select id="type_post" name="type_post">
-                        <option value="approved">Đã được duyệt</option>
-                        <option value="unapproved">Chưa được duyệt</option>
-                        <option value="banned">Bị xóa</option>
-                    </select>
+                <h2>Danh sách bài viết</h2><hr>
+                <div class="row">
+                    <div class="select_post col-8">
+                        <label for="type_post">Loại bài viết</label>
+                        <select id="type_post" name="type_post">
+                            <option value="approved">Đã được duyệt</option>
+                            <option value="unapproved">Chưa được duyệt</option>
+                            <option value="banned">Bị xóa</option>
+                        </select>
+                    </div>
+                    <div class="filter col-4">
+                        <input class="form-control" id="myInput" type="text" placeholder="Search..">
+                    </div>
                 </div>
+                
 
                 <!-- danh sách các bài viết -->
                 <div class="each-post">

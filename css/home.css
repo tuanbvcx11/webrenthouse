@@ -157,12 +157,17 @@ label.label-choose-room {
   font-size: 17px;
 }
 
-.Prices {
+.Prices-div {
   position: absolute;
-  top: 79px;
+  top: 82px;
+}
+
+.Prices {
   font-size: 20px;
   font-weight: 600;
+  color: #427bff;
 }
+
 
 .datePost {
   position: absolute;
@@ -170,10 +175,14 @@ label.label-choose-room {
   font-size: 12px;
 }
 
-.addressPost {
+.address-div {
   position: absolute;
-  top: 53px;
+  top: 57px;
+}
+
+.addressPost {
   font-size: 14px;
+  color: gray;
 }
 
 .favorite {

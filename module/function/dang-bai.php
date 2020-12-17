@@ -17,36 +17,6 @@
         '1117334',
         $options
       );
-
-    // // hàm chuyển tiền thành string
-    // function convertPrice($money) {
-    //     $ans = "";
-    //     if($money >= 1000000000) {
-    //       $billions = (int)($money/1000000000);
-    //       $ans = $ans . strval($billions) . " tỉ ";
-    //       $millions = (int)(($money - $billions*1000000000)/1000000);
-    //       if($millions == 0) {
-    //         return $ans;
-    //       }
-    //       $ans = $ans . strval($millions) . " triệu ";
-    //       /* $thousands = strval(($money - $billions*1000000000 - $millions*1000000)/1000);
-    //       $ans = $ans . thousands + " nghìn"; */
-    //     } else if($money >= 1000000) {
-    //       $millions = (int)($money/1000000);
-    //       $ans = $ans . strval($millions) . " triệu ";
-    //       $thousands = (int)(($money - $millions*1000000)/1000);
-    //       if($thousands == 0) {
-    //         return $ans;
-    //       }
-    //       $ans = $ans . strval($thousands) . " nghìn";
-    //     } else if($money >= 1000) {
-    //       $thousands = (int)($money/1000);
-    //       $ans = $ans . strval($thousands) . " nghìn";
-    //     } else {
-    //       return "số tiền nhỏ hơn 1000";
-    //     }
-    //     return $ans;
-    //   }
     
     $status_phong = 1; //còn phòng <> 0 là hết phòng
     $status_post = 0; //chưa được duyệt <> 1 là đã duyệt (-1 là bị xóa)

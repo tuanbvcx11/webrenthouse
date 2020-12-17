@@ -8,7 +8,7 @@ function validHost() {
     success: function (result) {
       if (result == "ok") {
       } else {
-        location.assign("http://localhost/BTLweb/webrenthouse/home.html");
+        location.assign("./home.html");
         return false;
       }
     },
@@ -234,12 +234,10 @@ $(document).ready(function () {
     indexPost = $(this).parent().parent().children().children("span").text();
     if ($(this).hasClass("detailButton")) {
       alert(idPost);
-      location.assign("http://localhost/BTLweb/webrenthouse/chi_tiet.html");
+      location.assign("./chi_tiet.html");
     } else if ($(this).hasClass("editButton")) {
       alert(idPost);
-      location.assign(
-        "http://localhost/BTLweb/webrenthouse/chinh_sua_bai_dang.html"
-      );
+      location.assign("./chinh_sua_bai_dang.html");
     } else if ($(this).hasClass("eraseButton")) {
       $("#eraseModal .modal-body").text(
         "Bạn xác nhận xóa bài đăng số " + indexPost + " này?"

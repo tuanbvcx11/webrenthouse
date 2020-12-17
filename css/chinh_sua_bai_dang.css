@@ -1,104 +1,137 @@
 .wrapper {
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    /* padding: 80px 255px 80px 289px; */
-    background-color: #f0f2f5;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  /* padding: 80px 255px 80px 289px; */
+  background-color: #f0f2f5;
+}
+
+.title_lable {
+  font-weight: bold;
+  font-family: sans-serif;
+  font-size: 15px;
+}
+
+.titlePost {
+  background-color: #55a9df;
+  height: 200px;
+  text-align: center;
+}
+
+.form_custom {
+  background: #ffffff;
+  color: black;
+  max-width: 758px;
+  margin: auto;
+  display: block;
+  position: relative;
+  top: -114px;
+}
+
+.tieu_de_dia_chi {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.tieu_de_mo_ta {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: sans-serif;
+}
+
+.select_color {
+  background-image: linear-gradient(to bottom, #dadada, #ffffff) !important;
+}
+
+.div_margin {
+  padding-top: 10px;
+}
+
+.wrapper p {
+  color: red;
+  font-size: 14px;
+  display: inline;
+  font-weight: 900;
+}
+
+.divs {
+  position: relative;
+  display: inline-block;
+}
+
+.inputs {
+  position:absolute;
+  left: 0px;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  background: #00f;
+  z-index:2;
+}
+
+.icons {
+  position:relative;
+}
+
+.preview {
+margin-top: 10px;
+}
+
+.img {
+position: relative;
+display: inline-block;
+margin-right: 10px;
+}
+
+.img img {
+height: 200px; width: auto;
+}
+
+@media (max-width: 1199px) {
+}
+
+@media (max-width: 991px) {
+  .wrapper {
+    padding: 0px;
+    position: relative;
+    padding: 44px;
   }
-  
-  .title_lable {
-    font-weight: bold;
-    font-family: sans-serif;
-    font-size: 15px;
+}
+
+@media (max-width: 767px) {
+  .form_custom {
+    padding: 27px 20px 37px;
+    border: none;
+    box-shadow: none;
+    top: 0px;
+    margin: 0px;
+    font-size: 12px;
   }
-  
+  .wrapper {
+    padding: 0px;
+  }
   .titlePost {
     background-color: #55a9df;
-    height: 200px;
+    height: 72px;
     text-align: center;
   }
-  
-  .form_custom {
-    background: #ffffff;
-    color: black;
-    max-width: 758px;
-    margin: auto;
-    display: block;
-    position: relative;
-    top: -114px;
+  h1 {
+    font-size: 20px;
   }
-  
-  .tieu_de_dia_chi {
-    font-size: 25px;
-    font-weight: bold;
-    font-family: sans-serif;
-  }
-  
-  .tieu_de_mo_ta {
-    font-size: 25px;
-    font-weight: bold;
-    font-family: sans-serif;
-  }
-  
   .select_color {
     background-image: linear-gradient(to bottom, #dadada, #ffffff) !important;
+    height: 30px;
+    font-size: 12px;
   }
-  
-  .div_margin {
-    padding-top: 10px;
+  .inputSize {
+    height: 30px;
   }
-  
-  .wrapper p {
-    color: red;
-    font-size: 14px;
-    display: inline;
-    font-weight: 900;
-  }
-  
-  @media (max-width: 1199px) {
-  }
-  
-  @media (max-width: 991px) {
-    .wrapper {
-      padding: 0px;
-      position: relative;
-      padding: 44px;
-    }
-  }
-  
-  @media (max-width: 767px) {
-    .form_custom {
-      padding: 27px 20px 37px;
-      border: none;
-      box-shadow: none;
-      top: 0px;
-      margin: 0px;
-      font-size: 12px;
-    }
-    .wrapper {
-      padding: 0px;
-    }
-    .titlePost {
-      background-color: #55a9df;
-      height: 72px;
-      text-align: center;
-    }
-    h1 {
-      font-size: 20px;
-    }
-    .select_color {
-      background-image: linear-gradient(to bottom, #dadada, #ffffff) !important;
-      height: 30px;
-      font-size: 12px;
-    }
-    .inputSize {
-      height: 30px;
-    }
-  }
-  
-  ._focus {
-    border-color: red;
-  }
-  
+}
+
+._focus {
+  border-color: red;
+}
+}

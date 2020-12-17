@@ -1,9 +1,30 @@
 $(document).ready(function() {
 
+    // hiện tên người dùng lên trên header
+    function getUser () {
+        // body... 
+        $.ajax({
+            url : 'module/function/chi_tiet_user.php',
+            type : 'post',
+            dataType : 'json',
+            data : {
+            },
+            success : function (result){
+                $(".logo").find('#hello').text('Hi: ' +result['ten-user'])
+            },
+            error : function (result) {
+                alert("lỗi");
+            }
+        });
+    }
+    
+
+    // hàm viết hoa chữ cái đầu
     function jsUcfirst(string) {
         return string.charAt(0).toUpperCase() + string.slice(1);
     }
 
+    // hàm load thông báo
     function load_thong_bao () {
         // body... 
         $.ajax({
@@ -67,13 +88,16 @@ $(document).ready(function() {
             	$('.list-posted').css('display', 'none');
             	$('.host-chat').css('display', 'none');
             	$('.toadmin').css('display', 'none');
+                getUser();
             } else if (result == "host") {
             	$('.toadmin').css('display', 'none');
             	$('.dangnhap').css('display', 'none');
+                getUser();
             } else {
             	$('.host-chat').css('display', 'none');
             	$('.dangnhap').css('display', 'none');
             	$('.info-me').css('display', 'none');
+                getUser();
             }
         },
         error : function (result) {
@@ -81,7 +105,10 @@ $(document).ready(function() {
         }
     });
 
-
+    $('.tuychon button').click(function(event) {
+         // Act on the event 
+        $(this).toggleClass('open');
+    });
 
     //hiển thi thông báo
     $('.thongbao').click(function(event) {

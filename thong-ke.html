@@ -59,7 +59,7 @@
                             </li>
                             <li class="nav-item tuychon">
                                 <div class="dropdown">
-                                    <button class="navbar-toggler"  data-toggle="collapse" data-target="#tuychon" aria-expanded="false" aria-controls="tuychon">
+                                    <button class="navbar-toggler" data-toggle="collapse" data-target="#tuychon" aria-expanded="false" aria-controls="tuychon">
                                         <span class="navbar-toggler-icon">
                                             
                                         </span>
@@ -155,108 +155,32 @@
 
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="">Thời gian trước</span>
+                            <span class="input-group-text" id="">Từ ngày </span>
                         </div>
-                        <input type="date" id="start" name="trip-start" value="2020-11-13" >
+                        <input type="date" id="start" name="trip-start" value="" >
                     </div>
 
                     <div class="input-group">
                         <div class="input-group-prepend">
-                            <span class="input-group-text" id="">Thời gian sau</span>
+                            <span class="input-group-text" id="">Đến ngày </span>
                         </div>
-                        <input type="date" id="end" name="trip-end" value="2020-10-22" max="">
+                        <input type="date" id="end" name="trip-end" value="" max="">
                     </div>
 
                     <button class="btn btn-primary">Kết quả</button>
                     <span id="result-check">14</span>
 
+                </div><hr>
+
+                <div class="chart-container">
+
+                    <div class="chart">
+                        <canvas id="myChart" width="400" height="250"></canvas>
+                    </div>
                 </div>
 
                 
-                <div class="countpost">
-                    <h4>Số lượng bài viết trong 1 khoảng thời gian</h4>
-
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="">Thời gian trước</span>
-                        </div>
-                        <input type="date" id="start" name="trip-start" value="2020-10-22" >
-                    </div>
-
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="">Thời gian sau</span>
-                        </div>
-                        <input type="date" id="end" name="trip-end" value="2020-10-22" max="">
-                    </div>
-
-                    <button class="btn btn-primary">Kết quả</button>
-                    <span id="result-check">14</span>
-
-                </div>
-                <div class="countpost">
-                    <h4>Số lượng bài viết trong 1 khoảng thời gian</h4>
-
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="">Thời gian trước</span>
-                        </div>
-                        <input type="date" id="start" name="trip-start" value="2020-10-22" >
-                    </div>
-
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="">Thời gian sau</span>
-                        </div>
-                        <input type="date" id="end" name="trip-end" value="2020-10-22" max="">
-                    </div>
-
-                    <button class="btn btn-primary">Kết quả</button>
-                    <span id="result-check">14</span>
-
-                </div>
-                <div class="countpost">
-                    <h4>Số lượng bài viết trong 1 khoảng thời gian</h4>
-
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="">Thời gian trước</span>
-                        </div>
-                        <input type="date" id="start" name="trip-start" value="2020-10-22" >
-                    </div>
-
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="">Thời gian sau</span>
-                        </div>
-                        <input type="date" id="end" name="trip-end" value="2020-10-22" max="">
-                    </div>
-
-                    <button class="btn btn-primary">Kết quả</button>
-                    <span id="result-check">14</span>
-
-                </div>
-                <div class="countpost">
-                    <h4>Số lượng bài viết trong 1 khoảng thời gian</h4>
-
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="">Thời gian trước</span>
-                        </div>
-                        <input type="date" id="start" name="trip-start" value="2020-10-22" >
-                    </div>
-
-                    <div class="input-group">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="">Thời gian sau</span>
-                        </div>
-                        <input type="date" id="end" name="trip-end" value="2020-10-22" max="">
-                    </div>
-
-                    <button class="btn btn-primary">Kết quả</button>
-                    <span id="result-check">14</span>
-
-                </div>
+                
 
 
             </div>
@@ -314,6 +238,7 @@
 
         </div>
     </div> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
     <script src="js/header-footer.js"></script>
     <script src="js/admin.js"></script>
     <script src="js/thong-ke.js"></script>

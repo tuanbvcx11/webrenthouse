@@ -48,55 +48,66 @@
     <script type="text/javascript">
 
         $(document).ready(function() {
-            var getUrlParameter = function getUrlParameter(sParam) {
-                var sPageURL = window.location.search.substring(1),
-                    sURLVariables = sPageURL.split('&'),
-                    sParameterName,
-                    i;
+            // var getUrlParameter = function getUrlParameter(sParam) {
+            //     var sPageURL = window.location.search.substring(1),
+            //         sURLVariables = sPageURL.split('&'),
+            //         sParameterName,
+            //         i;
              
-                for (i = 0; i < sURLVariables.length; i++) {
-                    sParameterName = sURLVariables[i].split('=');
+            //     for (i = 0; i < sURLVariables.length; i++) {
+            //         sParameterName = sURLVariables[i].split('=');
                 
-                    if (sParameterName[0] === sParam) {
-                        return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-                    }
-                }
-            };
-            var page = getUrlParameter('page');
+            //         if (sParameterName[0] === sParam) {
+            //             return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+            //         }
+            //     }
+            // };
+            // var page = getUrlParameter('page');
 
-            if(page == undefined) {
-                page = 0;
-            }
-            alert(page);
+            // if(page == undefined) {
+            //     page = 0;
+            // }
+            // alert(page);
         
 
-        $('input').val(page);
+        // $('input').val(page);
 
         function test() {
             // body... 
 
-            var getUrlParameter = function getUrlParameter(sParam) {
-                var sPageURL = window.location.search.substring(1),
-                    sURLVariables = sPageURL.split('&'),
-                    sParameterName,
-                    i;
+            // var getUrlParameter = function getUrlParameter(sParam) {
+            //     var sPageURL = window.location.search.substring(1),
+            //         sURLVariables = sPageURL.split('&'),
+            //         sParameterName,
+            //         i;
              
-                for (i = 0; i < sURLVariables.length; i++) {
-                    sParameterName = sURLVariables[i].split('=');
+            //     for (i = 0; i < sURLVariables.length; i++) {
+            //         sParameterName = sURLVariables[i].split('=');
                 
-                    if (sParameterName[0] === sParam) {
-                        return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
-                    }
-                }
-            };
-            var page = getUrlParameter('page');
+            //         if (sParameterName[0] === sParam) {
+            //             return sParameterName[1] === undefined ? true : decodeURIComponent(sParameterName[1]);
+            //         }
+            //     }
+            // };
+            // var page = getUrlParameter('page');
 
-            if(page == undefined) {
-                page = 0;
-            }
-            page = new Number(page) + 1;
-            window.history.pushState(page, '', '?page=' + page);
-            $('input').val(page);
+            // if(page == undefined) {
+            //     page = 0;
+            // }
+            window.history.pushState('', '', '../web/header_footer.html');
+                $.ajax({
+                url : "../header_footer.html",
+                type : 'post',
+                dataType : 'text',
+                data : {
+                },
+                success : function (result){
+                    $('body').html(result);
+                },
+                error : function (result) {
+                    alert("sai");
+                }
+            });
         }
         $('.next').click(function(event) {
             /* Act on the event */
