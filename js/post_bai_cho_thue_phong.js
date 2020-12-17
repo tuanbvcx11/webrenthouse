@@ -62,6 +62,7 @@ function convertPrice(money) {
   }
 
 $(document).ready(function() {
+    var total_img = 0;
 
     // kiểm tra phiên đăng nhập
     $.ajax({
@@ -130,6 +131,8 @@ $(document).ready(function() {
         if(files.length < 3){
             alert("Vui lòng nhập tối thiểu 3 ảnh");
         }
+        total_img = files.length;
+        console.log(total_img);
     });
 
 
@@ -195,8 +198,7 @@ $(document).ready(function() {
             announce += "thời gian đăng bài phải lớn hơn 0 \n";
         }
 
-        var fi = document.getElementsByClassName('inputs');
-        if(fi.files.length < 3){
+        if(total_img < 3){
             announce += "Vui lòng chọn tối thiểu 3 ảnh \n";
         }
 
