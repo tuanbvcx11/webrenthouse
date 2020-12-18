@@ -222,7 +222,7 @@ $(document).ready(function () {
         dataType: "json",
         data: {},
         success: function (result) {
-          var province = '<option value="Thành phố" hidden>Thành phố</option>';
+          var province = '<option value="Thành phố">Thành phố</option>';
           $.each(result, function (key, item) {
             province +=
               '<option value="' + item.name + '">' + item.name + "</option>";
@@ -241,7 +241,7 @@ $(document).ready(function () {
             },
             success: function (result) {
               var district =
-                '<option value="Quận(Huyện)" hidden>Quận/Huyện</option>';
+                '<option value="Quận(Huyện)">Quận/Huyện</option>';
               $.each(result, function (key, item) {
                 district +=
                   '<option value="' +
@@ -355,7 +355,7 @@ $(document).ready(function () {
         province: $(this).val(),
       },
       success: function (result) {
-        var district = '<option value="Quận(Huyện)" hidden>Quận/Huyện</option>';
+        var district = '<option value="Quận(Huyện)">Quận/Huyện</option>';
         $.each(result, function (key, item) {
           district +=
             '<option value="' +
@@ -422,28 +422,31 @@ $(document).ready(function () {
 
   $("body").on("click", ".titlePost", function (even) {
     var id = $(this).parent().find(".idPost").text();
-    alert(id);
+    /* alert(id); */
   });
 
   $("body").on("click", ".img-div", function (even) {
     var id = $(this).parent().find(".idPost").text();
-    alert(id);
+    /* alert(id); */
   });
 
-  $("body").on("click", ".favorite", function (even) {
+  /* $("body").on("click", ".favorite", function (even) {
     var id = $(this).parent().find(".idPost").text();
+    var icon = $(this).children('i');
     var tim;
     $.ajax({
       url: "module/function/click-button-like.php",
       type: "post",
-      dataType: "text",
+      dataType: "jss",
       data: {
         idpost: $(this).parent().find(".idPost").text(),
       },
       success: function (result) {
+        console.log(icon);
         if (result == "đã lưu") {
           tim = "đã lưu";
           alert(id + " " + tim);
+          
         } else if (result == "hủy lưu") {
           tim = "hủy lưu";
           alert(id + " " + tim);
@@ -461,8 +464,43 @@ $(document).ready(function () {
     } else {
       $(this).children("i").addClass("fas");
     }
-  });
+  }); */
+  $("body").on("click", ".favorite", function(even) {
+    var id = $(this).parent().find(".idPost").text();
+    var icon = $(this).children('i');
+    
+    var tim;
+    $.ajax({
+      url: "module/function/click-button-like.php",
+      type: "post",
+      dataType: "json",
+      data: {
+        idpost: $(this).parent().find(".idPost").text()
+      },
+      success: function (result) {
+        if(result['alert'] == "đã lưu") {
+          tim = "đã lưu";
+          icon.addClass('fas');
+        } else if(result['alert'] == "hủy lưu") {
+          tim = "hủy lưu";
+          icon.removeClass('fas');
+        } else if(result['alert'] == "chưa đăng nhập") {
+          alert("bạn cần đăng nhập để lưu bài đăng");
+        }
+      },
+      error: function(result) {
+        alert("lỗi lưu yêu thích");
+      }
+    });
+/* 
+    if ($(this).children("i").hasClass("fas")) {
+      $(this).children("i").removeClass("fas");
 
+    } else {
+      $(this).children("i").addClass("fas");
+    } */
+
+  });
   /*tìm kiếm*/
   $("body").on("click", "#submit" ,function (event) {
     pageNumber = 1;
@@ -494,7 +532,7 @@ $(document).ready(function () {
     var maxprice = $("#maxPrices").find(":selected").val();
 
     //in kết quả
-    alert( "load-post " + city + " " + district + " " + type_room + " " + minprice + " " + maxprice);
+    /* alert( "load-post " + city + " " + district + " " + type_room + " " + minprice + " " + maxprice); */
 
     $.ajax({
       url: "module/function/save-input-to-session.php",
@@ -550,7 +588,7 @@ $(document).ready(function () {
             $(".next").css("cursor", "not-allowed");
           }
         } else if(result == 0) {
-          alert("không có kết quả tìm kiếm nào phù hợp")
+          /* alert("không có kết quả tìm kiếm nào phù hợp") */
         }
       },
       error: function (result) {
@@ -577,7 +615,7 @@ $(document).ready(function () {
             $(".goPageTail").css("cursor", "not-allowed");
           }
         } else if(result == 0) {
-          alert("không có kết quả tìm kiếm nào phù hợp")
+          /* alert("không có kết quả tìm kiếm nào phù hợp"); */
         }
       },
       error: function (result) {
@@ -592,7 +630,7 @@ $(document).ready(function () {
   $("body").on("click", ".goPageHead" ,function (event) {
     pageNumber = $(".currPage").text();
     if (pageNumber == 1) {
-      alert("không có trang nào trước trang 1");
+      /* alert("không có trang nào trước trang 1"); */
       return false;
     } else {
       load_post_per_page(1);
@@ -603,7 +641,7 @@ $(document).ready(function () {
   $("body").on("click", ".previus" ,function (event) {
     pageNumber = parseInt($(".currPage").text());
     if (pageNumber == 1) {
-      alert("không có trang nào trước trang 1");
+      /* alert("không có trang nào trước trang 1"); */
       return false;
     } else {
       load_post_per_page(pageNumber - 1);
@@ -628,7 +666,7 @@ $(document).ready(function () {
             load_post_per_page(totalPage);
           }
         } else if(result == 0) {
-          alert("không có kết quả tìm kiếm nào phù hợp")
+          /* alert("không có kết quả tìm kiếm nào phù hợp"); */
         }
       },
       error: function (result) {
@@ -655,7 +693,7 @@ $(document).ready(function () {
             load_post_per_page(pageNumber + 1);
           }
         } else if(result == 0) {
-          alert("không có kết quả tìm kiếm nào phù hợp")
+          /* alert("không có kết quả tìm kiếm nào phù hợp"); */
         }
       },
       error: function (result) {
