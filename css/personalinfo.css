@@ -214,4 +214,25 @@ i.far.fa-heart {
 .change_info{
     margin-left: 35%;
     margin-right: 35%;
+    display: none;
+}
+
+input {
+  width: 100%;
+}
+.change_infor{
+  margin: 10px;
+  display: none;
+}
+
+.paging-bar {
+  height: 40px;
+}
+
+.paging-bar li:hover {
+  cursor: pointer;
+}
+
+.paging{
+  margin: 10px;
 }
