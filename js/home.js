@@ -5,7 +5,7 @@ function testExprisedPost() {
     type: "post",
     dataType: "text",
     data: {},
-    success: function (result) { 
+    success: function (result) {
       if(result == "ok") {
       }
     },
@@ -28,10 +28,10 @@ function load_new_post() {
       var loadNewPostHtml = `<label>Danh sách bài đăng mới nhất</label>
                               <div class="container">
                                 <div class="row">`;
-      
+
       $.each(result, function (key, item){
         item.gia_phong = convertPrice(item.gia_phong);
-        
+
         loadNewPostHtml += `<div class="col-12 col-xl-6 mt-4 d-flex baidang">
                               <!-- ảnh -->
                               <div class="img-div">
@@ -90,7 +90,7 @@ function load_favorite_post() {
       var loadFavoritePostHtml = `<label>Danh sách bài đăng được yêu thích nhất</label>
                               <div class="container">
                                 <div class="row">`;
-      
+
       $.each(result, function (key, item){
         item.gia_phong = convertPrice(item.gia_phong);
         if(key == 4) {
@@ -143,7 +143,7 @@ function load_favorite_post() {
     },
   });
 }
- 
+
 // hàm convert tiền về string
 function convertPrice(money) {
   let ans = "";
@@ -174,6 +174,15 @@ function convertPrice(money) {
   return ans;
 }
 $(document).ready(function () {
+  // load lại lựa chọn về mặc định
+  $("#city").find(":selected").val("Thành phố");
+  $("#district").find(":selected").val("Quận(Huyện)");
+  $("#minPrices").find(":selected").val("Tất cả");
+  $("#maxPrices").find(":selected").val("Tất cả");
+  $(".choose-room input[value='Phòng trọ']").prop("checked", false);
+  $(".choose-room input[value='Chung cư mini']").prop("checked", false);
+  $(".choose-room input[value='Nhà nguyên căn']").prop("checked", false);
+  $(".choose-room input[value='Chung cư nguyên căn']").prop("checked", false);
   // ajax lấy các tỉnh trên database
   $.ajax({
     url: "module/function/getprovince.php",
@@ -206,7 +215,7 @@ $(document).ready(function () {
         province: $(this).val(),
       },
       success: function (result) {
-        var district = '<option value="Quân(Huyện)" hidden>Quận/Huyện</option>';
+        var district = '<option value="Quận(Huyện)" hidden>Quận/Huyện</option>';
         $.each(result, function (key, item) {
           district +=
             '<option value="' +
@@ -264,7 +273,7 @@ $(document).ready(function () {
     } else if(minprice == "10") {
       var maxPirceHtml = `<option value="10">10 triệu</option>
                           <option value="20">20 triệu</option>`;
-                          
+
     } else if(minprice == "20") {
       var maxPirceHtml = `<option value="20">20 triệu</option>`;
     }
@@ -293,7 +302,7 @@ $(document).ready(function () {
         idpost: $(this).parent().find(".idPost").text(),
 
       },
-      success: function (result) { 
+      success: function (result) {
         if(result == "đã lưu") {
           tim = "đã lưu";
           alert(id + " " + tim);
@@ -311,11 +320,11 @@ $(document).ready(function () {
 
     if ($(this).children("i").hasClass("fas")) {
       $(this).children("i").removeClass("fas");
-      
+
     } else {
       $(this).children("i").addClass("fas");
-    } 
-    
+    }
+
   });
 
   /*tìm kiếm*/
@@ -352,7 +361,7 @@ $(document).ready(function () {
     );
 
     $.ajax({
-      url: "module/function/save-input-from-home.php",
+      url: "module/function/save-input-to-session.php",
       type: "post",
       dataType: "text",
       data: {
@@ -360,12 +369,13 @@ $(document).ready(function () {
         district: $("#district").find(":selected").val(),
         type_room: type_room,
         minprice: minprice,
-        maxprice: maxprice
+        maxprice: maxprice,
+        page: "1"
       },
       success: function (result) {
         if(result == "ok") {
           location.assign("./home-search.html");
-          
+
         }
       },
       error: function (result) {

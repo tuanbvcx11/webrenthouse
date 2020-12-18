@@ -7,7 +7,7 @@
 
     $result = array();
 
-    $stmt = $db->prepare("SELECT * FROM post WHERE status_post = '1' AND status_phong = '1' ORDER BY tg_duyet_bai DESC LIMIT 4");
+    $stmt = $db->prepare("SELECT * FROM post WHERE status_post = '1' AND status_phong = '1' ORDER BY id_post DESC LIMIT 4");
     $img = $db->prepare("SELECT * FROM img WHERE id_bai_viet = ? LIMIT 1");
     $stmt->execute();
 
