@@ -1,4 +1,6 @@
+<!-- khi bấm vào button trái tim thì sẽ kiểm tra rồi thêm hoặc xóa kết quả trên bảng yeu_thich  -->
 <?php
+
     session_start();
     header('Content-Type: text/html; charset=UTF-8');
     include_once("config.php");
