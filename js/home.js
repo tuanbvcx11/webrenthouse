@@ -295,7 +295,7 @@ $(document).ready(function () {
     var id = $(this).parent().find(".idPost").text();
     var tim;
     $.ajax({
-      url: "module/function/yeu-thich.php",
+      url: "module/function/click-button-like.php",
       type: "post",
       dataType: "text",
       data: {
