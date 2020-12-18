@@ -190,7 +190,7 @@ $(document).ready(function () {
     dataType: "json",
     data: {},
     success: function (result) {
-      var province = '<option value="Thành phố" hidden>Thành phố</option>';
+      var province = '<option value="Thành phố">Thành phố</option>';
       $.each(result, function (key, item) {
         province +=
           '<option value="' + item.name + '">' + item.name + "</option>";
@@ -202,7 +202,7 @@ $(document).ready(function () {
       alert("lỗi");
     },
   });
-
+  
   load_new_post();
   load_favorite_post();
   // khi chọn 1 tỉnh thì sẽ hiện các huyện của tỉnh đó
@@ -215,7 +215,7 @@ $(document).ready(function () {
         province: $(this).val(),
       },
       success: function (result) {
-        var district = '<option value="Quận(Huyện)" hidden>Quận/Huyện</option>';
+        var district = '<option value="Quận(Huyện)">Quận/Huyện</option>';
         $.each(result, function (key, item) {
           district +=
             '<option value="' +
@@ -291,25 +291,27 @@ $(document).ready(function () {
     alert(id);
   });
 
+  // sự kiện khi bấm vào tim
   $("body").on("click", ".favorite", function(even) {
     var id = $(this).parent().find(".idPost").text();
+    var icon = $(this).children('i');
+    
     var tim;
     $.ajax({
       url: "module/function/click-button-like.php",
       type: "post",
-      dataType: "text",
+      dataType: "json",
       data: {
-        idpost: $(this).parent().find(".idPost").text(),
-
+        idpost: $(this).parent().find(".idPost").text()
       },
       success: function (result) {
-        if(result == "đã lưu") {
+        if(result['alert'] == "đã lưu") {
           tim = "đã lưu";
-          alert(id + " " + tim);
-        } else if(result == "hủy lưu") {
+          icon.addClass('fas');
+        } else if(result['alert'] == "hủy lưu") {
           tim = "hủy lưu";
-          alert(id + " " + tim);
-        } else if(result == "chưa đăng nhập") {
+          icon.removeClass('fas');
+        } else if(result['alert'] == "chưa đăng nhập") {
           alert("bạn cần đăng nhập để lưu bài đăng");
         }
       },
@@ -317,13 +319,13 @@ $(document).ready(function () {
         alert("lỗi lưu yêu thích");
       }
     });
-
+/* 
     if ($(this).children("i").hasClass("fas")) {
       $(this).children("i").removeClass("fas");
 
     } else {
       $(this).children("i").addClass("fas");
-    }
+    } */
 
   });
 

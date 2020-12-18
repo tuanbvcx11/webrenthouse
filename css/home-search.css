@@ -119,9 +119,10 @@ label.label-choose-room {
   padding: 60px 120px 32px 120px;
 }
 
-span {
+.idPost{
   display: none;
 }
+
 
 .post-content label {
   font-size: 24px;

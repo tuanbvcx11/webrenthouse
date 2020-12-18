@@ -233,10 +233,8 @@ $(document).ready(function () {
     idPost = $(this).parent().parent().children().children(".idPost").text();
     indexPost = $(this).parent().parent().children().children("span").text();
     if ($(this).hasClass("detailButton")) {
-      alert(idPost);
       location.assign("./chi_tiet.html");
     } else if ($(this).hasClass("editButton")) {
-      alert(idPost);
       location.assign("./chinh_sua_bai_dang.html");
     } else if ($(this).hasClass("eraseButton")) {
       $("#eraseModal .modal-body").text(
@@ -253,7 +251,6 @@ $(document).ready(function () {
   // cập nhật thông báo lên database và xử lý ajax khi xác nhận xóa
   function updateErase(idPost, action) {
     action = "xoa";
-    alert(action + " " + idPost);
     // body...
     // gọi ajax để update idpost với action
     $.ajax({
@@ -282,7 +279,7 @@ $(document).ready(function () {
 
   //cập nhật thông báo khi điền vào input gia hạn, xử lý ajax xóa rồi đưa bài vào bảng chưa duyệt
   function updateGiahan(idPost, action, inputgiahan) {
-    alert(action + " " + idPost + " " + inputgiahan);
+   /*  alert(action + " " + idPost + " " + inputgiahan); */
     $.ajax({
       url: "module/function/giahan-post-host.php",
       type: "post",
