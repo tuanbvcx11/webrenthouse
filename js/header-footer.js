@@ -102,7 +102,7 @@ $(document).ready(function() {
         },
         error : function (result) {
             //alert("lỗi");
-        } 
+        }
     });
 
     $('.tuychon button').click(function(event) {
@@ -113,13 +113,25 @@ $(document).ready(function() {
     //hiển thi thông báo
     $('.thongbao').click(function(event) {
         /* Act on the event */
+        if ($(this).find('i').hasClass('far')) {
+            $(this).children('a').empty();
+            $(this).children('a').append('<i class="fas fa-bell"></i>')
+        } else {
+            $(this).children('a').empty();
+            $(this).children('a').append('<i class="far fa-bell"></i>')
+        }
         $('.list-thongbao').fadeToggle(200);
         load_thong_bao();
     });
 
-    $('.yeuthich').click(function(event){
-        location.assign("like.html");
+
+    $('.logo .col-4 img').click(function(event) {
+        /* Act on the event */
+        location.assign('home.html');
     });
 
+    $("body").on("click", ".list-thongbao .content-thongbao", function(){
+        alert($(this).children('.id_bai_viet').text());
+    });
     
 });
