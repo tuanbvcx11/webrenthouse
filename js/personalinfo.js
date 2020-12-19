@@ -12,9 +12,40 @@ var getUrlParameter = function getUrlParameter(sParam) {
         }
     }
 };
+
 var id = getUrlParameter('idUser');
 var page = 1;
 var count_post;
+
+// hàm convert tiền về string
+function convertPrice(money) {
+  let ans = "";
+  if (money >= 1000000000) {
+    let billions = parseInt(money / 1000000000);
+    ans += billions + " tỉ ";
+    let millions = parseInt((money - billions * 1000000000) / 1000000);
+    if (millions == 0) {
+      return ans;
+    }
+    ans += millions + " triệu ";
+    /* let thousands = parseInt((money - billions*1000000000 - millions*1000000)/1000);
+      ans += thousands + " nghìn"; */
+  } else if (money >= 1000000) {
+    let millions = parseInt(money / 1000000);
+    ans += millions + " triệu ";
+    let thousands = parseInt((money - millions * 1000000) / 1000);
+    if (thousands == 0) {
+      return ans;
+    }
+    ans += thousands + " nghìn";
+  } else if (money >= 1000) {
+    let thousands = parseInt(money / 1000);
+    ans += thousands + " nghìn";
+  } else {
+    return "số tiền nhỏ hơn 1000";
+  }
+  return ans;
+}
 var load_user = function load_user(){
   $.ajax({
     url : 'module/function/load_personalinfo.php',
@@ -24,6 +55,8 @@ var load_user = function load_user(){
       id : id
     },
     success : function(result){
+        $("#name").text(result["name"]);
+        $("#sdt").text(result["sdt"]);
         $(".ho_ten").text(result["name"]);
         $(".dien_thoai").text(result["sdt"]);
         $(".email").text(result["email"]);
@@ -81,7 +114,7 @@ var load_post = function load_post(){
             html += '<div class="d-flex address-div"><div class="mr-1 address-icon"><i class="fas fa-map-marker-alt"></i>';
             html += '</div><div class="addressPost">'+item.spe_add+', '+item.district+', '+item.province+'</div></div>';
             html += '<div class="d-flex Prices-div"><div class="mt-1 mr-1 Prices-icon"><i class="fas fa-coins"></i></div>';
-            html += '<div class="Prices">'+item.gia_phong+'</div></div>';
+            html += '<div class="Prices">'+convertPrice(item.gia_phong)+'</div></div>';
             html += '<div class="datePost">Ngày đăng: '+item.tg_dang_bai+'</div></div><div class="favorite">';
             if (item.fav == "chualuu"){
               html += '<i class="far fa-heart"></i></div></div>';
@@ -109,6 +142,10 @@ var phan_trang = function phan_trang(){
       success : function(result){
         var count = result;
         count_post = result;
+        if (count_post == 0){
+          $('.post_none').css("display","block");
+          $('.paging').css("display","none");
+        } else
         if (count_post > 1){
           if (page.toString() == "1"){
             $('.goPageHead').addClass('disabled');
@@ -284,9 +321,9 @@ $("body").on("click", ".img-div", function(){
     $('.infor').css("display","none");
   })
 
-$('#sdt').blur(function(event) {
+$('#sodt').blur(function(event) {
     var vnf_regex = /((09|03|07|08|05)+([0-9]{8})\b)/g;
-    var mobile = $('#sdt').val();
+    var mobile = $('#sodt').val();
     if(mobile !==''){
         if (vnf_regex.test(mobile) == false) 
         {
@@ -325,7 +362,7 @@ $('#sdt').blur(function(event) {
       dia_chi : dia_chi
     },
     success : function(result){
-      alert("thành công")
+      alert(result);
     },
 
     error : function(result){

@@ -166,8 +166,8 @@
             </div>
             <div class='content'>
               <div class='main'>
-                <h3 class='name'>Nguyễn Trung Thứ</h3>
-                <p class='front-motto text-center'>0912345678</p>
+                <p class='name' id="name" class="ho_ten">Nguyễn Trung Thứ</p>
+                <p class='front-motto text-center' class="dien_thoai" id="sdt">0912345678</p>
               </div>
             </div>
 
@@ -186,15 +186,7 @@
                                         </span>
                                     </span>
 
-                <!--số chứng minh nhân dân/ căn cước-->
-                                    <span class="flex_box">
-                                        <span class="mo_ta">
-                                            <p class="sub_title">CMND/CCCD:</p>
-                                        </span>
-                                        <span class="mo_ta">
-                                            <p class="chung_minh">012345678901</p>
-                                        </span>
-                                    </span>
+        
 
                 <!--điện thoại-->
                                     <span class="flex_box">
@@ -231,11 +223,66 @@
                     <button class="btn btn-primary change_info">Chỉnh sửa trang cá nhân</button>
                 </div>
               </div>
+
+              <div class="change_infor">
+                <div class="dan_le">
+                            
+                <!--tên-->
+                                    <span class="flex_box">
+                                        <span class="mo_ta">
+                                            <p class="sub_title">Họ tên:</p>
+                                        </span>
+                                        <span class="mo_ta">
+                                            <input type="text" class="inp_name">
+                                        </span>
+                                    </span>
+
+        
+
+                <!--điện thoại-->
+                                    <span class="flex_box">
+                                        <span class="mo_ta">
+                                            <p class="sub_title">Số điện thoại:</p>
+                                        </span>
+                                        <span class="mo_ta">
+                                            <input type="text" class="inp_sdt" name="sdt" id="sodt">
+                                        </span>
+                                    </span>
+
+                <!--email-->
+                                    <span class="flex_box">
+                                        <span class="mo_ta">
+                                            <p class="sub_title">Email:</p>
+                                        </span>
+                                        <span class="mo_ta">
+                                            <input type="text" class="inp_email" id="email">
+                                        </span>
+                                    </span>
+
+                <!--địa chỉ-->                    
+                                    <span class="flex_box">
+                                        <span class="mo_ta">
+                                            <p class="sub_title">Địa chỉ thường trú:</p>
+                                        </span>
+                                        <span class="mo_ta">
+                                            <input type="text" class="inp_dia_chi">
+                                        </span>
+                                    </span>
+
+                </div>
+                <div class="thay_doi_inf">
+                    <button class="btn btn-primary change_submit">Xác nhận</button>
+                    <button class="btn btn-primary change_exit">Hủy</button>
+                </div>
+              </div>
             </div>
 
 
         <div class="container post-content">
         <label>Danh sách bài đăng của chủ trọ</label>
+        <div class="post_none">
+          Bạn chưa lưu bài viết nào!
+        </div>
         <div class="list-table">
           <div class="d-flex baidang">
             <!-- ảnh -->

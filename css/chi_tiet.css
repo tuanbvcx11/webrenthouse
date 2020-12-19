@@ -386,3 +386,13 @@ p {
 .trang_thai_bai_dang{
   display: none;
 }
+
+#rectangle .row p{
+  text-align: center;
+}
+.id_tin{
+  margin-left: 45%;
+}
+.ngay_dang, .ngay_hethan{
+  margin-left: 30%; 
+}

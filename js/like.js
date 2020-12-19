@@ -1,6 +1,36 @@
 var page = 1;
 var count_post;
 
+
+// hàm convert tiền về string
+function convertPrice(money) {
+  let ans = "";
+  if (money >= 1000000000) {
+    let billions = parseInt(money / 1000000000);
+    ans += billions + " tỉ ";
+    let millions = parseInt((money - billions * 1000000000) / 1000000);
+    if (millions == 0) {
+      return ans;
+    }
+    ans += millions + " triệu ";
+    /* let thousands = parseInt((money - billions*1000000000 - millions*1000000)/1000);
+      ans += thousands + " nghìn"; */
+  } else if (money >= 1000000) {
+    let millions = parseInt(money / 1000000);
+    ans += millions + " triệu ";
+    let thousands = parseInt((money - millions * 1000000) / 1000);
+    if (thousands == 0) {
+      return ans;
+    }
+    ans += thousands + " nghìn";
+  } else if (money >= 1000) {
+    let thousands = parseInt(money / 1000);
+    ans += thousands + " nghìn";
+  } else {
+    return "số tiền nhỏ hơn 1000";
+  }
+  return ans;
+}
 var load_post = function load_post(){
 	$.ajax({
 	    url : 'module/function/like_load_post.php',
@@ -24,7 +54,7 @@ var load_post = function load_post(){
             html += item.tieu_de+'</a><div class="d-flex address-div"><div class="mr-1 address-icon"><i class="fas fa-map-marker-alt"></i>';
             html +=	'</div><div class="addressPost">'+item.spe_add+', '+item.district+', '+item.province+'</div></div>';
             html +=	'<div class="d-flex Prices-div"><div class="mt-1 mr-1 Prices-icon"><i class="fas fa-coins"></i>';
-            html += '</div><div class="Prices">'+item.gia_phong+'</div></div><div class="datePost">Ngày đăng: '+item.tg_dang_bai+'</div></div>';
+            html += '</div><div class="Prices">'+convertPrice(item.gia_phong)+'</div></div><div class="datePost">Ngày đăng: '+item.tg_dang_bai+'</div></div>';
             html +=	'<div class="dislike"><button class="btn btn-primary">Xóa</button></div></div>';
            
           });

@@ -179,7 +179,7 @@ var get_data = function get_data(){
             $(".tieu_de").text(result["tieu-de"]);
             $(".dia_chi").text(result["spe-add"]+", "+result["district"]+", "+result["province"]);
             $(".id_tin").text(result["id-post"]);
-            $(".gia").text(result["gia"]);
+            $(".gia").text(convertPrice(result["gia"]));
             $('.luotxem').text(result["luot-xem"]);
             if (result["status-phong"] == 1){
               $(".inf_trangthai").text("Còn phòng");
@@ -198,7 +198,7 @@ var get_data = function get_data(){
             $(".dieu_hoa").text(result["dieu-hoa"]);
             $(".ban_cong").text(result["ban-cong"]);
             $(".tien_ich_khac").text(result["khac"]);
-            $(".mo_ta_chi_tiet").text(result["mo-ta"]);
+            $(".mo_ta_chi_tiet").text(result["mo-ta"].replace("<br/>","\n"));
             $(".idOwner").text(result["id-host"]);
             $(".ten_host").text(result["ten-host"]);
             $(".sdt_host").text(result["sdt-host"]);
@@ -268,34 +268,35 @@ var yeu_thich = function yeu_thich(){
       }
     });
 }
-/*convertPrice(money) {
-    let ans = "";
-    if(money >= 1000000000) {
-      let billions = parseInt(money/1000000000);
-      ans += billions + " tỉ ";
-      let millions = parseInt((money - billions*1000000000)/1000000);
-      if(millions == 0) {
-        return ans;
-      }
-      ans += millions + " triệu ";
-      /* let thousands = parseInt((money - billions*1000000000 - millions*1000000)/1000);
-      ans += thousands + " nghìn"; */
-   /* } else if(money >= 1000000) {
-      let millions = parseInt(money/1000000);
-      ans += millions + " triệu ";
-      let thousands = parseInt((money - millions*1000000)/1000);
-      if(thousands == 0) {
-        return ans;
-      }
-      ans += thousands + " nghìn";
-    } else if(money >= 1000) {
-      let thousands = parseInt(money/1000);
-      ans += thousands + " nghìn";
-    } else {
-      return "số tiền nhỏ hơn 1000";
+// hàm convert tiền về string
+function convertPrice(money) {
+  let ans = "";
+  if (money >= 1000000000) {
+    let billions = parseInt(money / 1000000000);
+    ans += billions + " tỉ ";
+    let millions = parseInt((money - billions * 1000000000) / 1000000);
+    if (millions == 0) {
+      return ans;
     }
-    return ans;
-  }*/
+    ans += millions + " triệu ";
+    /* let thousands = parseInt((money - billions*1000000000 - millions*1000000)/1000);
+      ans += thousands + " nghìn"; */
+  } else if (money >= 1000000) {
+    let millions = parseInt(money / 1000000);
+    ans += millions + " triệu ";
+    let thousands = parseInt((money - millions * 1000000) / 1000);
+    if (thousands == 0) {
+      return ans;
+    }
+    ans += thousands + " nghìn";
+  } else if (money >= 1000) {
+    let thousands = parseInt(money / 1000);
+    ans += thousands + " nghìn";
+  } else {
+    return "số tiền nhỏ hơn 1000";
+  }
+  return ans;
+}
 $(document).ready(function() {
     
     //lấy dữ liệu
@@ -506,6 +507,7 @@ var get_luubai = function get_luubai(){
         success : function (result)
         {
             alert("Cảm ơn bạn đã đánh giá!");
+            star_avg();
 
         },
         error : function (result){}
@@ -520,9 +522,11 @@ var get_luubai = function get_luubai(){
   $('#submit_cmt').click(function(event){
     var cmt = $('#comment').val();
     var users = $('.ten_user:last').text();
-    if (cmt != "")
+    
     $('.binhluan').scrollTop($(document).height(),1);
     $('#comment').val('');
+    if (cmt.trim() != ""){
+
               $.ajax({
                   url : 'module/function/comment.php',
                   type : 'post',
@@ -541,6 +545,7 @@ var get_luubai = function get_luubai(){
                   error : function (result){}
                   
               });
+    }          
 
   });
 
@@ -593,7 +598,7 @@ var get_luubai = function get_luubai(){
 
 
 /*xác nhận báo cáo bài viết*/
-var report = function report(){
+
   $('#submit_report').click(function(event){
   var id = $('.id_tin').text();
   var content = $('#inp_report').val();
@@ -615,7 +620,7 @@ var report = function report(){
               });
   
 });
-}
+
 
 
 /*duyệt bài viết*/
@@ -657,6 +662,7 @@ $('.xoa').click(function(event){
                   success : function (result)
                   {
                       alert("thành công");
+                      location.assign("home.html");
                   },
                   error : function (result){}
                   

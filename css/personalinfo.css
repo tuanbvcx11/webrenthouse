@@ -205,6 +205,10 @@ i.far.fa-heart {
     margin: auto;
     font-size: 20px;
 }
+.change_infor{
+  margin-left: 20%;
+  margin-right: 20%;
+}
 @media (max-width: 991px) {
   .infor{
     width: 100%;
@@ -235,4 +239,15 @@ input {
 
 .paging{
   margin: 10px;
+}
+
+.thay_doi_inf{
+    display: inline-block;
+    margin-left: 35%;
+    margin-right: 35%;
+}
+.post_none{
+  text-align : center;
+  font-size : 30px;
+  display: none;
 }
