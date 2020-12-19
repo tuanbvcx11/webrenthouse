@@ -102,7 +102,7 @@ $(document).ready(function() {
         },
         error : function (result) {
             //alert("lỗi");
-        }
+        } 
     });
 
     $('.tuychon button').click(function(event) {
@@ -115,6 +115,10 @@ $(document).ready(function() {
         /* Act on the event */
         $('.list-thongbao').fadeToggle(200);
         load_thong_bao();
+    });
+
+    $('.yeuthich').click(function(event){
+        location.assign("like.html");
     });
 
     
