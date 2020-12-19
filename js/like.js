@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 var page = 1;
 var count_post;
 
@@ -157,9 +156,25 @@ $("body").on("click", ".img-div", function(){
             location.assign("chi_tiet.html?idpost=" + id);
         });
 
-=======
->>>>>>> parent of 14cfe38... 19/12
 $('.dislike').click(function(event){
 	var id = $(this).parent().find('.idPost').text();
 	alert(id);
 });
+
+$("body").on("click", ".dislike", function(){
+            var id = $(this).parent().find(".idPost").text();
+            $.ajax({
+			    url : 'module/function/like_delete_post.php',
+			    type : 'post',
+			    dataType : 'text',
+			    data : {
+			    	id : id
+			    },
+
+				success : function (result)
+				{
+					load_post();
+			    },
+			    error : function (result){ alert("lỗi12");}
+		    });
+        });
