@@ -1,6 +1,6 @@
 <?php 
 
-	// lấy các tài khoản chưa được duyệt
+	// lấy danh sách các chat với các tài khoản
 	header('Content-Type: text/html; charset=UTF-8');
     include_once("config.php");
 

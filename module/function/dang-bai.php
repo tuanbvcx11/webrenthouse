@@ -56,10 +56,19 @@
 
 
     	// lấy hết được r thì insert vào fbsql_database ở đây
-    	$sql = "INSERT INTO post (id_user, province, district, spe_add, tieu_de, loai_phong, gia_phong, dien_tich, gia_dien, gia_nuoc, so_phong, phong_tam, chung_chu, nong_lanh, bep, dieu_hoa, ban_cong, tien_ich_khac, mo_ta, tg_hien_thi, tg_dang_bai, status_phong, status_post) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-		$stmt= $db->prepare($sql);
-		$stmt->execute([$iduser, $province, $district, $spe_add, $tieu_de, $loai_phong, $gia_phong, $dien_tich, $gia_dien, $gia_nuoc, $so_luong_phong, $bathroom, $chung_chu, $nong_lanh, $kitchen, $dieu_hoa, $ban_cong, $tien_ich_khac, $mo_ta, $tg_hienthi, $tg_dang_bai, $status_phong, $status_post]);
+        if ($iduser != 1) {
+            $sql = "INSERT INTO post (id_user, province, district, spe_add, tieu_de, loai_phong, gia_phong, dien_tich, gia_dien, gia_nuoc, so_phong, phong_tam, chung_chu, nong_lanh, bep, dieu_hoa, ban_cong, tien_ich_khac, mo_ta, tg_hien_thi, tg_dang_bai, status_phong, status_post) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            $stmt= $db->prepare($sql);
+            $stmt->execute([$iduser, $province, $district, $spe_add, $tieu_de, $loai_phong, $gia_phong, $dien_tich, $gia_dien, $gia_nuoc, $so_luong_phong, $bathroom, $chung_chu, $nong_lanh, $kitchen, $dieu_hoa, $ban_cong, $tien_ich_khac, $mo_ta, $tg_hienthi, $tg_dang_bai, $status_phong, $status_post]);
 
+        } else {
+            $tg_duyet_bai = date('Y-m-d');
+            $sql = "INSERT INTO post (id_user, province, district, spe_add, tieu_de, loai_phong, gia_phong, dien_tich, gia_dien, gia_nuoc, so_phong, phong_tam, chung_chu, nong_lanh, bep, dieu_hoa, ban_cong, tien_ich_khac, mo_ta, tg_hien_thi, tg_dang_bai, tg_duyet_bai, status_phong, status_post) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+            $stmt= $db->prepare($sql);
+            $stmt->execute([$iduser, $province, $district, $spe_add, $tieu_de, $loai_phong, $gia_phong, $dien_tich, $gia_dien, $gia_nuoc, $so_luong_phong, $bathroom, $chung_chu, $nong_lanh, $kitchen, $dieu_hoa, $ban_cong, $tien_ich_khac, $mo_ta, $tg_hienthi, $tg_dang_bai, $tg_duyet_bai, $status_phong, $status_post]);
+        }
+    	
+		
         
 
 

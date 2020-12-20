@@ -10,7 +10,7 @@ function uppper(str) {
 }
 
 //kiểm tra số điện thoại
-$('#sdt').blur(function(event) {
+$('#sdt').change(function(event) {
     var vnf_regex = /((09|03|07|08|05)+([0-9]{8})\b)/g;
     var mobile = $('#sdt').val();
     if(mobile !==''){
@@ -27,15 +27,11 @@ $('#sdt').blur(function(event) {
 
 
 // kiểm tra email
-$('#email').blur(function(event) {
-    /* Act on the event */
-    var email = $(this).val();
-    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/; 
-    if (!filter.test(email)) { 
-         alert('Hay nhap dia chi email hop le.\nExample@gmail.com');
-         this.focus();
-    }
-});
+// $('#email').blur(function(event) {
+//      Act on the event 
+//     var email = $(this).val();
+    
+// });
 
 // kiểm tra nhập lại mật khẩu
 $('#repassword').change(function(event) {
@@ -54,6 +50,12 @@ $('#submit').click(function(event) {
 
     //kiểm tra nhập đầy đủ thông tin
     var baoloi = "";
+    email = $('#email').val();
+    var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/; 
+    if (!filter.test(email)) { 
+        baoloi = 'Hay nhap dia chi email hop le.\nExample@gmail.com';
+    }
+
     if ($('#hoten').val() == "") {
         baoloi = "vui lòng nhập đầy đủ thông tin";
     }

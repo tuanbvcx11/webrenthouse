@@ -46,11 +46,11 @@
                         
                         <ul class="nav">
                             <li class="nav-item thongbao">
-                                <a class="nav-link" title="thông báo"><i class="fas fa-bell"></i>(2)</a>
+                                <a class="nav-link" title="thông báo"><i class="far fa-bell"></i></a>
                             </li>
                             <div class="tuychonchinh">
                                 <li class="nav-item yeuthich">
-                                    <a class="nav-link" href="" title="yêu thích"><i class="fas fa-heart"></i>(3)</a>
+                                    <a class="nav-link" href="like.html" title="yêu thích"><i class="far fa-heart"></i><span id="total-like">4</span></a>
                                 </li>
                             </div>
     
@@ -59,10 +59,10 @@
                             </li>
                             <li class="nav-item tuychon">
                                 <div class="dropdown">
-                                    <button class="navbar-toggler" data-toggle="collapse" data-target="#tuychon" aria-expanded="false" aria-controls="tuychon">
-                                        <span class="navbar-toggler-icon">
-                                            
-                                        </span>
+                                    <button class="navbar-toggler"  data-toggle="collapse" data-target="#tuychon" aria-expanded="false" aria-controls="tuychon">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
                                     </button>
                                 </div>  
                             </li>
@@ -75,11 +75,11 @@
         <div class="containers collapse" id="tuychon">
             <div class="list-group entity">
                 <span class="tuychonphu">
-                    <a href="#" class="list-group-item list-group-item-action yeuthich">Yêu thích</a>
+                    <a href="like.html" class="list-group-item list-group-item-action yeuthich">Yêu thích</a>
                 </span>
-                <a href="#" class="list-group-item list-group-item-action dangbai">Đăng bài</a>
-                <a href="#" class="list-group-item list-group-item-action list-posted">Danh sách bài đăng</a>
-                <a href="#" class="list-group-item list-group-item-action host-chat">Chat với admin</a>
+                <a href="post_bai_cho_thue_phong.html" class="list-group-item list-group-item-action dangbai">Đăng bài</a>
+                <a href="danh_sach_bai_dang.html" class="list-group-item list-group-item-action list-posted">Danh sách bài đăng</a>
+                <a href="host-chat.html" class="list-group-item list-group-item-action host-chat">Chat với admin</a>
                 <a href="#" class="list-group-item list-group-item-action info-me">Thông tin cá nhân</a>
                 <a href="thong-ke.html" class="list-group-item list-group-item-action toadmin">Admin</a>
                 
@@ -127,6 +127,8 @@
 
                 <h2>Thống kê dữ liệu</h2><hr>
 
+                
+
                 <div class="row container-total d-flex">
                     <div class="total">
                         Số lượng bài viết
@@ -142,13 +144,79 @@
                     </div>
                 </div><hr>
 
-                <div class="viewpost">
-                    <h4>Bài viết được xem nhiều nhất</h4>
+                <div class="chart-container">
+
+                    <div class="chart">
+                        <canvas id="myChart" width="400" height="300"></canvas>
+                    </div>
+                    <div class="chart">
+                        <canvas id="myChart1" width="400" height="300"></canvas>
+                    </div>
                 </div><hr>
 
-                <div class="likepost">
-                    <h4>Bài viết được yêu thích nhiều nhất</h4>
-                </div><hr>
+                <div class="host-post">
+                    <div class="maxhost">
+                        <h4>Chủ trọ nhiều bài đăng nhất</h4>
+
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th id="mname">Tên chủ trọ</th>
+                                    <th id="musername">Tên tài khoản</th>
+                                    <th id="mtotalpost">Số bài viết</th>
+                                </tr>
+                            </thead>
+                            <tbody class="bodypost">
+                                <tr>
+                                    <td>Lê Minh Tuấn</td>
+                                    <td>tuancules</td>
+                                    <td>100</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <!-- <table class="table table-bordered table-host">
+                            <thead>
+                              <tr>
+                                <th id="mname">Tên chủ trọ</th>
+                                <th id="musername">Tên tài khoản</th>
+                                <th id="totalpost">Số bài viết</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td class="mname">John</td>
+                                <td class="musername">Doe</td>
+                                <td class="totalpost">john@example.com</td>
+                              </tr>
+                            </tbody>
+                          </table> -->
+                    </div>
+                    <div class="likepost">
+                        <h4>Bài viết được yêu thích nhiều nhất</h4>
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                              <tr>
+                                <th id="namepost">Tên chủ trọ</th>
+                                <th id="titlepost">Tiêu đề</th>
+                                <th id="pricepost">Giá tiền</th>
+                                <th id="totallike">lượt thích</th>
+                              </tr>
+                            </thead>
+                            <tbody class="bodypost" >
+                              <tr>
+                                <td >John</td>
+                                <td >Doe</td>
+                                <td>4000000</td>
+                                <td>50</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                    </div>
+                </div>
+                
+
+                <hr>
 
                 <div class="countpost">
                     <h4>Số lượng bài viết trong 1 khoảng thời gian</h4>
@@ -172,12 +240,7 @@
 
                 </div><hr>
 
-                <div class="chart-container">
-
-                    <div class="chart">
-                        <canvas id="myChart" width="400" height="250"></canvas>
-                    </div>
-                </div>
+                
 
                 
                 

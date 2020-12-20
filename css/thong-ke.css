@@ -27,6 +27,56 @@ hr {
 	margin-bottom: 20px;
 }
 
+.host-post {
+	display: flex;
+}
+
+.host-post h4 {
+	margin-bottom: 25px
+}
+
+.maxhost {
+	width: 40%;
+	margin-right: 5%;
+}
+
+.likepost {
+	width: 55%;
+}
+
+
+
+/*#hoten {width: 13%;}
+
+#id {width: 3%}
+
+#time-live {width: 10%;}
+
+#time {width: 13%;}*/
+
+table {
+	text-align: center;
+}
+
+#mname, #musername {
+	width: 35%;
+}
+#mtotalpost {
+	width: 30%;
+}
+
+#namepost {
+	width: 25%
+}
+
+#pricepost {
+	width: 15%;
+}
+
+#totallike {
+	width: 17%
+}
+
 .countpost .input-group {
 	margin-top: 15px;
 	margin-bottom: 15px;
@@ -44,10 +94,21 @@ hr {
 	margin-left: 10px;
 }
 
+.chart-container {
+	display: flex;
+}
+
 .chart-container .chart {
 	position: relative;
-	width: 45vw;
 	margin: auto;
+}
+
+.chart-container .chart:first-child {
+	width: 55%;
+}
+
+.chart-container .chart:n-child(2) {
+	width: 45%;
 }
 
 @media screen and (max-width: 900px) {
@@ -58,4 +119,31 @@ hr {
 	.total {
 		margin-bottom: 20px;
 	}
+
+	.chart-container {
+		flex-direction: column;
+	}
+
+	.chart-container .chart {
+		width: 80%;
+	}
+
+}
+
+@media screen and (max-width: 1020px) {
+	.host-post {
+		flex-direction: column;
+
+	}
+
+	.maxhost {
+		width: 100%;
+		margin-right: 0%;
+		margin-bottom: 20px
+	}
+
+	.likepost {
+		width: 100%;
+	}
+
 }
