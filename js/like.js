@@ -71,6 +71,25 @@ var load_post = function load_post(){
     });
 }
 
+var check_login = function check_login(){
+  $.ajax({
+    url : 'module/function/checkss-header.php',
+    type : 'post',
+    dataType : 'text',
+    data : {
+    },
+    success : function(result){
+        if (result == "nologin"){
+          location.assign("home.html");
+        }
+    },
+
+    error : function(result){
+      alert("lỗi5");
+    }
+  });
+}
+
 var phan_trang = function phan_trang(){
   $.ajax({
       url : 'module/function/like_count_post.php',
@@ -142,7 +161,7 @@ var phan_trang = function phan_trang(){
 $(document).ready(function(){
 	load_post();
 	phan_trang();
-
+  check_login();
 });
 
 $("body").on("click", ".paging .paging-bar .next", function(){
@@ -203,8 +222,9 @@ $("body").on("click", ".dislike", function(){
 
 				success : function (result)
 				{
-					load_post();
+					
 			    },
 			    error : function (result){ alert("lỗi12");}
 		    });
+            load_post();
         });

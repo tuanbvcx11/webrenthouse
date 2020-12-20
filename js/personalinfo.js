@@ -204,12 +204,54 @@ var phan_trang = function phan_trang(){
 
 }
 
+var check_guest = function check_guest(){
+  $.ajax({
+    url : 'module/function/check_guest_info.php',
+    type : 'post',
+    dataType : 'text',
+    data : {
+      id : id
+    },
+    success : function(result){
+        if (result == "guest"){
+          $('.post-content').css("display","none");
+        }
+    },
+
+    error : function(result){
+      alert("lỗi5");
+    }
+  });
+}
+
+var check_guest = function check_guest(){
+  $.ajax({
+    url : 'module/function/check_status_info.php',
+    type : 'post',
+    dataType : 'text',
+    data : {
+      id : id
+    },
+    success : function(result){
+        if (result == "chuaduyet"){
+          location.assign("home.html");
+        }
+    },
+
+    error : function(result){
+      alert("lỗi5");
+    }
+  });
+}
 $(document).ready(function(){
   load_user();
   check_user();
+  check_guest();
   load_post();
   phan_trang();
+
 });
+
 
 $("body").on("click", ".paging .paging-bar .next", function(){
             page = page + 1;
