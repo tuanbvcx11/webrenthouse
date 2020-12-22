@@ -396,3 +396,7 @@ p {
 .ngay_dang, .ngay_hethan{
   margin-left: 30%; 
 }
+
+.modal .modal-dialog{
+           transition: opacity 0.5s linear;
+ }

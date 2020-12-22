@@ -7,7 +7,7 @@
     $result = '';
 
     //$stmt = $db->prepare("SELECT * FROM post WHERE id_post = '$id'");
-    $stmt = $db->prepare("SELECT COUNT(id_post) AS total FROM post WHERE id_user = ?");
+    $stmt = $db->prepare("SELECT COUNT(id_post) AS total FROM post WHERE id_user = ? AND status_post = '1'");
     //SELECT * FROM post join user on post.id_user = user.id_user WHERE id_post = '$id'
     $stmt->execute([$id]);
     $count = $stmt->rowCount();
