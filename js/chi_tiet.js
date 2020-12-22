@@ -16,7 +16,7 @@ var idpost = getUrlParameter('idpost');
 var status_post = 2;
 var today = new Date();
 var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-
+var user_login = "NotOwner";
 //hàm chuyển ngày thành định dạng dd/mm/yyyy
 function convertDate (str) {
     var res = str.split('-');
@@ -184,7 +184,8 @@ var get_data = function get_data(){
         },
 
         success : function (result)
-        {
+        { 
+            if ( result["tieu-de"] != null){
             $(".tieu_de").text(result["tieu-de"]);
             $(".dia_chi").text(result["spe-add"]+", "+result["district"]+", "+result["province"]);
             $(".id_tin").text(result["id-post"]);
@@ -228,7 +229,9 @@ var get_data = function get_data(){
             if (result["status-post"] == 0){
               $("#validateButton").css("display","none");
             } 
-            
+            } else {
+              location.assign("home.html");
+            }
 
         },
         error : function (result) {
@@ -248,12 +251,13 @@ var star_avg = function star_avg(){
       },
       
       success : function(result){
-        $('.sao_chung').text(result["star-avg"]+"/5.0 sao");
+        if (result["star-avg"] != null) 
+          $('.sao_chung').text(result["star-avg"]+"/5.0 sao");
 
       },
 
       error : function(result){
-        alert("lỗi5");
+        alert("lỗi588");
       }
     });
 }
@@ -377,7 +381,7 @@ var get_rateStar = function get_rateStar(){
 
 
 
-    
+//kiểm tra vai trò người đăng nhập   
 var check_user = function check_user(){
   $.ajax({
         url : 'module/function/chi_tiet.php',
@@ -405,6 +409,7 @@ var check_user = function check_user(){
                 }
                 if (result["id-user"] == id_host){
                   $('.owner').css("display","block");
+                  user_login = "owner";
                 }
               },
 
@@ -456,27 +461,30 @@ var get_luubai = function get_luubai(){
         success : function(result){
           var status_user = result;
            $.ajax({
-        url : 'module/function/chi_tiet.php',
-        type : 'post',
-        dataType : 'json',
-        data : {
-          id : idpost
-        },
+            url : 'module/function/chi_tiet.php',
+            type : 'post',
+            dataType : 'json',
+            data : {
+              id : idpost
+            },
 
-        success : function (result)
-        {
-           
-            $(".trang_thai_bai_dang").text(result["status-post"]);
-            status_post = result["status-post"];
-            if ((status_user == "nologin" || status_user == "guest" ) && (status_post == '0' || status_post == '-1') ){
-            location.assign("home.html");
-          } 
-        },
-        error : function (result) {
-            alert("lỗi1");
-        }
+            success : function (result)
+            {
+               
+                $(".trang_thai_bai_dang").text(result["status-post"]);
+                status_post = result["status-post"];
+                if ((status_user == "nologin" || status_user == "guest" ) && (status_post == '0' || status_post == '-1') ){
+                location.assign("home.html");
+                }
+                if ((user_login == "NotOwner") && (status_post == '0' || status_post == '-1') ){
+                location.assign("home.html");
+                } 
+            },
+            error : function (result) {
+                alert("lỗi1");
+            }
             
-    });
+          });
           
           
           if (result == "nologin"){
