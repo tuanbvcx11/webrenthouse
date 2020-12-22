@@ -26,6 +26,11 @@ function convertDate (str) {
     return day + '-' + month + '-' + year;
   }
 
+// hàm viết hoa chữ cái đầu
+function jsUcfirst(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 //load bình luận
 var get_comment = function get_Comment(){
   $.ajax({
@@ -186,8 +191,8 @@ var get_data = function get_data(){
         success : function (result)
         { 
             if ( result["tieu-de"] != null){
-            $(".tieu_de").text(result["tieu-de"]);
-            $(".dia_chi").text(result["spe-add"]+", "+result["district"]+", "+result["province"]);
+            $(".tieu_de").text(jsUcfirst(result["tieu-de"]));
+            $(".dia_chi").text(jsUcfirst(result["spe-add"])+", "+jsUcfirst(result["district"])+", "+jsUcfirst(result["province"]));
             $(".id_tin").text(result["id-post"]);
             $(".gia").text(convertPrice(result["gia"]));
             $('.luotxem').text(result["luot-xem"]);
@@ -196,23 +201,23 @@ var get_data = function get_data(){
             } else{
               $(".inf_trangthai").text("Hết phòng");
             }
-            $(".loai_phong").text(result["loai-phong"]);
+            $(".loai_phong").text(jsUcfirst(result["loai-phong"]));
             $(".so_phong").text(result["so-phong"]);
             $(".dientich").text(result["dien-tich"]+"m2");
-            $(".chung_chu").text(result["chung-chu"]);
+            $(".chung_chu").text(jsUcfirst(result["chung-chu"]));
             $(".gia_dien").text(result["gia-dien"] + " VND/số");
             $(".gia_nuoc").text(result["gia-nuoc"] + " VND/khối");
-            $(".nong_lanh").text(result["nong-lanh"]);
-            $(".phong_tam").text(result["phong-tam"]);
-            $(".phong_bep").text(result["phong-bep"]);
-            $(".dieu_hoa").text(result["dieu-hoa"]);
-            $(".ban_cong").text(result["ban-cong"]);
-            $(".tien_ich_khac").text(result["khac"]);
+            $(".nong_lanh").text(jsUcfirst(result["nong-lanh"]));
+            $(".phong_tam").text(jsUcfirst(result["phong-tam"]));
+            $(".phong_bep").text(jsUcfirst(result["phong-bep"]));
+            $(".dieu_hoa").text(jsUcfirst(result["dieu-hoa"]));
+            $(".ban_cong").text(jsUcfirst(result["ban-cong"]));
+            $(".tien_ich_khac").text(jsUcfirst(result["khac"]));
             $(".mo_ta_chi_tiet").html(result["mo-ta"]);
             $(".idOwner").text(result["id-host"]);
             $(".ten_host").text(result["ten-host"]);
             $(".sdt_host").text(result["sdt-host"]);
-            $(".dia_chi_host").text(result["dia-chi-host"]);
+            $(".dia_chi_host").text(jsUcfirst(result["dia-chi-host"]));
             $(".ngay_dang").text(convertDate(result["ngay-dang"]));
             $(".ngay_hethan").text(convertDate(result["ngay-hethan"]));
             //$(".id_user").text(result["id-user"]);
