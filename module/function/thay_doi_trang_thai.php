@@ -8,9 +8,9 @@
     $result = '';
 
     //$stmt = $db->prepare("SELECT * FROM post WHERE id_post = '$id'");
-    $stmt = $db->prepare("UPDATE post SET status_phong = '1' WHERE id_post = ?");
+    $stmt = $db->prepare("UPDATE post SET status_phong = ? WHERE id_post = ?");
     //SELECT * FROM post join user on post.id_user = user.id_user WHERE id_post = '$id'
-    $stmt->execute([$id]);
+    $stmt->execute([$trang_thai,$id]);
     $count = $stmt->rowCount();
 
 	

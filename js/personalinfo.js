@@ -55,6 +55,7 @@ var load_user = function load_user(){
       id : id
     },
     success : function(result){
+      if (result["name"] != null){
         $("#name").text(result["name"]);
         $("#sdt").text(result["sdt"]);
         $(".ho_ten").text(result["name"]);
@@ -65,6 +66,9 @@ var load_user = function load_user(){
         $(".inp_sdt").val(result["sdt"]);
         $(".inp_email").val(result["email"]);
         $(".inp_dia_chi").val(result["dia-chi"]);
+      } else {
+        location.assign("home.html");
+      }
     },
 
     error : function(result){

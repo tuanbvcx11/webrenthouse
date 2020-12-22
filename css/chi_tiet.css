@@ -1,4 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
 * {
+  font-family: 'Open Sans', sans-serif;
   box-sizing:border-box
 }
 h2 {
@@ -105,8 +107,12 @@ body{
     top: 20px;
     box-shadow: 0 2px 7px 0 rgba(0,0,0,.3);
     border-radius: 5px;
+    font-size: 15px;
 }
 
+#rectangle_right .card-body > *{
+  margin-bottom: 5px;
+}
 .dan_le{
   margin-bottom: 10px;
   margin-top: 10px;
@@ -362,7 +368,6 @@ body{
   font-size: 30px;
   color: #009177;
   font-weight: 700;
-  text-decoration-line: underline;
 }
 i.fa.fa-arrow-circle-right {
     margin-top: 11px;
@@ -396,3 +401,7 @@ p {
 .ngay_dang, .ngay_hethan{
   margin-left: 30%; 
 }
+
+.modal .modal-dialog{
+           transition: opacity 0.5s linear;
+ }
