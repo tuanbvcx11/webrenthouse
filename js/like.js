@@ -60,7 +60,13 @@ var load_post = function load_post(){
           });
 
           if (html != ''){
+
+            $('.paging').css('display', 'block');
           	$('.post_none').css("display","none");
+          } else {
+            $('.post_none').css("display","block");
+            $('.paging').css('display', 'none');
+
           }
           $('.list-table').html(html);
          
@@ -222,9 +228,12 @@ $("body").on("click", ".dislike", function(){
 
 				success : function (result)
 				{
+
+          phan_trang();
+          load_post();
 					
-			    },
+			   },
 			    error : function (result){ alert("lỗi12");}
 		    });
-            load_post();
+            
         });

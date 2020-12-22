@@ -17,6 +17,15 @@ var status_post = 2;
 var today = new Date();
 var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
 
+//hàm chuyển ngày thành định dạng dd/mm/yyyy
+function convertDate (str) {
+    var res = str.split('-');
+    var year = res[0];
+    var month = res[1];
+    var day = res[2];
+    return day + '-' + month + '-' + year;
+  }
+
 //load bình luận
 var get_comment = function get_Comment(){
   $.ajax({
@@ -198,13 +207,13 @@ var get_data = function get_data(){
             $(".dieu_hoa").text(result["dieu-hoa"]);
             $(".ban_cong").text(result["ban-cong"]);
             $(".tien_ich_khac").text(result["khac"]);
-            $(".mo_ta_chi_tiet").text(result["mo-ta"].replace("<br/>","\n"));
+            $(".mo_ta_chi_tiet").html(result["mo-ta"]);
             $(".idOwner").text(result["id-host"]);
             $(".ten_host").text(result["ten-host"]);
             $(".sdt_host").text(result["sdt-host"]);
             $(".dia_chi_host").text(result["dia-chi-host"]);
-            $(".ngay_dang").text(result["ngay-dang"]);
-            $(".ngay_hethan").text(result["ngay-hethan"]);
+            $(".ngay_dang").text(convertDate(result["ngay-dang"]));
+            $(".ngay_hethan").text(convertDate(result["ngay-hethan"]));
             //$(".id_user").text(result["id-user"]);
             $(".trang_thai_bai_dang").text(result["status-post"]);
             status_post = result["status-post"];
@@ -365,6 +374,9 @@ var get_rateStar = function get_rateStar(){
       }
     });
 }
+
+
+
     
 var check_user = function check_user(){
   $.ajax({
@@ -472,6 +484,7 @@ var get_luubai = function get_luubai(){
             $('.Star').css("display","none");
             $('.comments').css("display","none");
             $('.ten_user').css("display","none");
+            $('#user_box').css('display', 'none');
           } else {
             check_user();
             get_rateStar();

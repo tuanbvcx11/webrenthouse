@@ -1,0 +1,6 @@
+RewriteEngine On
+
+
+RewriteRule "^admin/([0-9a-zA-Z-]+)$" "$1.html"
+
+RewriteRule "^thuoc/page-([0-9]+)$" "thuoc.html?page=$1"

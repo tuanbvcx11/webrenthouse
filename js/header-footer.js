@@ -1,4 +1,34 @@
+// hàm đêm số bài viết đã like
+function count_like_header() {
+    // body... 
+    $.ajax({
+        url : 'module/function/count-like-header.php',
+        type : 'post',
+        dataType : 'text',
+        data : {
+        },
+        success : function (result){
+            if (result == 0) {
+                $('#total-like-header').css('display', 'none');
+            } else if (result <= 9) {
+                $('#total-like-header').css('display', 'block');
+                $('#total-like-header').text(result);
+            } else {
+                $('#total-like-header').css('display', 'block');
+                $('#total-like-header').text('9+');
+            }
+            
+        },
+        error : function (result) {
+            alert("lỗi");
+        }
+    });
+}
+
+
 $(document).ready(function() {
+
+    count_like_header();
 
     // hiện tên người dùng lên trên header
     function getUser () {
@@ -131,7 +161,8 @@ $(document).ready(function() {
     });
 
     $("body").on("click", ".list-thongbao .content-thongbao", function(){
-        alert($(this).children('.id_bai_viet').text());
+        
+        location.assign('./chi_tiet.html?idpost=' + $(this).children('.id_bai_viet').text())
     });
     
 });
