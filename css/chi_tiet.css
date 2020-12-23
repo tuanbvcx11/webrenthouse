@@ -396,7 +396,7 @@ p {
   display: none;
 }
 
-.duyet, .xoa, .trangthai, .sua, .xoa, #validateButton{
+.duyet, .xoa, .trangthai, .sua, .xoa_admin, #validateButton{
   display: block;
 }
 .trang_thai_bai_dang{

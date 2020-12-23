@@ -7,7 +7,7 @@
     $page = isset($_POST['page']) ? $_POST['page'] : 0;
     $count = ($page -1) * 2;
     $result = array();
-
+   
     
     $stmt = $db->prepare("SELECT post.id_post, post.tieu_de, post.spe_add, post.district, post.province, post.gia_phong, post.tg_dang_bai, img.img FROM post JOIN img ON post.id_post = img.id_bai_viet WHERE post.id_user = ? AND post.status_post = '1' GROUP BY post.id_post limit 2 offset ?");
     
