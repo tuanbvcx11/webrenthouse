@@ -7,10 +7,6 @@
     
     $result = array();
 
-    //tăng lượt xem
-    $stmt = $db->prepare("UPDATE post SET luot_xem = luot_xem + 1 WHERE id_post = ?");
-    $stmt->execute([$id]);
-
     //truy vấn lấy dữ liệu
     $stmt = $db->prepare("SELECT * , DATE_ADD(tg_duyet_bai, INTERVAL tg_hien_thi DAY) as ngay_hethan, DATEDIFF(DATE(NOW()), tg_duyet_bai) AS han_post FROM post join user on post.id_user = user.id_user 
 	WHERE id_post = ?");

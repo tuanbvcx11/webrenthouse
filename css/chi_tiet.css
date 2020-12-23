@@ -134,15 +134,13 @@ body{
 
 .idtin, .ngaydang, .ngayhethan{
     position: relative;
-    height: 80px;
+   
 }
 
 .id_tin, .ngay_dang, .ngay_hethan{
   margin: 0;
-  padding: 10px;
-  position: absolute;
-  bottom: 0px;
-  left: 0;
+  line-height: 2.5;
+  
 }
 
 .binhluan{
@@ -411,4 +409,8 @@ p {
 
 .binhluantitle{
   margin-left: 2%; 
+}
+
+.inf_trangthai, .luotxem, .luotthich{
+  line-height: 2.5;
 }

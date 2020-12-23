@@ -252,6 +252,27 @@ var get_data = function get_data(){
             
     });
 }
+
+//tăng lượt xem
+var update_xem = function update_xem(){
+   $.ajax({
+        url : 'module/function/chi_tiet_seen.php',
+        type : 'post',
+        dataType : 'json',
+        data : {
+          id : idpost
+        },
+
+        success : function (result)
+        {   
+            
+        },
+        error : function (result) {
+            alert("lỗi1");
+        }
+            
+    });
+}
 //đánh giá chung
 var star_avg = function star_avg(){
   $.ajax({
@@ -338,6 +359,9 @@ $(document).ready(function() {
     
     //lượt thích
     yeu_thich();
+
+    //tăng luotj xem
+    update_xem();
 
 });
 
