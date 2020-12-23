@@ -15,6 +15,21 @@ function testExprisedPost() {
   });
 }
 
+// hàm viết hoa chữ cái đầu
+function jsUcfirst(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+$("body").on("mouseover", ".img-div, .brief-div", function () {
+  /* Act on the event */
+  $(this).parent().find('.titlePost').css('color', '#427bff');
+});
+
+$("body").on("mouseout", ".img-div, .brief-div", function () {
+  /* Act on the event */
+  $(this).parent().children('.brief-div').children('.titlePost').css('color', 'black');
+});
+
 testExprisedPost();
 // hàm convert tiền về string
 function convertPrice(money) {
@@ -97,7 +112,7 @@ function load_post() {
                         <!-- tóm tắt -->
                         <div class="brief-div">
                           <span class="idPost">` + item.id_post + `</span>
-                          <a class="titlePost" href="#">` + item.tieu_de + `</a>
+                          <a class="titlePost" href="#">` + jsUcfirst(item.tieu_de) + `</a>
 
                           <div class="d-flex address-div">
                             <div class="address-icon">

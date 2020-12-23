@@ -163,6 +163,10 @@ label.label-choose-room {
   border-radius: 5px;
 }
 
+.img-div:hover .titlePost {
+  color: #427bff;
+}
+
 img.img-post {
   width: 100%;
   height: 100%;
@@ -176,18 +180,27 @@ img.img-post {
   padding-left: 8px;
 }
 
+.brief-div:hover {
+  cursor: pointer;
+}
+
+.brief-div:hover .titlePost {
+  color: #427bff;
+}
+
 .titlePost {
   /* position: absolute; */
   text-decoration: none;
   color: black;
   /* font-weight: bold; */
-  font-size: 19px;
+  font-size: 20px;
 }
+
 
 .Prices-div {
   /* position: absolute; */
   /* top: 106px; */
- /*  margin-top: 6px; */
+   margin-top: 6px; 
 }
 
 .Prices-icon {
@@ -198,7 +211,7 @@ img.img-post {
 }
 
 .Prices {
-  font-size: 23px;
+  font-size: 21px;
   font-weight: 600;
   color: #427bff;
   margin-left: 7px;
@@ -228,7 +241,7 @@ img.img-post {
 }
 
 .area-div {
-  margin-top: 6px;
+  margin-top: 9px;
 }
 
 .area-icon {
@@ -252,6 +265,10 @@ img.img-post {
 .favorite {
   /* align-self: flex-end; */
   padding-top: 145px;
+}
+
+.favorite:hover {
+  cursor: pointer;
 }
 
 i.far.fa-heart {
@@ -291,6 +308,17 @@ i.far.fa-heart {
 }
 
 @media (max-width: 768px) {
+  .Prices {
+    font-size: 19px;
+  }
+
+  .address-div {
+    margin-top: 6px;
+  }
+  .Prices-div {
+     margin-top: 4px; 
+  }
+
   .wrapper {
     padding: 0px;
     border: none;
@@ -376,7 +404,7 @@ i.far.fa-heart {
     text-decoration: none;
     color: black;
     /* font-weight: bold; */
-    font-size: 15px;
+    font-size: 17px;
   }
 
   .form-content {

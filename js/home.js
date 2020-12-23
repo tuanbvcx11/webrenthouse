@@ -15,6 +15,27 @@ function testExprisedPost() {
   });
 }
 
+// hàm viết hoa chữ cái đầu
+function jsUcfirst(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+// khi hover vào từng bài (ngoài icon time) thì sẽ chuyển title thành màu xanh
+$("body").on("mouseover", ".baidang", function (e) {
+  /* Act on the event */
+  if (!$(e.target).closest('.favorite').length) {
+    $(this).find('.titlePost').css('color', '#427bff');
+  }
+  
+});
+
+$("body").on("mouseout", ".baidang", function (e) {
+  /* Act on the event */
+  if (!$(e.target).closest('.favorite').length) {
+    $(this).find('.titlePost').css('color', 'black');
+  }
+});
+
 testExprisedPost();
 // hàm chuyển ngày
 function convertDate (str) {
@@ -54,7 +75,7 @@ function load_new_post() {
                               <!-- tóm tắt -->
                               <div class="brief-div">
                                 <div class="idPost">`+ item.id_post +`</div>
-                                <a class="titlePost" href="#">` + item.tieu_de + `</a>
+                                <a class="titlePost" href="#">` + jsUcfirst(item.tieu_de) + `</a>
 
                                 <div class="d-flex address-div">
                                   <div class="address-icon">
@@ -125,7 +146,7 @@ function load_favorite_post() {
                                   <!-- tóm tắt -->
                                   <div class="brief-div">
                                     <div class="idPost">`+ item.id_post +`</div>
-                                    <a class="titlePost" href="#">` + item.tieu_de + `</a>
+                                    <a class="titlePost" href="#">` + jsUcfirst(item.tieu_de) + `</a>
 
                                     <div class="d-flex address-div">
                                       <div class="address-icon">
@@ -303,15 +324,19 @@ $(document).ready(function () {
     $("#maxPrices").html(maxPirceHtml);
   });
 
-  $("body").on("click", ".titlePost", function(even) {
-    var id = $(this).parent().find(".idPost").text();
-    alert(id);
+
+  // khi click vao 1 bài đăng và check nếu ko phải click vào tim
+  $("body").on("click", ".baidang", function(even) {
+    var id = $(this).find(".idPost").text();
+    if (!$(even.target).closest('.favorite').length) {
+      alert(id);
+    }
   });
 
-  $("body").on("click", ".img-div", function(even) {
-    var id = $(this).parent().find(".idPost").text();
-    alert(id);
-  });
+  // $("body").on("click", ".img-div", function(even) {
+  //   var id = $(this).parent().find(".idPost").text();
+  //   alert(id);
+  // });
 
   // sự kiện khi bấm vào tim
   $("body").on("click", ".favorite", function(even) {
