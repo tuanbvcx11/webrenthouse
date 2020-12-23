@@ -230,6 +230,7 @@ function load_post_per_page(pageNumber) {
 
         if(pageNumber <= totalPage) {
           save_page_number(pageNumber);
+          // lấy kết quả lọc tìm kiếm trên session
           $.ajax({
             url: "module/function/fetch-input-from-session.php",
             type: "post",

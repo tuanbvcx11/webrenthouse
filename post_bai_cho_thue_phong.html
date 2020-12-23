@@ -452,8 +452,8 @@
             class="form-control"
             name="postTitle"
             id="postTitle"
-            minlength="46"
-            maxlength="70"
+            minlength="20"
+            maxlength="42"
             required
           />
         </div>
@@ -496,10 +496,7 @@
 
         <!-- Thời gian bài đăng hiển thị -->
         <div class="form-group mt-5 div_margin">
-          <label class="title_lable"
-            >Thời gian bài đăng hiển thị
-            <p>*</p></label
-          >
+          <label class="title_lable">Thời gian bài đăng hiển thị <p>*</p></label>
 
           <div class="input-group mb-3">
             <input
@@ -507,6 +504,7 @@
               name="thoi_gian_dang_bai"
               class="form-control"
               id="thoi_gian_dang_bai"
+              min="7"
               required
             />
             <div class="input-group-append">

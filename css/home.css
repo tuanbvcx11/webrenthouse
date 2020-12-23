@@ -152,10 +152,11 @@ label.label-choose-room {
 
 .titlePost {
  /*  position: absolute; */
-  text-decoration: none;
-  color: black;
-  /* font-weight: bold; */
-  font-size: 20px;
+ text-decoration: none;
+ color: black;
+ /* font-weight: bold; */
+ font-size: 16px;
+ line-height: 0;
 }
 
 .Prices-div {
@@ -180,6 +181,7 @@ label.label-choose-room {
   position: absolute;
   top: 140px;
   font-size: 12px;
+  color: gray;
 }
 
 .address-div {
@@ -192,7 +194,7 @@ label.label-choose-room {
   font-size: 14px;
 }
 .addressPost {
-  font-size: 14px;
+  font-size: 13px;
   color: gray;
   margin-left: 9px;
   padding-right: 26px;
@@ -372,7 +374,7 @@ i.far.fa-heart {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 426px) {
   .favorite {
     /*top: 114px;
     left: 254px;*/
@@ -399,7 +401,14 @@ i.far.fa-heart {
     font-weight: bold;
     font-size: 12px;
   }
+  .latest-post {
+    margin-left: 6px;
+  }
+  .favorite-post {
+    margin-left: 6px;
+  }
 }
+
 
 .idPost{
   display: none;

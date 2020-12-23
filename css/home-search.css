@@ -200,7 +200,7 @@ img.img-post {
 .Prices-div {
   /* position: absolute; */
   /* top: 106px; */
-   margin-top: 6px; 
+  margin-top: 6px;
 }
 
 .Prices-icon {
@@ -304,7 +304,7 @@ i.far.fa-heart {
 @media (max-width: 991px) {
   .post-content {
     padding: 20px 7px 20px 7px;
-}
+  }
 }
 
 @media (max-width: 768px) {
@@ -315,8 +315,9 @@ i.far.fa-heart {
   .address-div {
     margin-top: 6px;
   }
+
   .Prices-div {
-     margin-top: 4px; 
+    margin-top: 4px;
   }
 
   .wrapper {
@@ -326,7 +327,7 @@ i.far.fa-heart {
 
   .post-content {
     padding: 20px 7px 20px 7px;
-}
+  }
 
   .telephone-div {
     position: absolute;
@@ -439,8 +440,19 @@ i.far.fa-heart {
   .favorite {
     /* align-self: flex-end; */
     padding-top: 145px;
+  }
+
+  .post-content {
+    padding: 20px 7px 20px 7px;
+  }
 }
-.post-content {
-  padding: 20px 7px 20px 7px;
-}
+
+@media (max-width: 426px) {
+  .telephone {
+    display: none;
+  }
+
+  .telephone-icon {
+    display: none;
+  }
 }
