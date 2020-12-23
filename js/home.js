@@ -419,10 +419,9 @@ $(document).ready(function () {
     var maxprice = $("#maxPrices").find(":selected").val();
 
     //in kết quả
-    alert(
+    /* alert(
       city + " " + district + " " + type_room + " " + minprice + " " + maxprice
-    );
-
+    );*/
     $.ajax({
       url: "module/function/save-input-to-session.php",
       type: "post",
