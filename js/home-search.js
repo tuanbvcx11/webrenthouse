@@ -274,7 +274,7 @@ function load_post_per_page(pageNumber) {
           load_post();
         } 
       } else if(result == 0) {
-        alert("không có kết quả tìm kiếm nào phù hợp");
+        
         $.ajax({
           url: "module/function/fetch-input-from-session.php",
           type: "post",
