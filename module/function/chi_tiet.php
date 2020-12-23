@@ -12,7 +12,7 @@
     $stmt->execute([$id]);
 
     //truy vấn lấy dữ liệu
-    $stmt = $db->prepare("SELECT * , DATE_ADD(tg_duyet_bai, INTERVAL tg_hien_thi DAY) as ngay_hethan FROM post join user on post.id_user = user.id_user 
+    $stmt = $db->prepare("SELECT * , DATE_ADD(tg_duyet_bai, INTERVAL tg_hien_thi DAY) as ngay_hethan, DATEDIFF(DATE(NOW()), tg_duyet_bai) AS han_post FROM post join user on post.id_user = user.id_user 
 	WHERE id_post = ?");
     
     $stmt->execute([$id]);
@@ -51,8 +51,8 @@
 	            'ngay-hethan' => $row['ngay_hethan'],
 	            'status-post' => $row['status_post'],
 	            'time_hien_thi' => $row['tg_hien_thi'],
-
-	            //'id-user' => $_SESSION["iduser"]
+	            'han_post' => $row['han_post'],
+	            'tg_hien_thi' => $row['tg_hien_thi'],
 	        );
 		}
 	}

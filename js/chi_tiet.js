@@ -189,7 +189,7 @@ var get_data = function get_data(){
         },
 
         success : function (result)
-        { 
+        {   
             if ( result["tieu-de"] != null){
             $(".tieu_de").text(jsUcfirst(result["tieu-de"]));
             $(".dia_chi").text(jsUcfirst(result["spe-add"])+", "+jsUcfirst(result["district"])+", "+jsUcfirst(result["province"]));
@@ -413,6 +413,11 @@ var check_user = function check_user(){
                   $('.admin').css("display","block");
                 }
                 if (result["id-user"] == id_host){
+                  $('.owner').css("display","block");
+                  user_login = "owner";
+                }
+
+                if (result["id-user"] == id_host && result["vai-tro"] == "admin"){
                   $('.owner').css("display","block");
                   user_login = "owner";
                 }
