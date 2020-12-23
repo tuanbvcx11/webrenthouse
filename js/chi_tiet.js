@@ -230,14 +230,16 @@ var get_data = function get_data(){
             } else
             if (result["status-post"] == -1){
               $(".duyet").css("display","none");
+              $(".ngay_hethan").text("Chưa duyệt");
             } else
             if (result["status-post"] == 0){
               $("#validateButton").css("display","none");
+              $(".ngay_hethan").text("Chưa duyệt");
             } 
             } else {
               location.assign("home.html");
             }
-
+            check_user();
         },
         error : function (result) {
             alert("lỗi1");
@@ -415,12 +417,16 @@ var check_user = function check_user(){
                 if (result["id-user"] == id_host){
                   $('.owner').css("display","block");
                   user_login = "owner";
+                  // alert(user_login);
                 }
 
                 if (result["id-user"] == id_host && result["vai-tro"] == "admin"){
                   $('.owner').css("display","block");
                   user_login = "owner";
+                  // alert(user_login);  
                 }
+                // alert(user_login); 
+                check_post(); 
               },
 
               error : function(result){
@@ -459,8 +465,8 @@ var get_luubai = function get_luubai(){
             });
 }
             
-
-      $.ajax({ 
+var check_post = function check_post(){
+  $.ajax({ 
         url : 'module/function/checkss-header.php',
         type : 'post',
         dataType : 'text',
@@ -480,7 +486,6 @@ var get_luubai = function get_luubai(){
 
             success : function (result)
             {
-               
                 $(".trang_thai_bai_dang").text(result["status-post"]);
                 status_post = result["status-post"];
                 if ((status_user != "admin" && user_login != "owner" ) && (status_post != '1') ){
@@ -511,6 +516,8 @@ var get_luubai = function get_luubai(){
         error : function(result){
         }             
       });
+}
+      
     
 /*đánh giá sao*/
 

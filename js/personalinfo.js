@@ -12,6 +12,19 @@ var getUrlParameter = function getUrlParameter(sParam) {
         }
     }
 };
+//viết hoa chữ cái đầu
+function jsUcfirst(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+//chuyển ngày về dạng dd/mm/yyy
+function convertDate (str) {
+      var res = str.split('-');
+      var year = res[0];
+      var month = res[1];
+      var day = res[2];
+      return day + '-' + month + '-' + year;
+    }
 
 var id = getUrlParameter('idUser');
 var page = 1;
@@ -122,10 +135,10 @@ var load_post = function load_post(){
                             <div class="areaPost">`+ item.dien_tich +` m<sup>2</sup> </div>
                           </div>`;
             html += '<div class="d-flex address-div"><div class="mr-1 address-icon"><i class="fas fa-map-marker-alt"></i>';
-            html += '</div><div class="addressPost">'+item.spe_add+', '+item.district+', '+item.province+'</div></div>';
+            html += '</div><div class="addressPost">'+jsUcfirst(item.spe_add)+', '+item.district+', '+item.province+'</div></div>';
             html += '<div class="d-flex Prices-div"><div class="mt-1 mr-1 Prices-icon"><i class="fas fa-coins"></i></div>';
             html += '<div class="Prices">'+convertPrice(item.gia_phong)+'</div></div>';
-            html += '<div class="datePost">Ngày đăng: '+item.tg_dang_bai+'</div></div><div class="favorite">';
+            html += '<div class="datePost">Ngày đăng: '+convertDate(item.tg_dang_bai)+'</div></div><div class="favorite">';
             if (item.fav == "chualuu"){
               html += '<i class="far fa-heart"></i></div></div>';
             } else {
