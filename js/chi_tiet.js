@@ -478,12 +478,9 @@ var get_luubai = function get_luubai(){
                
                 $(".trang_thai_bai_dang").text(result["status-post"]);
                 status_post = result["status-post"];
-                if ((status_user == "nologin" || status_user == "guest" ) && (status_post == '0' || status_post == '-1') ){
+                if ((status_user != "admin" && user_login != "owner" ) && (status_post != '1') ){
                 location.assign("home.html");
                 }
-                if ((user_login == "NotOwner") && (status_post == '0' || status_post == '-1') ){
-                location.assign("home.html");
-                } 
             },
             error : function (result) {
                 alert("lỗi1");
@@ -674,7 +671,7 @@ $('.duyet').click(function(event){
  /*xóa bài viết*/
 $('.xoa').click(function(event){
  
-  var text = "Bạn có thực sự muốn xóa bài viết?";
+  var text = "Bạn có thực sự muốn xóa bài viết?\n Bài viết sẽ bị xóa hoàn toàn khi xác nhận.";
   var accept = confirm(text);
   if (accept == true){
               $.ajax({
@@ -696,6 +693,30 @@ $('.xoa').click(function(event){
   } 
 });
 
+//admin xóa bài: lưu lại nhưng không hiển thị
+$('.xoa_admin').click(function(event){
+ 
+  var text = "Bạn có thực sự muốn xóa bài viết?";
+  var accept = confirm(text);
+  if (accept == true){
+              $.ajax({
+                  url : 'module/function/xoa_bai_admin.php',
+                  type : 'post',
+                  dataType : 'text',
+                  data : {
+                    id : idpost
+                  },
+
+                  success : function (result)
+                  {
+                      alert("thành công");
+                      location.assign("home.html");
+                  },
+                  error : function (result){}
+                  
+              });
+  } 
+});
 /*gia hạn bài viết*/
 $('#submit_giahan').click(function(event){
   var id = $('.id_tin').text();
