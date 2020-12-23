@@ -219,7 +219,12 @@ var get_data = function get_data(){
             $(".sdt_host").text(result["sdt-host"]);
             $(".dia_chi_host").text(jsUcfirst(result["dia-chi-host"]));
             $(".ngay_dang").text(convertDate(result["ngay-dang"]));
-            $(".ngay_hethan").text(convertDate(result["ngay-hethan"]));
+            if (result["ngay-hethan"] != null) {
+              $(".ngay_hethan").text(convertDate(result["ngay-hethan"]));
+            } else {
+              $(".ngay_hethan").text("Undefined");
+            }
+            
             //$(".id_user").text(result["id-user"]);
             $(".trang_thai_bai_dang").text(result["status-post"]);
             status_post = result["status-post"];
