@@ -40,7 +40,10 @@
                     'tieu_de' => $row['tieu_de'],
                     'tg_dang_bai' => $row['tg_dang_bai'],
                     'tg_duyet_bai' => $row['tg_duyet_bai'],
-                    'tg_hien_thi' => $row['tg_hien_thi']
+                    'tg_hien_thi' => $row['tg_hien_thi'],
+                    'province' => $row['province'],
+                    'district' => $row['district'],
+                    'dien_tich' => $row['dien_tich']
 				);
 			} else {
                 $result[] = array(
@@ -52,7 +55,10 @@
                     'tieu_de' => $row['tieu_de'],
                     'tg_dang_bai' => $row['tg_dang_bai'],
                     'tg_duyet_bai' => $row['tg_duyet_bai'],
-                    'tg_hien_thi' => $row['tg_hien_thi']
+                    'tg_hien_thi' => $row['tg_hien_thi'],
+                    'province' => $row['province'],
+                    'district' => $row['district'],
+                    'dien_tich' => $row['dien_tich']
                 );
             }
 		    

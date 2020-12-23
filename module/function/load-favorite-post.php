@@ -7,9 +7,9 @@
 
     $result = array();
 
-    $stmt = $db->prepare("SELECT COUNT(id_like) AS fav, id_bai_viet FROM yeu_thich GROUP BY id_bai_viet ORDER BY fav DESC ");
+    $stmt = $db->prepare("SELECT COUNT(id_like) AS fav, id_bai_viet FROM yeu_thich GROUP BY id_bai_viet ORDER BY fav DESC");
     $post = $db->prepare("SELECT * FROM post WHERE status_post = '1' AND status_phong = '1' AND id_post = ?");
-    $img = $db->prepare("SELECT * FROM img WHERE id_bai_viet = ? LIMIT '1'");
+    $img = $db->prepare("SELECT * FROM img WHERE id_bai_viet = ? LIMIT 1");
 
     $stmt->execute();
 
@@ -30,10 +30,11 @@
                 // kiểm tra xem có bài nào trong trong danh sách yêu thích không để bôi đỏ icon tim khi đã đăng nhập
                 $yeuthich = "";
                 if($iduser != 0) {
-                  $postFav = $db->prepare("SELECT * FROM post WHERE status_post = '1' AND status_phong = '1' AND id_post = ? AND id_user = ?");
-                  $postFav->execute([$id_bai_viet, $iduser]);
+                  $Fav = $db->prepare("SELECT * FROM yeu_thich WHERE id_bai_viet = ? AND id_user = ?");
+                  $Fav->execute([$id_bai_viet, $iduser]);
     
-                  $countFav = $postFav->fetch();
+                  $countFav = $Fav->rowCount();
+
     
                   if($countFav > 0) {
                     $yeuthich = " fas";
@@ -46,7 +47,10 @@
                   'spe_add' => $rowPost['spe_add'],
                   'tieu_de' => $rowPost['tieu_de'],
                   'gia_phong' => $rowPost['gia_phong'],
-                  'tg_duyet_bai' => $rowPost['tg_duyet_bai']
+                  'tg_duyet_bai' => $rowPost['tg_duyet_bai'],
+                  'province' => $rowPost['province'],
+                  'district' => $rowPost['district'],
+                  'dien_tich' => $rowPost['dien_tich']
                 );
                 
               }

@@ -16,6 +16,14 @@ function testExprisedPost() {
 }
 
 testExprisedPost();
+// hàm chuyển ngày
+function convertDate (str) {
+  var res = str.split('-');
+  var year = res[0];
+  var month = res[1];
+  var day = res[2];
+  return day + '-' + month + '-' + year;
+}
 
 //hàm tải các bài đăng mới nhất
 function load_new_post() {
@@ -49,20 +57,27 @@ function load_new_post() {
                                 <a class="titlePost" href="#">` + item.tieu_de + `</a>
 
                                 <div class="d-flex address-div">
-                                  <div class="mr-1 address-icon">
+                                  <div class="address-icon">
                                     <i class="fas fa-map-marker-alt"></i>
                                   </div>
-                                  <div class="addressPost"> `+ item.spe_add +` </div>
+                                  <div class="addressPost"> `+ item.spe_add +`, `+ item.district + `, ` + item.province + ` </div>
+                                </div>
+
+                                <div class="d-flex area-div">
+                                  <label class="area-icon">
+                                    <i class="fas fa-home"></i>
+                                  </label>
+                                  <div class="areaPost">`+ item.dien_tich +` m<sup>2</sup> </div>
                                 </div>
 
                                 <div class="d-flex Prices-div">
-                                  <div class="mt-1 mr-1 Prices-icon">
+                                  <div class="Prices-icon">
                                     <i class="fas fa-coins"></i>
                                   </div>
                                   <div class="Prices">` + item.gia_phong +`</div>
                                 </div>
 
-                                <div class="datePost">Ngày đăng: ` + item.tg_duyet_bai + `</div>
+                                <div class="datePost">Ngày đăng: ` + convertDate(item.tg_duyet_bai) + `</div>
 
                                 <div class="favorite">
                                   <i class="far fa-heart`+ item.buttonFav +`"></i>
@@ -97,42 +112,49 @@ function load_favorite_post() {
           return false;
         }
         loadFavoritePostHtml += `<div class="col-12 col-xl-6 mt-4 d-flex baidang">
-                              <!-- ảnh -->
-                              <div class="img-div">
-                                <a class="link-img" href="#">
-                                  <img
-                                    class="img-post"
-                                    src="./upload/` + item.img + `"
-                                    alt=""
-                                  />
-                                </a>
-                              </div>
-                              <!-- tóm tắt -->
-                              <div class="brief-div">
-                                <div class="idPost">`+ item.id_post +`</div>
-                                <a class="titlePost" href="#">` + item.tieu_de + `</a>
-
-                                <div class="d-flex address-div">
-                                  <div class="mr-1 address-icon">
-                                    <i class="fas fa-map-marker-alt"></i>
+                                  <!-- ảnh -->
+                                  <div class="img-div">
+                                    <a class="link-img" href="#">
+                                      <img
+                                        class="img-post"
+                                        src="./upload/` + item.img + `"
+                                        alt=""
+                                      />
+                                    </a>
                                   </div>
-                                  <div class="addressPost"> `+ item.spe_add +` </div>
-                                </div>
+                                  <!-- tóm tắt -->
+                                  <div class="brief-div">
+                                    <div class="idPost">`+ item.id_post +`</div>
+                                    <a class="titlePost" href="#">` + item.tieu_de + `</a>
 
-                                <div class="d-flex Prices-div">
-                                  <div class="mt-1 mr-1 Prices-icon">
-                                    <i class="fas fa-coins"></i>
+                                    <div class="d-flex address-div">
+                                      <div class="address-icon">
+                                        <i class="fas fa-map-marker-alt"></i>
+                                      </div>
+                                      <div class="addressPost"> `+ item.spe_add +`, `+ item.district + `, ` + item.province + ` </div>
+                                    </div>
+
+                                    <div class="d-flex area-div">
+                                      <div class="area-icon">
+                                        <i class="fas fa-home"></i>
+                                      </div>
+                                      <div class="areaPost">`+ item.dien_tich +` m<sup>2</sup> </div>
+                                    </div>
+
+                                    <div class="d-flex Prices-div">
+                                      <div class="Prices-icon">
+                                        <i class="fas fa-coins"></i>
+                                      </div>
+                                      <div class="Prices">` + item.gia_phong +`</div>
+                                    </div>
+
+                                    <div class="datePost">Ngày đăng: ` + convertDate(item.tg_duyet_bai) + `</div>
+
+                                    <div class="favorite">
+                                      <i class="far fa-heart`+ item.buttonFav +`"></i>
+                                    </div>
                                   </div>
-                                  <div class="Prices">` + item.gia_phong +`</div>
-                                </div>
-
-                                <div class="datePost">Ngày đăng: ` + item.tg_duyet_bai + `</div>
-
-                                <div class="favorite">
-                                  <i class="far fa-heart`+ item.buttonFav +`"></i>
-                                </div>
-                              </div>
-                            </div>`;
+                                </div>`;
       });
       loadFavoritePostHtml += `</div>
                             </div>`;
@@ -307,9 +329,11 @@ $(document).ready(function () {
       success: function (result) {
         if(result['alert'] == "đã lưu") {
           tim = "đã lưu";
+          alert(id + " " + tim);
           icon.addClass('fas');
         } else if(result['alert'] == "hủy lưu") {
           tim = "hủy lưu";
+          alert(id + " " + tim);
           icon.removeClass('fas');
         } else if(result['alert'] == "chưa đăng nhập") {
           alert("bạn cần đăng nhập để lưu bài đăng");

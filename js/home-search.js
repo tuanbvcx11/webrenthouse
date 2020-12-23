@@ -45,6 +45,15 @@ function convertPrice(money) {
   }
   return ans;
 }
+// hàm chuyển ngày
+function convertDate (str) {
+  var res = str.split('-');
+  var year = res[0];
+  var month = res[1];
+  var day = res[2];
+  return day + '-' + month + '-' + year;
+}
+
 //hàm hiển thị dữ liệu các bài post lấy input từ session
 function load_post() {
   //kiểm tra hết hạn
@@ -57,8 +66,20 @@ function load_post() {
     data: {
     },
     success: function (result) {
-      var postHtml = `<label>Thuê nhà đất 2020 giá rẻ tại Việt Nam, giá thuê mới nhất</label>
-                        <div class="list-table">`;
+      $.ajax({
+        url: "module/function/find-post.php",
+        type: "post",
+        dataType: "json",
+        data: {
+        },
+        success: function(result1) {
+
+        },
+        error: function(result1) {
+
+        }
+      });
+      var postHtml = `<div class="list-table">`;
       $.each(result, function (key, item) {
         // item.gia_phong = convertPrice(item.gia_phong);
         postHtml +=
@@ -79,20 +100,27 @@ function load_post() {
                           <a class="titlePost" href="#">` + item.tieu_de + `</a>
 
                           <div class="d-flex address-div">
-                            <div class="mr-1 address-icon">
+                            <div class="address-icon">
                               <i class="fas fa-map-marker-alt"></i>
                             </div>
-                            <div class="addressPost"> ` + item.spe_add + ` </div>
+                            <div class="addressPost"> ` + item.spe_add +`, `+ item.district + `, ` + item.province + ` </div>
+                          </div>
+
+                          <div class="d-flex area-div">
+                            <div class="area-icon">
+                              <i class="fas fa-home"></i>
+                            </div>
+                            <div class="areaPost">`+ item.dien_tich +` m<sup>2</sup> </div>
                           </div>
 
                           <div class="d-flex Prices-div">
-                            <div class="mt-1 mr-1 Prices-icon">
+                            <div class="Prices-icon">
                               <i class="fas fa-coins"></i>
                             </div>
                             <div class="Prices">` + convertPrice(item.gia_phong) + `</div>
                           </div>
 
-                          <div class="datePost">Ngày đăng: ` + item.tg_duyet_bai + `</div>
+                          <div class="datePost">Ngày đăng: ` + convertDate(item.tg_duyet_bai) + `</div>
 
                           <div class="d-flex telephone-div">
                             <div class="mr-1 telephone-icon">
@@ -136,8 +164,9 @@ function load_post() {
                             </li>
                           </ul>
                         </div>`;
-            $(".post-content").html(postHtml);
-            $(".paging").html(pagingHTML);
+          
+          $(".load-post").html(postHtml);
+          $(".paging").html(pagingHTML);
         },
         error: function (result) {
           alert("không thể update dữ liệu");
@@ -186,6 +215,46 @@ function load_post_per_page(pageNumber) {
 
         if(pageNumber <= totalPage) {
           save_page_number(pageNumber);
+          $.ajax({
+            url: "module/function/fetch-input-from-session.php",
+            type: "post",
+            dataType: "json",
+            data: {},
+            success: function (result) {
+              var citySearch = (result['citySearch'] == "Thành phố") ? "" : ("/" + result['citySearch']);
+              var districtSearch = (result['districtSearch'] == "Quận(Huyện)") ? "" : ("/" + result['districtSearch']);
+              var type_roomSearch = (result['type_roomSearch'] == "Tất cả") ? "" : ("/" + result['type_roomSearch']);
+              var priceSearch = "/";
+              var minpriceSearch = result['minpriceSearch'];
+              var maxpriceSearch = result['maxpriceSearch'];
+
+              if(minpriceSearch == "Tất cả") {
+                if(maxpriceSearch == "Tất cả") {
+                  priceSearch += "Tất cả";
+                } else {
+                  priceSearch += "Giá dưới " + minpriceSearch + " triệu";
+                }
+              } else if(minpriceSearch != "Tất cả") {
+                if(maxpriceSearch == "Tất cả") {
+                  priceSearch += "Giá trên " + maxpriceSearch + " triệu";
+                } else {
+                  priceSearch += "Giá từ " + minpriceSearch + "đến dưới " + maxpriceSearch + " triệu";
+                }
+              }
+
+              var summaryHTML = `<div class="link-search">
+                                  Trang chủ/Tìm kiếm`+ citySearch + districtSearch + type_roomSearch + priceSearch +`
+                                </div>
+                                <div class="result-summary">
+                                  Kết quả: `+totalPost+` bài đăng
+                                </div>`
+              $(".summary").html(summaryHTML);
+              
+            },
+            error: function (result) {
+              alert("không thể update dữ liệu");
+            },
+          });
           load_post();
         } else {
           
@@ -293,32 +362,38 @@ $(document).ready(function () {
                             <option value="10">10 triệu</option>
                             <option value="20">20 triệu</option>`;
       } else if (minpriceSession == "1") {
-        var maxPirceHtml = `<option value="1">1 triệu</option>
+        var maxPirceHtml = `<option value="Tất cả">Tất cả</option>
+                            <option value="1">1 triệu</option>
                             <option value="3">3 triệu</option>
                             <option value="5">5 triệu</option>
                             <option value="7">7 triệu</option>
                             <option value="10">10 triệu</option>
                             <option value="20">20 triệu</option>`;
       } else if (minpriceSession == "3") {
-        var maxPirceHtml = `<option value="3">3 triệu</option>
+        var maxPirceHtml = `<option value="Tất cả">Tất cả</option>
+                            <option value="3">3 triệu</option>
                             <option value="5">5 triệu</option>
                             <option value="7">7 triệu</option>
                             <option value="10">10 triệu</option>
                             <option value="20">20 triệu</option>`;
       } else if (minpriceSession == "5") {
-        var maxPirceHtml = `<option value="5">5 triệu</option>
+        var maxPirceHtml = `<option value="Tất cả">Tất cả</option>
+                            <option value="5">5 triệu</option>
                             <option value="7">7 triệu</option>
                             <option value="10">10 triệu</option>
                             <option value="20">20 triệu</option>`;
       } else if (minpriceSession == "7") {
-        var maxPirceHtml = `<option value="7">7 triệu</option>
+        var maxPirceHtml = `<option value="Tất cả">Tất cả</option>
+                            <option value="7">7 triệu</option>
                             <option value="10">10 triệu</option>
                             <option value="20">20 triệu</option>`;
       } else if (minpriceSession == "10") {
-        var maxPirceHtml = `<option value="10">10 triệu</option>
+        var maxPirceHtml = `<option value="Tất cả">Tất cả</option>
+                            <option value="7">7 triệu</option>
                             <option value="20">20 triệu</option>`;
       } else if (minpriceSession == "20") {
-        var maxPirceHtml = `<option value="20">20 triệu</option>`;
+        var maxPirceHtml = `<option value="7">7 triệu</option>
+                            <option value="Tất cả">Tất cả</option>`;
       }
 
       $("#maxPrices").html(maxPirceHtml);
@@ -389,32 +464,38 @@ $(document).ready(function () {
                           <option value="10">10 triệu</option>
                           <option value="20">20 triệu</option>`;
     } else if (minprice == "1") {
-      var maxPirceHtml = `<option value="1">1 triệu</option>
+      var maxPirceHtml = `<option value="Tất cả">Tất cả</option>
+                          <option value="1">1 triệu</option>
                           <option value="3">3 triệu</option>
                           <option value="5">5 triệu</option>
                           <option value="7">7 triệu</option>
                           <option value="10">10 triệu</option>
                           <option value="20">20 triệu</option>`;
     } else if (minprice == "3") {
-      var maxPirceHtml = `<option value="3">3 triệu</option>
+      var maxPirceHtml = `<option value="Tất cả">Tất cả</option>
+                          <option value="3">3 triệu</option>
                           <option value="5">5 triệu</option>
                           <option value="7">7 triệu</option>
                           <option value="10">10 triệu</option>
                           <option value="20">20 triệu</option>`;
     } else if (minprice == "5") {
-      var maxPirceHtml = `<option value="5">5 triệu</option>
+      var maxPirceHtml = `<option value="Tất cả">Tất cả</option>
+                          <option value="5">5 triệu</option>
                           <option value="7">7 triệu</option>
                           <option value="10">10 triệu</option>
                           <option value="20">20 triệu</option>`;
     } else if (minprice == "7") {
-      var maxPirceHtml = `<option value="7">7 triệu</option>
+      var maxPirceHtml = `<option value="Tất cả">Tất cả</option>
+                          <option value="7">7 triệu</option>
                           <option value="10">10 triệu</option>
                           <option value="20">20 triệu</option>`;
     } else if (minprice == "10") {
-      var maxPirceHtml = `<option value="10">10 triệu</option>
+      var maxPirceHtml = `<option value="Tất cả">Tất cả</option>
+                          <option value="7">7 triệu</option>
                           <option value="20">20 triệu</option>`;
     } else if (minprice == "20") {
-      var maxPirceHtml = `<option value="20">20 triệu</option>`;
+      var maxPirceHtml = `<option value="7">7 triệu</option>
+                          <option value="Tất cả">Tất cả</option>`;
     }
 
     $("#maxPrices").html(maxPirceHtml);
@@ -465,6 +546,8 @@ $(document).ready(function () {
       $(this).children("i").addClass("fas");
     }
   }); */
+  
+  // sự kiện bấm nút tim
   $("body").on("click", ".favorite", function(even) {
     var id = $(this).parent().find(".idPost").text();
     var icon = $(this).children('i');
@@ -634,6 +717,7 @@ $(document).ready(function () {
       return false;
     } else {
       load_post_per_page(1);
+      $("html").scrollTop(0);
     }
   });
 
@@ -645,6 +729,7 @@ $(document).ready(function () {
       return false;
     } else {
       load_post_per_page(pageNumber - 1);
+      $("html").scrollTop(0);
     }
   });
 
@@ -664,6 +749,7 @@ $(document).ready(function () {
           var totalPage = Math.ceil(totalPost / post_per_page);
           if(pageNumber <= totalPage) {
             load_post_per_page(totalPage);
+            $("html").scrollTop(0);
           }
         } else if(result == 0) {
           /* alert("không có kết quả tìm kiếm nào phù hợp"); */
@@ -691,6 +777,7 @@ $(document).ready(function () {
           var totalPage = Math.ceil(totalPost / post_per_page);
           if(pageNumber <= totalPage) {
             load_post_per_page(pageNumber + 1);
+            $("html").scrollTop(0);
           }
         } else if(result == 0) {
           /* alert("không có kết quả tìm kiếm nào phù hợp"); */

@@ -54,13 +54,14 @@
       if($maxpriceSearch == "Tất cả") {
         $stmt = $db->prepare("SELECT * FROM post
                               WHERE province LIKE ? AND district LIKE ? AND loai_phong LIKE ? AND status_post = 1 AND status_phong = 1 AND gia_phong LIKE '%%'
+                              ORDER by id_post DESC
                               LIMIT ? OFFSET ?");
-        $stmt->execute([$city, $district, $type_room  , $post_per_page, $offset ]);
-      } else {
+        $stmt->execute([$city, $district, $type_room  , $post_per_page, $offset]);
+      } else if($maxpriceSearch != "Tất cả") {
         $stmt = $db->prepare("SELECT * FROM post
                               WHERE province LIKE ? AND district = ? AND loai_phong LIKE ? AND status_post = 1 AND status_phong = 1 AND gia_phong <= ?
                               LIMIT ? OFFSET ?");
-        $stmt->execute([$city, $district, $type_room, $maxprice , $post_per_page, $offset ]);
+        $stmt->execute([$city, $district, $type_room, $maxprice , $post_per_page, $offset]);
       }
     } else if($minpriceSearch != "Tất cả"){
       if($maxpriceSearch == "Tất cả") {
@@ -68,7 +69,7 @@
                               WHERE province LIKE ? AND district LIKE ? AND loai_phong LIKE ? AND status_post = 1 AND status_phong = 1 AND gia_phong >= ?
                               LIMIT ? OFFSET ?");
         $stmt->execute([$city, $district, $type_room, $minprice, $post_per_page, $offset ]);
-      } else {
+      } else if($maxpriceSearch != "Tất cả") {
         $stmt = $db->prepare("SELECT * FROM post
                               WHERE province LIKE ? AND district LIKE ? AND loai_phong LIKE ? AND status_post = 1 AND status_phong = 1 AND gia_phong >= ? AND gia_phong <= ?
                               LIMIT ? OFFSET ?");
@@ -111,6 +112,9 @@
           'tieu_de' => $row['tieu_de'],
           'gia_phong' => $row['gia_phong'],
           'tg_duyet_bai' => $row['tg_duyet_bai'],
+          'province' => $row['province'],
+          'district' => $row['district'],
+          'dien_tich' => $row['dien_tich']
         );
       }
     }

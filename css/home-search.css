@@ -1,11 +1,13 @@
 body {
   background-color: #f0f2f5;
 }
+
 .wrapper {
   background-color: #f0f2f5;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
+
 /* phan tim kiem*/
 .search-content {
   height: 440px;
@@ -14,9 +16,11 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 .display-flex {
   display: flex;
 }
+
 .slogan {
   font-size: 30px;
   font-weight: 700;
@@ -32,15 +36,18 @@ body {
   margin: auto;
   height: 200px;
 }
+
 .choose-area {
   width: 30%;
   border-right: 1px solid white;
 }
+
 .choose-room {
   width: 40%;
   border-right: 1px solid white;
   padding-left: 101px;
 }
+
 .choose-prices {
   width: 30%;
 }
@@ -73,7 +80,7 @@ label.label-choose-room {
   font-size: 13px;
 }
 
-.choose-prices > label {
+.choose-prices>label {
   color: #fafafa;
   font-weight: 600;
   font-size: 16px;
@@ -115,11 +122,25 @@ label.label-choose-room {
 }
 
 /* phan danh sach bai dang */
+.summary {
+  background-color: #d2d2d2;
+}
+
+.link-search {
+  display: block;
+  background-color: #d2d2d2;
+}
+
+.result-summary {
+  display: block;
+  background-color: #d2d2d2;
+}
+
 .post-content {
   padding: 60px 120px 32px 120px;
 }
 
-.idPost{
+.idPost {
   display: none;
 }
 
@@ -156,7 +177,7 @@ img.img-post {
 }
 
 .titlePost {
-  position: absolute;
+  /* position: absolute; */
   text-decoration: none;
   color: black;
   /* font-weight: bold; */
@@ -164,20 +185,29 @@ img.img-post {
 }
 
 .Prices-div {
-  position: absolute;
-  top: 106px;
+  /* position: absolute; */
+  /* top: 106px; */
+ /*  margin-top: 6px; */
+}
+
+.Prices-icon {
+
+  font-size: 16px;
+
+  padding-top: 5px;
 }
 
 .Prices {
-  font-size: 20px;
+  font-size: 23px;
   font-weight: 600;
   color: #427bff;
+  margin-left: 7px;
 }
 
 .datePost {
   position: absolute;
-  top: 149px;
-  font-size: 12px;
+  top: 148px;
+  font-size: 14px;
 }
 
 .telephone-div {
@@ -187,17 +217,41 @@ img.img-post {
 }
 
 .address-div {
-  position: absolute;
-  top: 70px;
+  /* position: absolute; */
+  /* top: 70px; */
+  margin-top: 8px;
+}
+
+.address-icon {
+  font-size: 16px;
+  margin-left: 3px;
+}
+
+.area-div {
+  margin-top: 6px;
+}
+
+.area-icon {
+
+  font-size: 16px;
+}
+
+.areaPost {
+
+  margin-left: 5px;
+
+  font-size: 16px;
 }
 
 .addressPost {
-  font-size: 14px;
+  font-size: 15px;
   color: gray;
+  margin-left: 8px;
 }
 
 .favorite {
-  align-self: flex-end;
+  /* align-self: flex-end; */
+  padding-top: 145px;
 }
 
 i.far.fa-heart {
@@ -208,6 +262,7 @@ i.far.fa-heart {
 .paging-bar {
   height: 40px;
 }
+
 .currPage {
   background-color: #636569;
   color: white;
@@ -216,9 +271,11 @@ i.far.fa-heart {
 .titlePost:hover {
   text-decoration: none;
 }
+
 .paging-bar li:hover {
   cursor: pointer;
 }
+
 @media (max-width: 1199px) {
   .telephone-div {
     position: absolute;
@@ -229,8 +286,8 @@ i.far.fa-heart {
 
 @media (max-width: 991px) {
   .post-content {
-    padding: 20px 0px 20px 0px;
-  }
+    padding: 20px 7px 20px 7px;
+}
 }
 
 @media (max-width: 768px) {
@@ -238,15 +295,17 @@ i.far.fa-heart {
     padding: 0px;
     border: none;
   }
+
   .post-content {
-    padding: 20px 0px 20px 0px;
-  }
+    padding: 20px 7px 20px 7px;
+}
 
   .telephone-div {
     position: absolute;
     top: 145px;
     left: 233px;
   }
+
   .slogan {
     font-size: 30px;
     font-weight: 700;
@@ -259,15 +318,18 @@ i.far.fa-heart {
   .display-flex {
     display: block;
   }
+
   .choose-area {
     width: 100%;
     border: none;
   }
+
   .choose-area select {
     max-width: 95%;
     font-weight: 600;
     cursor: pointer;
   }
+
   .choose-room {
     width: 100%;
     border: none;
@@ -278,6 +340,7 @@ i.far.fa-heart {
     width: 92%;
     margin-bottom: 20px;
   }
+
   .select-minPrices select {
     width: 100%;
     height: 31px;
@@ -307,8 +370,9 @@ i.far.fa-heart {
     padding: 0px;
     height: 518px;
   }
+
   .titlePost {
-    position: absolute;
+    /* position: absolute; */
     text-decoration: none;
     color: black;
     /* font-weight: bold; */
@@ -322,10 +386,33 @@ i.far.fa-heart {
   }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 515px) {
   .telephone-div {
-    top: 129px;
-    left: 8px;
+    position: absolute;
+    top: 145px;
+    left: 223px;
   }
-}
 
+  .titlePost {
+    /* position: absolute; */
+    text-decoration: none;
+    color: black;
+    /* font-weight: bold; */
+    font-size: 17px;
+  }
+
+  .Prices {
+    font-size: 20px;
+    font-weight: 600;
+    color: #427bff;
+    margin-left: 7px;
+  }
+
+  .favorite {
+    /* align-self: flex-end; */
+    padding-top: 145px;
+}
+.post-content {
+  padding: 20px 7px 20px 7px;
+}
+}
