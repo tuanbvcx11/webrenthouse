@@ -248,6 +248,14 @@ i.far.fa-heart {
     bottom: 0px;
     right: 18px;
   }
+
+  .titlePost {
+    font-size: 22px;
+  }
+
+  .Prices {
+    font-size: 18px;
+  }
 }
 
 
@@ -259,6 +267,14 @@ i.far.fa-heart {
     left: 434px;*/
     bottom: 0px;
     right: 18px;
+  }
+
+  .titlePost {
+    font-size: 20px;
+  }
+
+  .Prices {
+    font-size: 17px;
   }
 }
 
