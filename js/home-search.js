@@ -252,7 +252,7 @@ function load_post_per_page(pageNumber) {
                 }
               } else if(minpriceSearch != "Tất cả") {
                 if(maxpriceSearch == "Tất cả") {
-                  priceSearch += "Giá trên " + maxpriceSearch + " triệu";
+                  priceSearch += "Giá trên " + minpriceSearch + " triệu";
                 } else {
                   priceSearch += "Giá từ " + minpriceSearch + "đến dưới " + maxpriceSearch + " triệu";
                 }

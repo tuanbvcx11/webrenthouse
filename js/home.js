@@ -292,33 +292,39 @@ $(document).ready(function () {
                           <option value="10">10 triệu</option>
                           <option value="20">20 triệu</option>`;
     } else if(minprice == "1") {
-      var maxPirceHtml = `<option value="1">1 triệu</option>
+      var maxPirceHtml = `<option value="Tất cả">Tất cả</option>
+                          <option value="1">1 triệu</option>
                           <option value="3">3 triệu</option>
                           <option value="5">5 triệu</option>
                           <option value="7">7 triệu</option>
                           <option value="10">10 triệu</option>
                           <option value="20">20 triệu</option>`;
     } else if(minprice == "3") {
-      var maxPirceHtml = `<option value="3">3 triệu</option>
+      var maxPirceHtml = `<option value="Tất cả">Tất cả</option>
+                          <option value="3">3 triệu</option>
                           <option value="5">5 triệu</option>
                           <option value="7">7 triệu</option>
                           <option value="10">10 triệu</option>
                           <option value="20">20 triệu</option>`;
     } else if(minprice == "5") {
-      var maxPirceHtml = `<option value="5">5 triệu</option>
+      var maxPirceHtml = `<option value="Tất cả">Tất cả</option>
+                          <option value="5">5 triệu</option>
                           <option value="7">7 triệu</option>
                           <option value="10">10 triệu</option>
                           <option value="20">20 triệu</option>`;
     } else if(minprice == "7") {
-      var maxPirceHtml = `<option value="7">7 triệu</option>
+      var maxPirceHtml = `<option value="Tất cả">Tất cả</option>
+                          <option value="7">7 triệu</option>
                           <option value="10">10 triệu</option>
                           <option value="20">20 triệu</option>`;
     } else if(minprice == "10") {
-      var maxPirceHtml = `<option value="10">10 triệu</option>
+      var maxPirceHtml = `<option value="Tất cả">Tất cả</option>
+                          <option value="10">10 triệu</option>
                           <option value="20">20 triệu</option>`;
 
     } else if(minprice == "20") {
-      var maxPirceHtml = `<option value="20">20 triệu</option>`;
+      var maxPirceHtml = `<option value="Tất cả">Tất cả</option>
+                          <option value="20">20 triệu</option>`;
     }
 
     $("#maxPrices").html(maxPirceHtml);
