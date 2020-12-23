@@ -46,7 +46,7 @@
         $stmt = $db->prepare("SELECT * FROM post WHERE province LIKE ? AND district LIKE ? AND loai_phong LIKE ? AND status_post = 1 AND status_phong = 1 AND gia_phong LIKE '%%'");
         $stmt->execute([$city, $district, $type_room]);
       } else {
-        $stmt = $db->prepare("SELECT * FROM post WHERE province LIKE ? AND district = ? AND loai_phong LIKE ? AND status_post = 1 AND status_phong = 1 AND gia_phong <= ?");
+        $stmt = $db->prepare("SELECT * FROM post WHERE province LIKE ? AND district LIKE ? AND loai_phong LIKE ? AND status_post = 1 AND status_phong = 1 AND gia_phong <= ?");
         $stmt->execute([$city, $district, $type_room, $maxprice]);
       }
     } else if($minpriceSearch != "Tất cả"){

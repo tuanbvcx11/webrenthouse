@@ -408,7 +408,7 @@ $(document).ready(function () {
                             <option value="7">7 triệu</option>
                             <option value="20">20 triệu</option>`;
       } else if (minpriceSession == "20") {
-        var maxPirceHtml = `<option value="7">7 triệu</option>
+        var maxPirceHtml = `<option value="20">20 triệu</option>
                             <option value="Tất cả">Tất cả</option>`;
       }
 
@@ -510,7 +510,7 @@ $(document).ready(function () {
                           <option value="7">7 triệu</option>
                           <option value="20">20 triệu</option>`;
     } else if (minprice == "20") {
-      var maxPirceHtml = `<option value="7">7 triệu</option>
+      var maxPirceHtml = `<option value="20">20 triệu</option>
                           <option value="Tất cả">Tất cả</option>`;
     }
 
