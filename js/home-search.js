@@ -272,11 +272,50 @@ function load_post_per_page(pageNumber) {
             },
           });
           load_post();
-        } else {
-          
-        }
+        } 
       } else if(result == 0) {
-        alert("không có kết quả tìm kiếm nào phù hợp")
+        alert("không có kết quả tìm kiếm nào phù hợp");
+        $.ajax({
+          url: "module/function/fetch-input-from-session.php",
+          type: "post",
+          dataType: "json",
+          data: {},
+          success: function (result) {
+            var citySearch = (result['citySearch'] == "Thành phố") ? "" : ("/" + result['citySearch']);
+            var districtSearch = (result['districtSearch'] == "Quận(Huyện)") ? "" : ("/" + result['districtSearch']);
+            var type_roomSearch = (result['type_roomSearch'] == "Tất cả") ? "" : ("/" + result['type_roomSearch']);
+            var priceSearch = "/";
+            var minpriceSearch = result['minpriceSearch'];
+            var maxpriceSearch = result['maxpriceSearch'];
+
+            if(minpriceSearch == "Tất cả") {
+              if(maxpriceSearch == "Tất cả") {
+                priceSearch += "Tất cả";
+              } else {
+                priceSearch += "Giá dưới " + minpriceSearch + " triệu";
+              }
+            } else if(minpriceSearch != "Tất cả") {
+              if(maxpriceSearch == "Tất cả") {
+                priceSearch += "Giá trên " + minpriceSearch + " triệu";
+              } else {
+                priceSearch += "Giá từ " + minpriceSearch + " đến dưới " + maxpriceSearch + " triệu";
+              }
+            }
+
+            var summaryHTML = `<div class="link-search">
+                                Trang chủ/Tìm kiếm`+ citySearch + districtSearch + type_roomSearch + priceSearch +`
+                              </div>
+                              <div class="result-summary">
+                                Kết quả: 0 bài đăng
+                              </div>`
+            $(".summary").html(summaryHTML);
+            
+          },
+          error: function (result) {
+            alert("không thể update dữ liệu");
+          },
+        });
+        load_post();
       }
     },
     error: function (result) {
