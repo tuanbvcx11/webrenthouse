@@ -94,6 +94,9 @@
 .mo_ta{
   width: 50%;
 }
+.thay_doi.inf .flex_box .mo_ta > *{
+  width: 100%;
+}
 
 .ho_ten, .chung_minh, .dien_thoai, .email, .dia_chi{
     float: right;
@@ -205,10 +208,10 @@ i.far.fa-heart {
     margin: auto;
     font-size: 20px;
 }
-.change_infor{
+/*.change_infor{
   margin-left: 20%;
   margin-right: 20%;
-}
+}*/
 @media (max-width: 991px) {
   .infor{
     width: 100%;
@@ -242,9 +245,9 @@ input {
 }
 
 .thay_doi_inf{
-    display: inline-block;
+    /*
     margin-left: 35%;
-    margin-right: 35%;
+    margin-right: 35%;*/
 }
 .post_none{
   text-align : center;
@@ -260,4 +263,11 @@ input {
   margin-left: 5px;
 
   font-size: 16px;
+}
+
+.change_submit, .change_exit{
+  font-size: 20px;
+}
+.change_submit{
+  float: right;
 }
