@@ -54,18 +54,18 @@
 
     if($minpriceSearch == "Tất cả") {
       if($maxpriceSearch == "Tất cả") {
-        $stmt = $db->prepare("SELECT * FROM post WHERE province LIKE ? AND district LIKE ? AND loai_phong LIKE ? AND status_post = 1 AND status_phong = 1 AND gia_phong LIKE '%%' ORDER by id_post DESC LIMIT ? OFFSET ?");
+        $stmt = $db->prepare("SELECT * FROM post WHERE province LIKE ? AND district LIKE ? AND loai_phong LIKE ? AND status_post = 1 AND status_phong = 1 AND gia_phong LIKE '%%' ORDER BY id_post DESC LIMIT ? OFFSET ?");
         $stmt->execute([$city, $district, $type_room, $post_per_page, $offset]);
       } else if($maxpriceSearch != "Tất cả") {
-        $stmt = $db->prepare("SELECT * FROM post WHERE province LIKE ? AND district LIKE ? AND loai_phong LIKE ? AND status_post = 1 AND status_phong = 1 AND gia_phong <= ? ORDER by id_post DESC LIMIT ? OFFSET ?");
+        $stmt = $db->prepare("SELECT * FROM post WHERE province LIKE ? AND district LIKE ? AND loai_phong LIKE ? AND status_post = 1 AND status_phong = 1 AND gia_phong <= ? ORDER BY id_post DESC LIMIT ? OFFSET ?");
         $stmt->execute([$city, $district, $type_room, $maxprice, $post_per_page, $offset]);
       }
     } else if($minpriceSearch != "Tất cả"){
       if($maxpriceSearch == "Tất cả") {
-        $stmt = $db->prepare("SELECT * FROM post WHERE province LIKE ? AND district LIKE ? AND loai_phong LIKE ? AND status_post = 1 AND status_phong = 1 AND gia_phong >= ? ORDER by id_post DESC LIMIT ? OFFSET ?");
+        $stmt = $db->prepare("SELECT * FROM post WHERE province LIKE ? AND district LIKE ? AND loai_phong LIKE ? AND status_post = 1 AND status_phong = 1 AND gia_phong >= ? ORDER BY id_post DESC LIMIT ? OFFSET ?");
         $stmt->execute([$city, $district, $type_room, $minprice, $post_per_page, $offset ]);
       } else if($maxpriceSearch != "Tất cả") {
-        $stmt = $db->prepare("SELECT * FROM post WHERE province LIKE ? AND district LIKE ? AND loai_phong LIKE ? AND status_post = 1 AND status_phong = 1 AND gia_phong >= ? AND gia_phong <= ? ORDER by id_post DESC LIMIT ? OFFSET ?");
+        $stmt = $db->prepare("SELECT * FROM post WHERE province LIKE ? AND district LIKE ? AND loai_phong LIKE ? AND status_post = 1 AND status_phong = 1 AND gia_phong >= ? AND gia_phong <= ? ORDER BY id_post DESC LIMIT ? OFFSET ?");
         $stmt->execute([$city, $district, $type_room, $minprice, $maxprice, $post_per_page, $offset ]);
       }
     }
