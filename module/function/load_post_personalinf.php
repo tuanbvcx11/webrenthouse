@@ -9,7 +9,7 @@
     $result = array();
    
     
-    $stmt = $db->prepare("SELECT post.id_post, post.tieu_de, post.spe_add, post.district, post.province, post.gia_phong, post.tg_dang_bai, img.img FROM post JOIN img ON post.id_post = img.id_bai_viet WHERE post.id_user = ? AND post.status_post = '1' GROUP BY post.id_post limit 2 offset ?");
+    $stmt = $db->prepare("SELECT post.id_post, post.tieu_de, post.spe_add, post.district, post.province, post.gia_phong, post.tg_dang_bai, post.dien_tich, img.img FROM post JOIN img ON post.id_post = img.id_bai_viet WHERE post.id_user = ? AND post.status_post = '1' GROUP BY post.id_post limit 2 offset ?");
     
     $stmt->execute([$id, $count]);
     $count = $stmt->rowCount();
@@ -30,6 +30,7 @@
 		    	'id_post' => $row['id_post'],
 		    	'tieu_de' => $row['tieu_de'],
 		    	'spe_add' => $row['spe_add'],
+		    	'dien_tich' => $row['dien_tich'],
 		    	'district' => $row['district'],
 		    	'province' => $row['province'],
 		    	'gia_phong' => $row['gia_phong'],

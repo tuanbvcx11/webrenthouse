@@ -123,16 +123,13 @@ body{
 }
 
 #dia_chi{
-  margin-left: 3%;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .titlebox{
   margin-top: 10px; 
   padding-top: 10px;
   text-transform: uppercase;
-  margin-left: 2%;
-  margin-right: 2%;
 }
 
 .idtin, .ngaydang, .ngayhethan{
@@ -303,9 +300,7 @@ body{
 }
 
 .title{
-  font-size: 30px;
-  font-weight: bold;
-  margin-left: 10px;
+  font-size: 25px;
 }
 
 .comments #comment{
@@ -374,8 +369,7 @@ body{
 }
 
 #gia{
-  margin-left: 3%;
-  font-size: 30px;
+  font-size: 25px;
   color: #009177;
   font-weight: 700;
 }
@@ -412,5 +406,9 @@ p {
 }
 
 .modal .modal-dialog{
-           transition: opacity 0.5s linear;
+    transition: opacity 0.5s linear;
  }
+
+.binhluantitle{
+  margin-left: 2%; 
+}

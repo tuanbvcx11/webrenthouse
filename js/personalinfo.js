@@ -115,6 +115,12 @@ var load_post = function load_post(){
             html += '<div class="d-flex baidang"><div class="img-div">';
             html += '<a class="link-img" href="#"><img class="img-post" src="./upload/'+item.img+'" alt="'+item.tieu_de+'"/></a></div>';
             html += '<div class="brief-div"><span class="idPost">'+item.id_post+'</span><a class="titlePost" href="#">'+item.tieu_de+'</a>';
+            html +=`<div class="d-flex area-div">
+                            <div class="area-icon">
+                              <i class="fas fa-home"></i>
+                            </div>
+                            <div class="areaPost">`+ item.dien_tich +` m<sup>2</sup> </div>
+                          </div>`;
             html += '<div class="d-flex address-div"><div class="mr-1 address-icon"><i class="fas fa-map-marker-alt"></i>';
             html += '</div><div class="addressPost">'+item.spe_add+', '+item.district+', '+item.province+'</div></div>';
             html += '<div class="d-flex Prices-div"><div class="mt-1 mr-1 Prices-icon"><i class="fas fa-coins"></i></div>';

@@ -38,6 +38,7 @@
 		    $result[] = array(
 		    	'id_post' => $row['id_bai_viet'],
 		    	'tieu_de' => $rowPOST['tieu_de'],
+		    	'dien_tich' => $rowPOST['dien_tich'],
 		    	'spe_add' => $rowPOST['spe_add'],
 		    	'district' => $rowPOST['district'],
 		    	'province' => $rowPOST['province'],

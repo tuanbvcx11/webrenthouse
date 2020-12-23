@@ -2,6 +2,20 @@ var page = 1;
 var count_post;
 
 
+// hàm viết hoa chữ cái đầu
+function jsUcfirst(string) {
+        return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+//chuyển ngày về dạng dd/mm/yyy
+function convertDate (str) {
+      var res = str.split('-');
+      var year = res[0];
+      var month = res[1];
+      var day = res[2];
+      return day + '-' + month + '-' + year;
+    }
+
 // hàm convert tiền về string
 function convertPrice(money) {
   let ans = "";
@@ -37,7 +51,6 @@ var load_post = function load_post(){
 	    type : 'post',
 	    dataType : 'json',
 	    data : {
-
 	    	page : page,
 	    },
 
@@ -53,12 +66,73 @@ var load_post = function load_post(){
             html += '<!-- tóm tắt --><div class="brief-div"><span class="idPost">'+item.id_post+'</span><a class="titlePost" href="#">';
             html += item.tieu_de+'</a><div class="d-flex address-div"><div class="mr-1 address-icon"><i class="fas fa-map-marker-alt"></i>';
             html +=	'</div><div class="addressPost">'+item.spe_add+', '+item.district+', '+item.province+'</div></div>';
+            html +=`<div class="d-flex area-div">
+                            <div class="area-icon">
+                              <i class="fas fa-home"></i>
+                            </div>
+                            <div class="areaPost">`+ item.dien_tich +` m<sup>2</sup> </div>
+                          </div>`;
             html +=	'<div class="d-flex Prices-div"><div class="mt-1 mr-1 Prices-icon"><i class="fas fa-coins"></i>';
-            html += '</div><div class="Prices">'+convertPrice(item.gia_phong)+'</div></div><div class="datePost">Ngày đăng: '+item.tg_dang_bai+'</div></div>';
+            html += '</div><div class="Prices">'+convertPrice(item.gia_phong)+'</div></div><div class="datePost">Ngày đăng: '+convertDate(item.tg_dang_bai)+'</div></div>';
             html +=	'<div class="dislike"><button class="btn btn-primary">Xóa</button></div></div>';
            
-          });
+           });
+      //     var html = '';
+      // $.each(result, function (key, item) {
+      //   // item.gia_phong = convertPrice(item.gia_phong);
+      //   html +=`<div class="list-table">`+
+      //     `<div class="d-flex baidang">
+      //                   <!-- ảnh -->
+      //                   <div class="img-div">
+      //                     <a class="link-img" href="#">
+      //                       <img
+      //                         class="img-post"
+      //                         src="./upload/` + item.img + `"
+      //                         alt=""
+      //                       />
+      //                     </a>
+      //                   </div>
+      //                   <!-- tóm tắt -->
+      //                   <div class="brief-div">
+      //                     <span class="idPost">` + item.id_post + `</span>
+      //                     <a class="titlePost" href="#">` + jsUcfirst(item.tieu_de) + `</a>
 
+      //                     <div class="d-flex address-div">
+      //                       <div class="address-icon">
+      //                         <i class="fas fa-map-marker-alt"></i>
+      //                       </div>
+      //                       <div class="addressPost"> ` + item.spe_add +`, `+ item.district + `, ` + item.province + ` </div>
+      //                     </div>
+
+                          // <div class="d-flex area-div">
+                          //   <div class="area-icon">
+                          //     <i class="fas fa-home"></i>
+                          //   </div>
+                          //   <div class="areaPost">`+ item.dien_tich +` m<sup>2</sup> </div>
+                          // </div>
+
+      //                     <div class="d-flex Prices-div">
+      //                       <div class="Prices-icon">
+      //                         <i class="fas fa-coins"></i>
+      //                       </div>
+      //                       <div class="Prices">` + convertPrice(item.gia_phong) + `</div>
+      //                     </div>
+
+      //                     <div class="datePost">Ngày đăng: ` + convertDate(item.tg_duyet_bai) + `</div>
+
+      //                     <div class="d-flex telephone-div">
+      //                       <div class="mr-1 telephone-icon">
+      //                         <i class="fas fa-mobile-alt"></i>
+      //                       </div>
+      //                       <div class="telephone">` + item.tel + `</div>
+      //                     </div>
+      //                   </div>
+      //                   <div class="favorite">
+      //                     <i class="far fa-heart` + item.buttonFav + `"></i>
+      //                   </div>
+      //                 </div>
+      //                 </div></div>`;
+      // });
           if (html != ''){
 
             $('.paging').css('display', 'block');
