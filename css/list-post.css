@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
 .body {
 	margin-top: 20px;	
+	font-family: 'Open Sans', sans-serif;
 }
 
 .select_post {

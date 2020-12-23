@@ -147,6 +147,7 @@ label.label-choose-room {
   width: 66%;
   position: relative;
   padding-left: 8px;
+  cursor: pointer;
 }
 
 .titlePost {
@@ -154,13 +155,13 @@ label.label-choose-room {
   text-decoration: none;
   color: black;
   /* font-weight: bold; */
-  font-size: 17px;
+  font-size: 20px;
 }
 
 .Prices-div {
   /* position: absolute;
   top: 99px; */
-  margin-top: -7px;
+  margin-top: 3px;
 }
 .Prices-icon {
   font-size: 15px;
@@ -184,7 +185,7 @@ label.label-choose-room {
 .address-div {
   /* position: absolute;
   top: 57px; */
-  margin-top: 2px;
+  margin-top: 3px;
 }
 .address-icon {
   margin-left: 3px;
@@ -199,7 +200,7 @@ label.label-choose-room {
 .area-div {
   /* position: absolute;
   top: 77px; */
-  margin-top: -2px;
+  margin-top: 5px;
 }
 .area-icon {
   font-size: 14px;
@@ -215,8 +216,10 @@ label.label-choose-room {
 
 .favorite {
   position: absolute;
-  top: 139px;
-  left: 318px;
+  bottom: 0px;
+  right: 18px;
+  /*top: 139px;
+  left: 318px;*/
 }
 
 i.far.fa-heart {
@@ -240,16 +243,38 @@ i.far.fa-heart {
 @media (max-width: 1199px) {
   .favorite {
     position: absolute;
-    top: 115px;
-    left: 593px;
+    /*top: 115px;
+    left: 593px;*/
+    bottom: 0px;
+    right: 18px;
+  }
+
+  .titlePost {
+    font-size: 22px;
+  }
+
+  .Prices {
+    font-size: 18px;
   }
 }
+
+
 
 @media (max-width: 991px) {
   .favorite {
     position: absolute;
-    top: 115px;
-    left: 434px;
+    /*top: 115px;
+    left: 434px;*/
+    bottom: 0px;
+    right: 18px;
+  }
+
+  .titlePost {
+    font-size: 20px;
+  }
+
+  .Prices {
+    font-size: 17px;
   }
 }
 
@@ -323,8 +348,10 @@ i.far.fa-heart {
     height: 518px;
   }
   .favorite {
-    top: 114px;
-    left: 447px;
+    /*top: 114px;
+    left: 447px;*/
+    bottom: 0px;
+    right: 18px;
   }
   .titlePost {
     text-decoration: none;
@@ -347,8 +374,10 @@ i.far.fa-heart {
 
 @media (max-width: 425px) {
   .favorite {
-    top: 114px;
-    left: 254px;
+    /*top: 114px;
+    left: 254px;*/
+    bottom: 0px;
+    right: 18px;
   }
 
   .Prices {/* 

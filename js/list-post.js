@@ -168,7 +168,7 @@ $(document).ready(function() {
 
 		if ($(this).hasClass('xem')) {
 			// đi đến trang thông tin bài viết
-
+			alert(idpost);
 
 		} else {
 			$(".modal .modal-body").text('bài viết số ' + idpost + ' không?');
