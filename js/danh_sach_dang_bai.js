@@ -18,7 +18,43 @@ function validHost() {
   });
 }
 validHost();
-
+// hàm biến đổi ngày
+function convertDate (str) {
+  var res = str.split('-');
+  var year = res[0];
+  var month = res[1];
+  var day = res[2];
+  return day + '-' + month + '-' + year;
+}
+// hàm convert tiền về string
+function convertPrice(money) {
+  let ans = "";
+  if (money >= 1000000000) {
+    let billions = parseInt(money / 1000000000);
+    ans += billions + " tỉ ";
+    let millions = parseInt((money - billions * 1000000000) / 1000000);
+    if (millions == 0) {
+      return ans;
+    }
+    ans += millions + " triệu ";
+    /* let thousands = parseInt((money - billions*1000000000 - millions*1000000)/1000);
+      ans += thousands + " nghìn"; */
+  } else if (money >= 1000000) {
+    let millions = parseInt(money / 1000000);
+    ans += millions + " triệu ";
+    let thousands = parseInt((money - millions * 1000000) / 1000);
+    if (thousands == 0) {
+      return ans;
+    }
+    ans += thousands + " nghìn";
+  } else if (money >= 1000) {
+    let thousands = parseInt(money / 1000);
+    ans += thousands + " nghìn";
+  } else {
+    return "số tiền nhỏ hơn 1000";
+  }
+  return ans;
+}
 // kiểm tra bài đăng đã hết hạn hay chưa
 function testExprisedPost() {
   $.ajax({
@@ -81,10 +117,10 @@ $(document).ready(function () {
               `<tr>
                           <td><span>`+index+`</span><div class="idPost">` +  item.id_post + `</div></td>
                           <td> <div class="tieude">` + item.tieu_de + `</div>
-                          <div class="chitiet"><i class="fas fa-map-marked-alt mr-1"></i>`+ item.spe_add + `</div>
-                          <div class="Prices"><i class="fas fa-coins mr-1"></i>`+ item.gia_phong +`</td>
+                          <div class="chitiet"><i class="fas fa-map-marked-alt mr-1"></i>`+ item.spe_add +`, `+ item.district + `, ` + item.province +  `</div>
+                          <div class="Prices"><i class="fas fa-coins mr-1"></i>`+ convertPrice(item.gia_phong) +`</td>
                           <td>` + item.yeu_thich + `</td>
-                          <td>` + item.tg_duyet_bai + `</td>
+                          <td>` + convertDate(item.tg_duyet_bai) + `</td>
                           <td>` + item.tg_hien_thi + `</td>
                           <td class="d-flex">
                             <button
@@ -120,9 +156,9 @@ $(document).ready(function () {
               `<tr>
                           <td><span>`+index+`</span><div class="idPost">` +  item.id_post + `</div></td>
                           <td> <div class="tieude">` + item.tieu_de + `</div>
-                          <div class="chitiet"><i class="fas fa-map-marked-alt mr-1"></i>`+ item.spe_add + `</div>
-                          <div class="Prices"><i class="fas fa-coins mr-1"></i>`+ item.gia_phong +`</td>
-                          <td>` + item.tg_dang_bai + `</td>
+                          <div class="chitiet"><i class="fas fa-map-marked-alt mr-1"></i>`+ item.spe_add +`, `+ item.district + `, ` + item.province + `</div>
+                          <div class="Prices"><i class="fas fa-coins mr-1"></i>`+ convertPrice(item.gia_phong) +`</td>
+                          <td>` + convertDate(item.tg_dang_bai )+ `</td>
                           <td>` + item.tg_hien_thi + `</td>
                           <td class="d-flex pl-3">
                             <button
@@ -167,10 +203,10 @@ $(document).ready(function () {
               `<tr>
                           <td><span>`+index+`</span><div class="idPost">` +  item.id_post + `</div></td>
                           <td> <div class="tieude">` + item.tieu_de + `</div>
-                          <div class="chitiet"><i class="fas fa-map-marked-alt mr-1"></i>`+ item.spe_add + `</div>
-                          <div class="Prices"><i class="fas fa-coins mr-1"></i>`+ item.gia_phong +`</td>
+                          <div class="chitiet"><i class="fas fa-map-marked-alt mr-1"></i>`+ item.spe_add +`, `+ item.district + `, ` + item.province + `</div>
+                          <div class="Prices"><i class="fas fa-coins mr-1"></i>`+ convertPrice(item.gia_phong) +`</td>
                           <td>` +item.yeu_thich +`</td>
-                          <td>` +item.tg_dang_bai +`</td>
+                          <td>` +convertDate(item.tg_dang_bai) +`</td>
                           
                           <td class="d-flex pl-3">
                             <button

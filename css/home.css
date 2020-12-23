@@ -128,7 +128,7 @@ label.label-choose-room {
 }
 
 .baidang {
-  height: 141px;
+  height: 158px;
   padding: 0px;
 }
 
@@ -150,7 +150,7 @@ label.label-choose-room {
 }
 
 .titlePost {
-  position: absolute;
+ /*  position: absolute; */
   text-decoration: none;
   color: black;
   /* font-weight: bold; */
@@ -158,36 +158,64 @@ label.label-choose-room {
 }
 
 .Prices-div {
-  position: absolute;
-  top: 82px;
+  /* position: absolute;
+  top: 99px; */
+  margin-top: -7px;
+}
+.Prices-icon {
+  font-size: 15px;
 }
 
 .Prices {
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 600;
   color: #427bff;
+  margin-left: 7px;
+  margin-top: -2px;
 }
 
 
 .datePost {
   position: absolute;
-  top: 116px;
+  top: 140px;
   font-size: 12px;
 }
 
 .address-div {
-  position: absolute;
-  top: 57px;
+  /* position: absolute;
+  top: 57px; */
+  margin-top: 2px;
 }
-
+.address-icon {
+  margin-left: 3px;
+  font-size: 14px;
+}
 .addressPost {
   font-size: 14px;
   color: gray;
+  margin-left: 9px;
+  padding-right: 26px;
 }
+.area-div {
+  /* position: absolute;
+  top: 77px; */
+  margin-top: -2px;
+}
+.area-icon {
+  font-size: 14px;
+}
+
+
+.areaPost {
+  font-size: 14px;
+  padding-top: 1px;
+  margin-left: 6px;
+}
+
 
 .favorite {
   position: absolute;
-  top: 115px;
+  top: 139px;
   left: 318px;
 }
 
@@ -213,7 +241,7 @@ i.far.fa-heart {
   .favorite {
     position: absolute;
     top: 115px;
-    left: 491px;
+    left: 593px;
   }
 }
 
@@ -296,10 +324,9 @@ i.far.fa-heart {
   }
   .favorite {
     top: 114px;
-    left: 316px;
+    left: 447px;
   }
   .titlePost {
-    position: absolute;
     text-decoration: none;
     color: black;
     /* font-weight: bold; */
@@ -324,20 +351,20 @@ i.far.fa-heart {
     left: 254px;
   }
 
-  .Prices {
+  .Prices {/* 
     position: absolute;
-    top: 79px;
+    top: 79px; */
     font-size: 18px;
     font-weight: 600;
   }
 
   .addressPost {
-    position: absolute;
-    top: 53px;
+    /* position: absolute;
+    top: 53px; */
     font-size: 12px;
   }
   .titlePost {
-    position: absolute;
+    /* position: absolute; */
     text-decoration: none;
     color: black;
     font-weight: bold;

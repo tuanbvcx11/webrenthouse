@@ -38,7 +38,10 @@
 	            'spe_add' => $row['spe_add'],
 	            'tieu_de' => $row['tieu_de'],
 	            'gia_phong' => $row['gia_phong'],
-	            'tg_duyet_bai' => $row['tg_duyet_bai']
+              'tg_duyet_bai' => $row['tg_duyet_bai'],
+              'province' => $row['province'],
+              'district' => $row['district'],
+              'dien_tich' => $row['dien_tich']
             );
             
 		}
