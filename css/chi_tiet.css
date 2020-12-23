@@ -81,6 +81,10 @@ body{
     position: relative;
 }
 
+#rectangle .row:first-child {
+  text-align: center;
+}
+
 #user_box{
   width:100%;
     height:auto;
@@ -302,7 +306,6 @@ body{
   font-size: 30px;
   font-weight: bold;
   margin-left: 10px;
-  font-family: -apple-system;
 }
 
 .comments #comment{
@@ -317,7 +320,11 @@ body{
   background-color: rgb(230,230,230);
   border-radius: 5px;
   margin: 2%;
-  
+  padding: 5px;
+}
+
+.user_comment .content {
+  font-size: 13px;
 }
 
 .hoten_user, .ten_user{
@@ -331,10 +338,13 @@ body{
 }
 
 .hoten_user, .ten_user, .content{
-  margin-left: 2%;
   margin-right: 2%;
   margin-bottom: 0%;
 
+}
+
+.ten_user {
+  margin-left: 2%;
 }
 
 .content{
@@ -372,7 +382,8 @@ body{
 i.fa.fa-arrow-circle-right {
     margin-top: 11px;
     cursor: pointer;
-    margin-left: 10px;
+    color: #007bff;
+    margin-left: 36%;
 }
 .card{
   margin-top:10px; 
@@ -393,13 +404,11 @@ p {
 }
 
 #rectangle .row p{
-  text-align: center;
-}
-.id_tin{
-  margin-left: 45%;
+  width: 100%;
+  
 }
 .ngay_dang, .ngay_hethan{
-  margin-left: 30%; 
+  /*margin-left: 30%; */
 }
 
 .modal .modal-dialog{
