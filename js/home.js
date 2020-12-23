@@ -328,16 +328,22 @@ $(document).ready(function () {
       },
       success: function (result) {
         if(result['alert'] == "đã lưu") {
-          tim = "đã lưu";
+          /* tim = "đã lưu";
           alert(id + " " + tim);
-          icon.addClass('fas');
+          icon.addClass('fas'); */
+          load_new_post();
+          load_favorite_post();
         } else if(result['alert'] == "hủy lưu") {
-          tim = "hủy lưu";
+          /* tim = "hủy lưu";
           alert(id + " " + tim);
-          icon.removeClass('fas');
+          icon.removeClass('fas'); */
+          load_new_post();
+          load_favorite_post();
         } else if(result['alert'] == "chưa đăng nhập") {
           alert("bạn cần đăng nhập để lưu bài đăng");
         }
+        
+        
       },
       error: function(result) {
         alert("lỗi lưu yêu thích");

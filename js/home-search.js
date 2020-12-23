@@ -564,6 +564,7 @@ $(document).ready(function () {
         if(result['alert'] == "đã lưu") {
           tim = "đã lưu";
           icon.addClass('fas');
+          
         } else if(result['alert'] == "hủy lưu") {
           tim = "hủy lưu";
           icon.removeClass('fas');
