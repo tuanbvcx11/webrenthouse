@@ -203,7 +203,7 @@ var get_data = function get_data(){
             }
             $(".loai_phong").text(jsUcfirst(result["loai-phong"]));
             $(".so_phong").text(result["so-phong"]);
-            $(".dientich").text(result["dien-tich"]+"m2");
+            $(".dientich").html(result["dien-tich"]+" m<sup>2</sup>");
             $(".chung_chu").text(jsUcfirst(result["chung-chu"]));
             $(".gia_dien").text(result["gia-dien"] + " VND/số");
             $(".gia_nuoc").text(result["gia-nuoc"] + " VND/khối");
