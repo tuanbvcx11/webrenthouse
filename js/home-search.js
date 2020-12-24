@@ -248,13 +248,15 @@ function load_post_per_page(pageNumber) {
                 if(maxpriceSearch == "Tất cả") {
                   priceSearch += "Tất cả";
                 } else {
-                  priceSearch += "Giá dưới " + minpriceSearch + " triệu";
+                  priceSearch += "Giá dưới " + maxpriceSearch + " triệu";
                 }
               } else if(minpriceSearch != "Tất cả") {
                 if(maxpriceSearch == "Tất cả") {
                   priceSearch += "Giá trên " + minpriceSearch + " triệu";
+                }else if(minpriceSearch == maxpriceSearch){
+                  priceSearch += "Giá " + minpriceSearch + " triệu";
                 } else {
-                  priceSearch += "Giá từ " + minpriceSearch + " đến dưới " + maxpriceSearch + " triệu";
+                  priceSearch += "Giá từ " + minpriceSearch + " đến " + maxpriceSearch + " triệu";
                 }
               }
 
@@ -274,7 +276,7 @@ function load_post_per_page(pageNumber) {
           load_post();
         } 
       } else if(result == 0) {
-        
+        // hiển thị lúc không tìm kiếm được gì
         $.ajax({
           url: "module/function/fetch-input-from-session.php",
           type: "post",
@@ -292,13 +294,15 @@ function load_post_per_page(pageNumber) {
               if(maxpriceSearch == "Tất cả") {
                 priceSearch += "Tất cả";
               } else {
-                priceSearch += "Giá dưới " + minpriceSearch + " triệu";
+                priceSearch += "Giá dưới " + maxpriceSearch + " triệu";
               }
             } else if(minpriceSearch != "Tất cả") {
               if(maxpriceSearch == "Tất cả") {
                 priceSearch += "Giá trên " + minpriceSearch + " triệu";
+              }else if(minpriceSearch == maxpriceSearch){
+                priceSearch += "Giá " + minpriceSearch + " triệu";
               } else {
-                priceSearch += "Giá từ " + minpriceSearch + " đến dưới " + maxpriceSearch + " triệu";
+                priceSearch += "Giá từ " + minpriceSearch + " đến " + maxpriceSearch + " triệu";
               }
             }
 
@@ -718,12 +722,12 @@ $(document).ready(function () {
       dataType: "text",
       data: {},
       success: function (result) {
-        if (result > 0) {
+        if (result >= 0) {
           // số trang một bài(nếu chỉnh thì phải chỉnh cả trong find-post.php)
           var post_per_page = 8;
           var totalPost = result;
           var totalPage = Math.ceil(totalPost / post_per_page);
-          if(pageNumber1 > totalPage) {
+          if(pageNumber1 > totalPage || totalPost == "0") {
             $(".next").css("cursor", "not-allowed");
           }
         } else if(result == 0) {
@@ -745,12 +749,12 @@ $(document).ready(function () {
       dataType: "text",
       data: {},
       success: function (result) {
-        if (result > 0) {
+        if (result >= 0) {
           // số trang một bài(nếu chỉnh thì phải chỉnh cả trong find-post.php)
           var post_per_page = 8;
           var totalPost = result;
           var totalPage = Math.ceil(totalPost / post_per_page);
-          if(pageNumber1 > totalPage) {
+          if(pageNumber1 > totalPage || totalPost == "0") {
             $(".goPageTail").css("cursor", "not-allowed");
           }
         } else if(result == 0) {
@@ -803,7 +807,7 @@ $(document).ready(function () {
           var post_per_page = 8;
           var totalPost = result;
           var totalPage = Math.ceil(totalPost / post_per_page);
-          if(pageNumber <= totalPage) {
+          if(pageNumber < totalPage) {
             load_post_per_page(totalPage);
             $("html").scrollTop(0);
           }
@@ -831,11 +835,11 @@ $(document).ready(function () {
           var post_per_page = 8;
           var totalPost = result;
           var totalPage = Math.ceil(totalPost / post_per_page);
-          if(pageNumber <= totalPage) {
+          if(pageNumber < totalPage) {
             load_post_per_page(pageNumber + 1);
             $("html").scrollTop(0);
           }
-        } else if(result == 0) {
+        } else if(result == 0 || result == undefined) {
           /* alert("không có kết quả tìm kiếm nào phù hợp"); */
         }
       },
