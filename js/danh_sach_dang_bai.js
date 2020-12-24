@@ -264,14 +264,14 @@ $(document).ready(function () {
     testExprisedPost();
     load_post_table();
   });
-
+  
   $("body").on("click", ".bodyPost button", function () {
     idPost = $(this).parent().parent().children().children(".idPost").text();
     indexPost = $(this).parent().parent().children().children("span").text();
     if ($(this).hasClass("detailButton")) {
-      location.assign("./chi_tiet.html");
+      location.assign("./chi_tiet.html?idpost=" + idPost);
     } else if ($(this).hasClass("editButton")) {
-      location.assign("./chinh_sua_bai_dang.html");
+      location.assign("./chinh_sua_bai_dang.html?post=" + idPost);
     } else if ($(this).hasClass("eraseButton")) {
       $("#eraseModal .modal-body").text(
         "Bạn xác nhận xóa bài đăng số " + indexPost + " này?"
