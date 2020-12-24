@@ -101,7 +101,7 @@ var check_user = function check_user(){
     success : function(result){
         if (result == "owner"){
           $('.change_info').css("display","block");
-          $('change_pass').css("display","block");
+          $('.change_pass').css("display","block"); 
         }
     },
 

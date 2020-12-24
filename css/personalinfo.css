@@ -221,6 +221,7 @@ i.far.fa-heart {
 .change_info{
     /*margin-left: 35%;
     margin-right: 35%;*/
+    
     display: none;
     background-color: white!important;
     border: white 1px solid;
@@ -280,8 +281,8 @@ input {
 }
 
 .change_info i{
-  color: gray;
-  transform: scale(2,2);
+  color: gray!important;
+  font-size: 20px;
 }
 .change_pass{
   background-color: white!important;
