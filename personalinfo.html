@@ -220,7 +220,25 @@
 
                 </div>
                 <div>
-                    <button class="btn btn-primary change_info">Chỉnh sửa trang cá nhân</button>
+                  <div class="row">
+                    <div class="col-2"></div>
+                    <div class="col-4">
+                      <button class="btn btn-primary change_info">
+                      <i class="fas fa-user-cog" class="change_info">&nbsp;Đổi thông tin</i>
+                    </button>
+                    </div>
+                    <div class="col-4">
+                      <button class="btn btn-primary change_pass">
+                      <i class="fas fa-exchange-alt">&nbsp;Đổi mật khẩu</i>
+                      
+                    </button>
+                    </div>
+                  </div>
+                    
+                    
+                    <div>
+                     
+                    </div>
                 </div>
               </div>
 
@@ -233,7 +251,7 @@
                                             <p class="sub_title">Họ tên:</p>
                                         </span>
                                         <span class="mo_ta">
-                                            <input type="text" class="inp_name">
+                                            <input type="text" class="inp_name form-control">
                                         </span>
                                     </span>
 
@@ -245,7 +263,7 @@
                                             <p class="sub_title">Số điện thoại:</p>
                                         </span>
                                         <span class="mo_ta">
-                                            <input type="text" class="inp_sdt" name="sdt" id="sodt">
+                                            <input type="text" class="inp_sdt form-control" name="sdt" id="sodt">
                                         </span>
                                     </span>
 
@@ -255,7 +273,7 @@
                                             <p class="sub_title">Email:</p>
                                         </span>
                                         <span class="mo_ta">
-                                            <input type="text" class="inp_email" id="email">
+                                            <input type="text" class="inp_email form-control" id="email">
                                         </span>
                                     </span>
 
@@ -265,22 +283,13 @@
                                             <p class="sub_title">Địa chỉ thường trú:</p>
                                         </span>
                                         <span class="mo_ta">
-                                            <input type="text" class="inp_dia_chi">
+                                            <input type="text" class="inp_dia_chi form-control">
                                         </span>
                                     </span>
 
                 </div>
                 <div class="thay_doi_inf">
-                    <!-- <button class="btn btn-primary change_submit">Xác nhận</button>
-                    <button class="btn btn-primary change_exit">Hủy</button> -->
-                    <!-- <span class="flex_box">
-                                        <span class="mo_ta">
-                                           <button class="btn btn-primary change_submit">Xác nhận</button>
-                                        </span>
-                                        <span class="mo_ta">
-                                              <button class="btn btn-primary change_exit">Hủy</button>
-                                        </span>
-                                    </span> -->
+                    
                     <div class="row">
                       <div class="col-3"></div>
                       <div class="col-3">
@@ -288,6 +297,46 @@
                       </div>
                       <div class="col-3">
                         <button class="btn btn-primary change_exit">Hủy</button>
+                      </div>
+                      <div class="col-3"></div>
+                    </div>
+                </div>
+              </div>
+              <div class="change_password">
+                <div class="dan_le">
+                            
+                
+
+                <!--mật khẩu mới-->
+                                    <span class="flex_box">
+                                        <span class="mo_ta">
+                                            <p class="sub_title">Mật khẩu mới:</p>
+                                        </span>
+                                        <span class="mo_ta">
+                                            <input type="text" class="form-control" id="password">
+                                        </span>
+                                    </span>
+
+                <!--nhập lại mật khẩu mới-->                    
+                                    <span class="flex_box">
+                                        <span class="mo_ta">
+                                            <p class="sub_title">Nhập lại mật khẩu:</p>
+                                        </span>
+                                        <span class="mo_ta">
+                                            <input type="text" class="form-control" id="repassword">
+                                        </span>
+                                    </span>
+
+                </div>
+                <div class="thay_doi_inf">
+                    
+                    <div class="row">
+                      <div class="col-3"></div>
+                      <div class="col-3">
+                          <button class="btn btn-primary change_pass_submit">Xác nhận</button>
+                      </div>
+                      <div class="col-3">
+                        <button class="btn btn-primary change_pass_exit">Hủy</button>
                       </div>
                       <div class="col-3"></div>
                     </div>

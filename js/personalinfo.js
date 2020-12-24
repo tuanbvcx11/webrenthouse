@@ -101,6 +101,7 @@ var check_user = function check_user(){
     success : function(result){
         if (result == "owner"){
           $('.change_info').css("display","block");
+          $('.change_pass').css("display","block"); 
         }
     },
 
@@ -344,7 +345,6 @@ $("body").on("click", ".img-div", function(){
 
                                     success : function (result)
                                     {
-                                        alert("hủy");
                                         load_post();
                                     },
                                     error : function (result){}
@@ -442,5 +442,47 @@ $('#sodt').blur(function(event) {
 //hủy thay đổi thông tin
   $('.change_exit').click(function(event){
     $('.change_infor').css("display","none");
+    $('.infor').css("display","block");
+  })
+
+    $('.change_pass').click(function(event){
+    $('.infor').css("display","none");
+    $('.change_password').css("display","block");
+  })
+  //nhập lại mật khẩu
+  $('#repassword').change(function(event) {
+    /* Act on the event */
+    var pass = $('#password').val();
+    var repass = $('#repassword').val();
+    if (repass != pass) {
+        alert("mật khẩu không giống nhau");
+        this.focus();
+    }
+});
+  $('.change_pass_exit').click(function(event){
+    $('.change_password').css("display","none");
+    $('.infor').css("display","block");
+  })
+
+$('.change_pass_submit').click(function(event){
+    var newpass = $('#repassword').val();
+    $.ajax({
+    url : 'module/function/change_pass_inf.php',
+    type : 'post',
+    dataType : 'text',
+    data : {
+      id : id,
+      pass : newpass
+    },
+    success : function(result){
+      alert(result);
+    },
+
+    error : function(result){
+      alert("lỗi5");
+    }
+
+  });
+    $('.change_password').css("display","none");
     $('.infor').css("display","block");
   })
