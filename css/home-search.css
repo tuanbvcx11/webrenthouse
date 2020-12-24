@@ -129,11 +129,13 @@ label.label-choose-room {
 .link-search {
   display: block;
   background-color: #d2d2d2;
+  font-weight: bold;
 }
 
 .result-summary {
   display: block;
   background-color: #d2d2d2;
+  font-weight: 600;
 }
 
 .post-content {
