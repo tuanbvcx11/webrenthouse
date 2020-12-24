@@ -85,7 +85,7 @@ function load_post() {
       $.each(result, function (key, item) {
         // item.gia_phong = convertPrice(item.gia_phong);
         postHtml +=
-          `<div class="d-flex baidang">
+          `<div class="d-flex wow zoomIn baidang">
                         <!-- ảnh -->
                         <div class="img-div">
                           <a class="link-img" href="#">

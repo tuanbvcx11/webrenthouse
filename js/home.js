@@ -55,13 +55,13 @@ function load_new_post() {
     data: {},
     success: function (result) {
       var loadNewPostHtml = `<label>Danh sách bài đăng mới nhất</label>
-                              <div class="container">
+                              <div class="container" data-wow-offset="300">
                                 <div class="row">`;
 
       $.each(result, function (key, item){
         item.gia_phong = convertPrice(item.gia_phong);
 
-        loadNewPostHtml += `<div class="col-12 col-xl-6 mt-4 d-flex baidang">
+        loadNewPostHtml += `<div class="col-12 col-xl-6 mt-4 d-flex wow zoomIn baidang">
                               <!-- ảnh -->
                               <div class="img-div">
                                 <a class="link-img" href="#">
@@ -124,7 +124,7 @@ function load_favorite_post() {
     data: {},
     success: function (result) {
       var loadFavoritePostHtml = `<label>Danh sách bài đăng được yêu thích nhất</label>
-                              <div class="container">
+                              <div class="container" data-wow-offset="330">
                                 <div class="row">`;
 
       $.each(result, function (key, item){
@@ -132,7 +132,7 @@ function load_favorite_post() {
         if(key == 4) {
           return false;
         }
-        loadFavoritePostHtml += `<div class="col-12 col-xl-6 mt-4 d-flex baidang">
+        loadFavoritePostHtml += `<div class="col-12 col-xl-6 mt-4 d-flex wow zoomIn baidang">
                                   <!-- ảnh -->
                                   <div class="img-div">
                                     <a class="link-img" href="#">
