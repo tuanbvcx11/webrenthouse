@@ -219,15 +219,22 @@ i.far.fa-heart {
 }
 
 .change_info{
-    margin-left: 35%;
-    margin-right: 35%;
+    /*margin-left: 35%;
+    margin-right: 35%;*/
     display: none;
+    background-color: white!important;
+    border: white 1px solid;
 }
 
 input {
   width: 100%;
 }
 .change_infor{
+  margin: 10px;
+  display: none;
+}
+
+.change_password{
   margin: 10px;
   display: none;
 }
@@ -269,5 +276,22 @@ input {
   font-size: 20px;
 }
 .change_submit{
+  float: right;
+}
+
+.change_info i{
+  color: gray;
+  transform: scale(2,2);
+}
+.change_pass{
+  background-color: white!important;
+  border: white 1px solid;
+  font-size: 20px;
+  display: none;
+}
+.change_pass i{
+  color: gray!important;
+}
+.change_pass_submit{
   float: right;
 }
