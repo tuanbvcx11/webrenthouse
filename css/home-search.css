@@ -123,19 +123,27 @@ label.label-choose-room {
 
 /* phan danh sach bai dang */
 .summary {
-  background-color: #d2d2d2;
+  background-color: #f0f2f5;
 }
 
 .link-search {
   display: block;
-  background-color: #d2d2d2;
+  background-color: #f0f2f5;
   font-weight: bold;
 }
 
 .result-summary {
   display: block;
-  background-color: #d2d2d2;
+  background-color: #3d67a7;
   font-weight: 600;
+  width: 204px;
+  border-bottom-right-radius: 10px;
+  /* border-top-right-radius: 17px; */
+  border-bottom-left-radius: 10px;
+  text-align: center;
+  padding-top: 3px;
+  padding-bottom: 4px;
+  color: white;
 }
 
 .post-content {
