@@ -329,11 +329,11 @@ label{
   margin-left: 0%;
 }
 
-button{
+.container button{
   background-color: #fafafa!important;
   border: #fafafa 0px solid!important;
   color: black!important;
 }
-button : focus{
-  outline: 0;
+.comtainer button : focus{
+  outline: 0!important;
 }
