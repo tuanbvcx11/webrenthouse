@@ -61,7 +61,7 @@ function load_new_post() {
       $.each(result, function (key, item){
         item.gia_phong = convertPrice(item.gia_phong);
 
-        loadNewPostHtml += `<div class="col-12 col-xl-6 mt-4 d-flex wow zoomIn baidang">
+        loadNewPostHtml += `<div class="col-12 col-xl-6 mt-4 d-flex baidang">
                               <!-- ảnh -->
                               <div class="img-div">
                                 <a class="link-img" href="#">
@@ -132,7 +132,7 @@ function load_favorite_post() {
         if(key == 4) {
           return false;
         }
-        loadFavoritePostHtml += `<div class="col-12 col-xl-6 mt-4 d-flex wow zoomIn baidang">
+        loadFavoritePostHtml += `<div class="col-12 col-xl-6 mt-4 d-flex baidang">
                                   <!-- ảnh -->
                                   <div class="img-div">
                                     <a class="link-img" href="#">
