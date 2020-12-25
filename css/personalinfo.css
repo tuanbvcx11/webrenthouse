@@ -310,8 +310,8 @@ input {
   font-size: 20px!important;
 }
 .change_pass{
-  background-color: white!important;
-  border: white 1px solid;
+  background-color: #fafafa!important;
+  border: #fafafa 1px solid;
   font-size: 20px;
   display: none;
 }
@@ -327,4 +327,13 @@ label{
   font-size: 30px;
   margin-bottom: 40px;
   margin-left: 0%;
+}
+
+button{
+  background-color: #fafafa!important;
+  border: #fafafa 0px solid!important;
+  color: black!important;
+}
+button : focus{
+  outline: 0;
 }
