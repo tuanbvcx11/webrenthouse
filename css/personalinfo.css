@@ -94,8 +94,9 @@
 .mo_ta{
   width: 50%;
 }
-.thay_doi.inf .flex_box .mo_ta > *{
-  width: 100%;
+
+.change_password .mo_ta{
+  width: 100%!important;
 }
 
 .ho_ten, .chung_minh, .dien_thoai, .email, .dia_chi{
@@ -104,6 +105,8 @@
 
 .flex_box{
   display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 /*p {
     margin-top: 0;
@@ -208,10 +211,7 @@ i.far.fa-heart {
     margin: auto;
     font-size: 20px;
 }
-/*.change_infor{
-  margin-left: 20%;
-  margin-right: 20%;
-}*/
+
 @media (max-width: 991px) {
   .infor{
     width: 100%;
@@ -229,14 +229,17 @@ i.far.fa-heart {
 
 input {
   width: 100%;
+  box-shadow: 1px 2px lightgray!important;
 }
 .change_infor{
-  margin: 10px;
+  margin-right: 10%;
+  margin-left: 10%;
   display: none;
 }
 
 .change_password{
-  margin: 10px;
+  margin-right: 10%;
+  margin-left: 10%;
   display: none;
 }
 
@@ -282,7 +285,7 @@ input {
 
 .change_info i{
   color: gray!important;
-  font-size: 20px;
+  font-size: 20px!important;
 }
 .change_pass{
   background-color: white!important;
@@ -295,4 +298,11 @@ input {
 }
 .change_pass_submit{
   float: right;
+}
+
+label{
+  font-weight: bold;
+  font-size: 30px;
+  margin-bottom: 40px;
+  margin-left: 0%;
 }
