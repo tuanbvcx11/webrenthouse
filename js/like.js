@@ -77,62 +77,7 @@ var load_post = function load_post(){
             html +=	'<div class="dislike"><button class="btn btn-primary">Xóa</button></div></div>';
            
            });
-      //     var html = '';
-      // $.each(result, function (key, item) {
-      //   // item.gia_phong = convertPrice(item.gia_phong);
-      //   html +=`<div class="list-table">`+
-      //     `<div class="d-flex baidang">
-      //                   <!-- ảnh -->
-      //                   <div class="img-div">
-      //                     <a class="link-img" href="#">
-      //                       <img
-      //                         class="img-post"
-      //                         src="./upload/` + item.img + `"
-      //                         alt=""
-      //                       />
-      //                     </a>
-      //                   </div>
-      //                   <!-- tóm tắt -->
-      //                   <div class="brief-div">
-      //                     <span class="idPost">` + item.id_post + `</span>
-      //                     <a class="titlePost" href="#">` + jsUcfirst(item.tieu_de) + `</a>
-
-      //                     <div class="d-flex address-div">
-      //                       <div class="address-icon">
-      //                         <i class="fas fa-map-marker-alt"></i>
-      //                       </div>
-      //                       <div class="addressPost"> ` + item.spe_add +`, `+ item.district + `, ` + item.province + ` </div>
-      //                     </div>
-
-                          // <div class="d-flex area-div">
-                          //   <div class="area-icon">
-                          //     <i class="fas fa-home"></i>
-                          //   </div>
-                          //   <div class="areaPost">`+ item.dien_tich +` m<sup>2</sup> </div>
-                          // </div>
-
-      //                     <div class="d-flex Prices-div">
-      //                       <div class="Prices-icon">
-      //                         <i class="fas fa-coins"></i>
-      //                       </div>
-      //                       <div class="Prices">` + convertPrice(item.gia_phong) + `</div>
-      //                     </div>
-
-      //                     <div class="datePost">Ngày đăng: ` + convertDate(item.tg_duyet_bai) + `</div>
-
-      //                     <div class="d-flex telephone-div">
-      //                       <div class="mr-1 telephone-icon">
-      //                         <i class="fas fa-mobile-alt"></i>
-      //                       </div>
-      //                       <div class="telephone">` + item.tel + `</div>
-      //                     </div>
-      //                   </div>
-      //                   <div class="favorite">
-      //                     <i class="far fa-heart` + item.buttonFav + `"></i>
-      //                   </div>
-      //                 </div>
-      //                 </div></div>`;
-      // });
+      
           if (html != ''){
 
             $('.paging').css('display', 'block');
@@ -160,7 +105,7 @@ var check_login = function check_login(){
     },
     success : function(result){
         if (result == "nologin"){
-          location.assign("home.html");
+          location.assign("trotot.com/home");
         }
     },
 
@@ -245,45 +190,47 @@ $(document).ready(function(){
 });
 
 $("body").on("click", ".paging .paging-bar .next", function(){
-            page = page + 1;
-            load_post();
-            phan_trang();
-            $('.currPage').text(page.toString());
-            window.scrollTo(0, 0);
-        });
+  page = page + 1;
+  load_post();
+  phan_trang();
+  $('.currPage').text(page.toString());
+  window.scrollTo(0, 0);
+});
 $("body").on("click", ".paging .paging-bar .previus", function(){
-            page = page - 1;
-            load_post();
-            phan_trang();
-            $('.currPage').text(page.toString());
-            window.scrollTo(0, 0);
-        });
+  page = page - 1;
+  load_post();
+  phan_trang();
+  $('.currPage').text(page.toString());
+  window.scrollTo(0, 0);
+});
 $("body").on("click", ".paging .paging-bar .goPageHead", function(){
-            page = 1;
-            load_post();
-            phan_trang();
-            $('.currPage').text(page.toString());
-            window.scrollTo(0, 0);
-        });
+  page = 1;
+  load_post();
+  phan_trang();
+  $('.currPage').text(page.toString());
+  window.scrollTo(0, 0);
+});
 $("body").on("click", ".paging .paging-bar .goPageTail", function(){
-            page = count_post;
-            load_post();
-            phan_trang();
-            $('.currPage').text(page.toString());
-            window.scrollTo(0, 0);
-        });
+  page = count_post;
+  load_post();
+  phan_trang();
+  $('.currPage').text(page.toString());
+  window.scrollTo(0, 0);
+});
 
 
-$("body").on("click", ".brief-div .titlePost", function(){
-            var id = $(this).parent().find(".idPost").text();
-            location.assign("chi_tiet.html?idpost=" + id);
-        });
+$("body").on("click", ".brief-div .titlePost", function(e){
+e.preventDefault();
+  var id = $(this).parent().find(".idPost").text();
+  location.assign("trotot.com/post/" + id);
+});
 
 
-$("body").on("click", ".img-div", function(){
-            var id = $(this).parent().find(".idPost").text();
-            location.assign("chi_tiet.html?idpost=" + id);
-        });
+$("body").on("click", ".img-div", function(e){
+  e.preventDefault();
+  var id = $(this).parent().find(".idPost").text();
+  location.assign("trotot.com/post/" + id);
+});
 
 $('.dislike').click(function(event){
 	var id = $(this).parent().find('.idPost').text();

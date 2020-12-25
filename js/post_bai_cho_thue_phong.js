@@ -73,7 +73,7 @@ $(document).ready(function() {
         },
         success : function (result){
             if (result == 'nologin' || result == 'guest') {
-                location.assign("./home.html")
+                location.assign("./trotot.com/home")
             }
         },
         error : function (result) {
@@ -228,9 +228,27 @@ $(document).ready(function() {
             let phithuebai = $("#phi_thue_bai").val();
             var titlePost = $("#postTitle").val();
             var descriptionPost = $("#descriptionPost").val();
+            $.ajax({
+                url : 'module/function/dang-bai.php',
+                type : 'post',
+                dataType : 'text',
+                data : {
+                },
+                success : function (result){
+                    var cf = confirm("Đăng bài thành công! Vui lòng chờ admin phê duyệt. \nBạn có muốn trở vể trang chủ");
+                    if (cf == true) {
+                        location.assign('trotot.com/home');
+                    }
+                },
+                error : function (result) {
+                    alert("lỗi");
+                }
+            });
+
         }
     });
 
+    
 
     $("#tinh_thanh_pho").change(function() {
         if ($("#tinh_thanh_pho").hasClass("_focus") && $("#tinh_thanh_pho").val() != "Chưa chọn") {

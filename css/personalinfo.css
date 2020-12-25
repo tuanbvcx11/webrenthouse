@@ -159,6 +159,12 @@ img.img-post {
   padding-left: 8px;
 }
 
+.titlePost:hover {
+  text-decoration: none;
+  cursor: pointer;
+  color: #427bff;
+}
+
 .titlePost {
   position: absolute;
   text-decoration: none;

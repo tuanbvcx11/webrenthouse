@@ -27,6 +27,11 @@ function convertDate (str) {
     }
 
 var id = getUrlParameter('idUser');
+if (id === undefined) {
+  var url = window.location.href;
+  var str = url.split('user/');
+  id = str[1];
+}
 var page = 1;
 var count_post;
 
@@ -248,7 +253,7 @@ var check_guest = function check_guest(){
   });
 }
 
-var check_guest = function check_guest(){
+var check_guest_1 = function check_guest_1(){
   $.ajax({
     url : 'module/function/check_status_info.php',
     type : 'post',
@@ -258,7 +263,7 @@ var check_guest = function check_guest(){
     },
     success : function(result){
         if (result == "chuaduyet"){
-          location.assign("home.html");
+          location.assign("trotot.com/home");
         }
     },
 
@@ -271,6 +276,7 @@ $(document).ready(function(){
   load_user();
   check_user();
   check_guest();
+  check_guest_1()
   load_post();
   phan_trang();
 
@@ -307,75 +313,79 @@ $("body").on("click", ".paging .paging-bar .goPageTail", function(){
         });
 
 
-$("body").on("click", ".brief-div .titlePost", function(){
-            var id = $(this).parent().find(".idPost").text();
-            location.assign("chi_tiet.html?idpost=" + id);
-        });
+$("body").on("click", ".brief-div .titlePost", function(e){
+  e.preventDefault();
+  var id = $(this).parent().find(".idPost").text();
+  location.assign("trotot.com/post/" + id);
+});
 
 
-$("body").on("click", ".img-div", function(){
-            var id = $(this).parent().find(".idPost").text();
-            location.assign("chi_tiet.html?idpost=" + id);
-        });
+$("body").on("click", ".img-div", function(e){
+  e.preventDefault();
+  var id = $(this).parent().find(".idPost").text();
+  location.assign("trotot.com/post/" + id);
+});
+
+
   /*yêu thích và lưu tin*/
   
   $("body").on("click", ".favorite i", function(){
     var idpost = $(this).parent().parent().find(".idPost").text();
     var icon = $(this);
     $.ajax({
-                  url : 'module/function/checkss-header.php',
-                  type : 'post',
-                  dataType : 'text',
-                  data : {
-                    id : idpost,
-                  },
+        url : 'module/function/checkss-header.php',
+        type : 'post',
+        dataType : 'text',
+        data : {
+          id : idpost,
+        },
 
-                  success : function (result)
-                  {  
-                    if (result != "nologin"){
-                      if (icon.hasClass("fas")) {
-                        icon.removeClass("fas");
-                        $.ajax({
-                                    url : 'module/function/huy_luu_tin.php',
-                                    type : 'post',
-                                    dataType : 'text',
-                                    data : {
-                                      id : idpost,
-                                    },
+        success : function (result)
+        {  
+          if (result != "nologin"){
+            if (icon.hasClass("fas")) {
+              icon.removeClass("fas");
+              $.ajax({
+                          url : 'module/function/huy_luu_tin.php',
+                          type : 'post',
+                          dataType : 'text',
+                          data : {
+                            id : idpost,
+                          },
 
-                                    success : function (result)
-                                    {
-                                        load_post();
-                                    },
-                                    error : function (result){}
-                                      
-                                });
-                      } else {
-                        icon.addClass("fas");
-                        $.ajax({
-                                    url : 'module/function/luu_tin.php',
-                                    type : 'post',
-                                    dataType : 'text',
-                                    data : {
-                                      id : idpost
-                                    },
+                          success : function (result)
+                          {
+                              load_post();
+                          },
+                          error : function (result){}
+                            
+                      });
+            } else {
+              icon.addClass("fas");
+              $.ajax({
+                          url : 'module/function/luu_tin.php',
+                          type : 'post',
+                          dataType : 'text',
+                          data : {
+                            id : idpost
+                          },
 
-                                    success : function (result)
-                                    {
-                                        alert("lưu");
-                                        load_post();
-                                    },
-                                    error : function (result){}
-                              
-                                });
-                      }
-                    } else {
-                      alert("vui lòng đăng nhâpk");
-                    }
-                  },
-                  error : function (result){}
-            
-              });
+                          success : function (result)
+                          {
+                              alert("lưu");
+                              load_post();
+                          },
+                          error : function (result){}
+                    
+                      });
+            }
+          } else {
+            alert("vui lòng đăng nhâpk");
+          }
+        },
+        error : function (result){}
+  
+    });
 
     
   })

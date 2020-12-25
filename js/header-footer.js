@@ -168,13 +168,13 @@ $(document).ready(function() {
     // khi click vào logo thì về trang home
     $('.logo .col-4 img').click(function(event) {
         /* Act on the event */
-        location.assign('home.html');
+        location.assign('trotot.com/home');
     });
 
     // khi click vào thông báo
     $("body").on("click", ".list-thongbao .content-thongbao", function(){
         
-        location.assign('./chi_tiet.html?idpost=' + $(this).children('.id_bai_viet').text())
+        location.assign('./trotot.com/post/' + $(this).children('.id_bai_viet').text())
     });
 
     // khi click vào trang cá nhân
@@ -190,7 +190,7 @@ $(document).ready(function() {
             data : {
             },
             success : function (result){
-                location.assign("personalinfo.html?idUser=" + result['id-user']);
+                location.assign("trotot.com/user/" + result['id-user']);
             },
             error : function (result) {
                 //alert("lỗi");

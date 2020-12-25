@@ -13,6 +13,13 @@ var getUrlParameter = function getUrlParameter(sParam) {
     }
 };
 var idpost = getUrlParameter('idpost');
+
+if (idpost === undefined) {
+  var url = window.location.href;
+  var str = url.split('post/');
+  idpost = str[1];
+}
+
 var status_post = 2;
 var today = new Date();
 var date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
@@ -242,7 +249,7 @@ var get_data = function get_data(){
               $(".ngay_hethan").text("Chưa duyệt");
             } 
             } else {
-              location.assign("home.html");
+              location.assign("trotot.com/home");
             }
             check_user();
         },
@@ -518,7 +525,7 @@ var check_post = function check_post(){
                 $(".trang_thai_bai_dang").text(result["status-post"]);
                 status_post = result["status-post"];
                 if ((status_user != "admin" && user_login != "owner" ) && (status_post != '1') ){
-                location.assign("home.html");
+                location.assign("trotot.com/home");
                 }
             },
             error : function (result) {
@@ -726,7 +733,7 @@ $('.xoa').click(function(event){
                   success : function (result)
                   {
                       alert("thành công");
-                      location.assign("home.html");
+                      location.assign("trotot.com/home");
                   },
                   error : function (result){}
                   
@@ -751,7 +758,7 @@ $('.xoa_admin').click(function(event){
                   success : function (result)
                   {
                       alert("thành công");
-                      location.assign("home.html");
+                      location.assign("trotot.com/home");
                   },
                   error : function (result){}
                   
@@ -816,10 +823,11 @@ $('.trangthai').click(function(event){
 });
 
 $('.sua').click(function(event){
+  location.assign("trotot.com/post/" + idpost + '/edit');
 });
 
 $('#rectangle_right').click(function(event){
   var idOwner = $(this).find('.idOwner').text();
-  location.assign("personalinfo.html?idUser=" + idOwner);
+  location.assign("trotot.com/user/" + idOwner);
 });
 

@@ -10,7 +10,7 @@ $(document).ready(function() {
             	
             } else {
             	alert("bạn không phải admin");
-            	location.assign("home.html");
+            	location.assign("trotot.com/home");
             }
         },
         error : function (result) {

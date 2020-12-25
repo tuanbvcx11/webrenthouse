@@ -104,5 +104,8 @@
 
     }
 
+    $db = null;
+    echo "ok";
+    header("location: ../../post_bai_cho_thue_phong.html");
 
 ?>

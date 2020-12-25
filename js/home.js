@@ -15,6 +15,34 @@ function testExprisedPost() {
   });
 }
 
+// hàm đêm số bài viết đã like
+function count_like_header() {
+    // body... 
+    $.ajax({
+        url : 'module/function/count-like-header.php',
+        type : 'post',
+        dataType : 'text',
+        data : {
+        },
+        success : function (result){
+            if (result == 0) {
+                $('#total-like-header').css('display', 'none');
+            } else if (result <= 9) {
+                $('#total-like-header').css('display', 'block');
+                $('#total-like-header').text(result);
+            } else {
+                $('#total-like-header').css('display', 'block');
+                $('#total-like-header').text('9+');
+            }
+            
+        },
+        error : function (result) {
+            alert("lỗi");
+        }
+    });
+}
+
+
 // hàm viết hoa chữ cái đầu
 function jsUcfirst(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -64,7 +92,7 @@ function load_new_post() {
         loadNewPostHtml += `<div class="col-12 col-xl-6 mt-4 d-flex baidang">
                               <!-- ảnh -->
                               <div class="img-div">
-                                <a class="link-img" href="#">
+                                <a class="link-img">
                                   <img
                                     class="img-post"
                                     src="./upload/` + item.img + `"
@@ -75,7 +103,7 @@ function load_new_post() {
                               <!-- tóm tắt -->
                               <div class="brief-div">
                                 <div class="idPost">`+ item.id_post +`</div>
-                                <a class="titlePost" href="#">` + jsUcfirst(item.tieu_de) + `</a>
+                                <a class="titlePost">` + jsUcfirst(item.tieu_de) + `</a>
 
                                 <div class="d-flex address-div">
                                   <div class="address-icon">
@@ -135,7 +163,7 @@ function load_favorite_post() {
         loadFavoritePostHtml += `<div class="col-12 col-xl-6 mt-4 d-flex baidang">
                                   <!-- ảnh -->
                                   <div class="img-div">
-                                    <a class="link-img" href="#">
+                                    <a class="link-img">
                                       <img
                                         class="img-post"
                                         src="./upload/` + item.img + `"
@@ -146,7 +174,7 @@ function load_favorite_post() {
                                   <!-- tóm tắt -->
                                   <div class="brief-div">
                                     <div class="idPost">`+ item.id_post +`</div>
-                                    <a class="titlePost" href="#">` + jsUcfirst(item.tieu_de) + `</a>
+                                    <a class="titlePost">` + jsUcfirst(item.tieu_de) + `</a>
 
                                     <div class="d-flex address-div">
                                       <div class="address-icon">
@@ -335,14 +363,11 @@ $(document).ready(function () {
   $("body").on("click", ".baidang", function(even) {
     var id = $(this).find(".idPost").text();
     if (!$(even.target).closest('.favorite').length) {
-      alert(id);
+      location.assign("trotot.com/post/" + id);
     }
   });
 
-  // $("body").on("click", ".img-div", function(even) {
-  //   var id = $(this).parent().find(".idPost").text();
-  //   alert(id);
-  // });
+  
 
   // sự kiện khi bấm vào tim
   $("body").on("click", ".favorite", function(even) {
@@ -358,6 +383,7 @@ $(document).ready(function () {
         idpost: $(this).parent().find(".idPost").text()
       },
       success: function (result) {
+        count_like_header();
         if(result['alert'] == "đã lưu") {
           /* tim = "đã lưu";
           alert(id + " " + tim);
@@ -380,13 +406,7 @@ $(document).ready(function () {
         alert("lỗi lưu yêu thích");
       }
     });
-/* 
-    if ($(this).children("i").hasClass("fas")) {
-      $(this).children("i").removeClass("fas");
 
-    } else {
-      $(this).children("i").addClass("fas");
-    } */
 
   });
 
@@ -436,8 +456,7 @@ $(document).ready(function () {
       },
       success: function (result) {
         if(result == "ok") {
-          location.assign("./home-search.html");
-
+          location.assign("./trotot.com/search");
         }
       },
       error: function (result) {

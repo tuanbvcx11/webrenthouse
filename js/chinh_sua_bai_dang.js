@@ -173,6 +173,13 @@ $(document).ready(function() {
         }
     };
     var idPost = getUrlParameter('post');
+    if (idPost === undefined) {
+        var url = window.location.href;
+        var str = url.split('post/');
+        var str1 = str[1].split('/')
+        idPost = str1[0];
+    }
+
     $('#idPost').val(idPost);
     
     // kiểm tra user đang đăng nhập và bài viết
@@ -188,7 +195,7 @@ $(document).ready(function() {
                 
             } else {
                 alert("Không được chỉnh sửa bài viết");
-                location.assign("home.html");
+                location.assign("trotot.com/home");
             }
         },
         error : function (result) {

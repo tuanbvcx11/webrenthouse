@@ -8,7 +8,7 @@ function validHost() {
     success: function (result) {
       if (result == "ok") {
       } else {
-        location.assign("./home.html");
+        location.assign("trotot.com/home");
         return false;
       }
     },
@@ -269,9 +269,9 @@ $(document).ready(function () {
     idPost = $(this).parent().parent().children().children(".idPost").text();
     indexPost = $(this).parent().parent().children().children("span").text();
     if ($(this).hasClass("detailButton")) {
-      location.assign("./chi_tiet.html?idpost=" + idPost);
+      location.assign("./trotot.com/post/" + idPost);
     } else if ($(this).hasClass("editButton")) {
-      location.assign("./chinh_sua_bai_dang.html?post=" + idPost);
+      location.assign("./trotot.com/post/" + idPost + "/edit");
     } else if ($(this).hasClass("eraseButton")) {
       $("#eraseModal .modal-body").text(
         "Bạn xác nhận xóa bài đăng số " + indexPost + " này?"

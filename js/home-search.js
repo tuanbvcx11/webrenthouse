@@ -15,6 +15,33 @@ function testExprisedPost() {
   });
 }
 
+// hàm đêm số bài viết đã like
+function count_like_header() {
+    // body... 
+    $.ajax({
+        url : 'module/function/count-like-header.php',
+        type : 'post',
+        dataType : 'text',
+        data : {
+        },
+        success : function (result){
+            if (result == 0) {
+                $('#total-like-header').css('display', 'none');
+            } else if (result <= 9) {
+                $('#total-like-header').css('display', 'block');
+                $('#total-like-header').text(result);
+            } else {
+                $('#total-like-header').css('display', 'block');
+                $('#total-like-header').text('9+');
+            }
+            
+        },
+        error : function (result) {
+            alert("lỗi");
+        }
+    });
+}
+
 // hàm viết hoa chữ cái đầu
 function jsUcfirst(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
@@ -88,7 +115,7 @@ function load_post() {
           `<div class="d-flex wow zoomIn baidang">
                         <!-- ảnh -->
                         <div class="img-div">
-                          <a class="link-img" href="#">
+                          <a class="link-img">
                             <img
                               class="img-post"
                               src="./upload/` + item.img + `"
@@ -99,7 +126,7 @@ function load_post() {
                         <!-- tóm tắt -->
                         <div class="brief-div">
                           <span class="idPost">` + item.id_post + `</span>
-                          <a class="titlePost" href="#">` + jsUcfirst(item.tieu_de) + `</a>
+                          <a class="titlePost">` + jsUcfirst(item.tieu_de) + `</a>
 
                           <div class="d-flex address-div">
                             <div class="address-icon">
@@ -632,51 +659,11 @@ $(document).ready(function () {
     $("#maxPrices").html(maxPirceHtml);
   });
 
-  $("body").on("click", ".titlePost", function (even) {
+  $("body").on("click", ".img-div, .brief-div", function () {
     var id = $(this).parent().find(".idPost").text();
-    /* alert(id); */
+     location.assign("trotot.com/post/" + id);
   });
 
-  $("body").on("click", ".img-div", function (even) {
-    var id = $(this).parent().find(".idPost").text();
-    /* alert(id); */
-  });
-
-  /* $("body").on("click", ".favorite", function (even) {
-    var id = $(this).parent().find(".idPost").text();
-    var icon = $(this).children('i');
-    var tim;
-    $.ajax({
-      url: "module/function/click-button-like.php",
-      type: "post",
-      dataType: "jss",
-      data: {
-        idpost: $(this).parent().find(".idPost").text(),
-      },
-      success: function (result) {
-        console.log(icon);
-        if (result == "đã lưu") {
-          tim = "đã lưu";
-          alert(id + " " + tim);
-          
-        } else if (result == "hủy lưu") {
-          tim = "hủy lưu";
-          alert(id + " " + tim);
-        } else if (result == "chưa đăng nhập") {
-          alert("bạn cần đăng nhập để lưu bài đăng");
-        }
-      },
-      error: function (result) {
-        alert("lỗi lưu yêu thích");
-      },
-    });
-
-    if ($(this).children("i").hasClass("fas")) {
-      $(this).children("i").removeClass("fas");
-    } else {
-      $(this).children("i").addClass("fas");
-    }
-  }); */
   
   // sự kiện bấm nút tim
   $("body").on("click", ".favorite", function(even) {
@@ -692,6 +679,7 @@ $(document).ready(function () {
         idpost: $(this).parent().find(".idPost").text()
       },
       success: function (result) {
+        count_like_header();
         if(result['alert'] == "đã lưu") {
           tim = "đã lưu";
           icon.addClass('fas');
@@ -707,13 +695,7 @@ $(document).ready(function () {
         alert("lỗi lưu yêu thích");
       }
     });
-/* 
-    if ($(this).children("i").hasClass("fas")) {
-      $(this).children("i").removeClass("fas");
 
-    } else {
-      $(this).children("i").addClass("fas");
-    } */
 
   });
   /*tìm kiếm*/

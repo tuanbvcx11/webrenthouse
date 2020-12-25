@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <base href="http://localhost/web/">
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv='cache-control' content='no-cache'> 
@@ -48,11 +49,11 @@
                         
                         <ul class="nav">
                             <li class="nav-item thongbao">
-                                <a class="nav-link" title="thông báo"><i class="fas fa-bell"></i>(2)</a>
+                                <a class="nav-link" title="thông báo"><i class="far fa-bell"></i></a>
                             </li>
                             <div class="tuychonchinh">
                                 <li class="nav-item yeuthich">
-                                    <a class="nav-link" href="" title="yêu thích"><i class="fas fa-heart"></i>(3)</a>
+                                    <a id="like-header" class="nav-link" href="trotot.com/like" title="yêu thích"><i class="far fa-heart"></i><span id="total-like-header">4</span></a>
                                 </li>
                             </div>
     
@@ -62,9 +63,9 @@
                             <li class="nav-item tuychon">
                                 <div class="dropdown">
                                     <button class="navbar-toggler"  data-toggle="collapse" data-target="#tuychon" aria-expanded="false" aria-controls="tuychon">
-                                        <span class="navbar-toggler-icon">
-                                            
-                                        </span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
                                     </button>
                                 </div>  
                             </li>
@@ -77,13 +78,13 @@
         <div class="containers collapse" id="tuychon">
             <div class="list-group entity">
                 <span class="tuychonphu">
-                    <a href="#" class="list-group-item list-group-item-action yeuthich">Yêu thích</a>
+                    <a href="trotot.com/like" class="list-group-item list-group-item-action yeuthich">Yêu thích</a>
                 </span>
-                <a href="#" class="list-group-item list-group-item-action dangbai">Đăng bài</a>
-                <a href="#" class="list-group-item list-group-item-action list-posted">Danh sách bài đăng</a>
-                <a href="#" class="list-group-item list-group-item-action host-chat">Chat với admin</a>
-                <a href="#" class="list-group-item list-group-item-action info-me">Thông tin cá nhân</a>
-                <a href="thong-ke.html" class="list-group-item list-group-item-action toadmin">Admin</a>
+                <a href="trotot.com/creat-post" class="list-group-item list-group-item-action dangbai">Đăng bài</a>
+                <a href="trotot.com/list-post" class="list-group-item list-group-item-action list-posted">Danh sách bài đăng</a>
+                <a href="trotot.com/chat" class="list-group-item list-group-item-action host-chat">Chat với admin</a>
+                <a href="" class="list-group-item list-group-item-action info-me-header">Thông tin cá nhân</a>
+                <a href="trotot.com/admin/thong-ke" class="list-group-item list-group-item-action toadmin">Admin</a>
                 
                 <a href="./module/function/logout.php" class="list-group-item list-group-item-action logout">Đăng xuất</a>
             </div>

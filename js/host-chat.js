@@ -90,7 +90,7 @@ $(document).ready(function() {
             	
             } else {
             	alert("bạn không phải chủ trọ");
-            	location.assign("home.html");
+            	location.assign("trotot.com/home");
             }
         },
         error : function (result) {

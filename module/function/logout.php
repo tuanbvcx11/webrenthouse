@@ -4,5 +4,5 @@
 
 	unset($_SESSION['iduser']);
 	unset($_SESSION['vaitro']);
-	header("location: ../../home.html");
+	header("location: ../../trotot.com/home");
  ?>

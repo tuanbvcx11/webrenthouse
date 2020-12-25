@@ -1,6 +1,24 @@
 RewriteEngine On
 
 
-RewriteRule "^admin/([0-9a-zA-Z-]+)$" "$1.html"
+RewriteRule "^trotot.com/admin/([0-9a-zA-Z-]+)$" "$1.html"
 
-RewriteRule "^thuoc/page-([0-9]+)$" "thuoc.html?page=$1"
+RewriteRule "trotot.com/home" "home.html"
+
+RewriteRule "trotot.com/list-post" "danh_sach_bai_dang.html"
+
+RewriteRule "trotot.com/creat-post" "post_bai_cho_thue_phong.html"
+
+RewriteRule "trotot.com/like" "like.html"
+
+RewriteRule "trotot.com/chat" "host-chat.html"
+
+RewriteRule "trotot.com/search" "home-search.html"
+
+RewriteRule "^trotot.com/user/([0-9]+)$" "personalinfo.html?idUser=$1"
+
+RewriteRule "^trotot.com/post/([0-9]+)$" "chi_tiet.html?idpost=$1"
+
+RewriteRule "^trotot.com/post/([0-9]+)/edit$" "chinh_sua_bai_dang.html?post=$1"
+
+

@@ -23,7 +23,7 @@ $('#submit').click(function(event) {
             },
             success : function (result){
                 if(result == "ok") {
-                    location.assign("home.html");
+                    location.assign("trotot.com/home");
                 } else if (result == "sai") {
                     alert("Sai tài khoản hoặc mật khẩu");
                 } else {
