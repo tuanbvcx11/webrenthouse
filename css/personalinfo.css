@@ -91,23 +91,44 @@
     padding-bottom: 10px;
     text-align: center;
 }
+
+@media (max-width: 700px) {
+  .flex_box{
+  display:flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 100%;
+}
 .mo_ta{
-  width: 50%;
+  display: inline-block;
+  width: 100%;
 }
-
-.change_password .mo_ta{
-  width: 100%!important;
-}
-
 .ho_ten, .chung_minh, .dien_thoai, .email, .dia_chi{
-    float: right;
+    float: left;
+    margin-left: 5%;
 }
-
-.flex_box{
+}
+@media (min-width: 701px) {
+  .flex_box{
   display: flex;
   margin-top: 10px;
   margin-bottom: 10px;
 }
+  .mo_ta{
+  width: 50%;
+}
+.ho_ten, .chung_minh, .dien_thoai, .email, .dia_chi{
+    float: right;
+}
+}
+
+/*
+.flex_box{
+  display: flex;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}*/
 /*p {
     margin-top: 0;
     margin-bottom: 0rem;
@@ -212,9 +233,10 @@ i.far.fa-heart {
     font-size: 20px;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 600px) {
   .infor{
     width: 100%;
+    margin-left: 10%;
   }
 }
 
