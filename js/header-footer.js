@@ -67,12 +67,23 @@ $(document).ready(function() {
                 var html = `<h3>Thông báo</h3><hr>`;
                 var html_con = ``;
                 $.each(result, function (key, item){
-                    html_con += `<div class="content-thongbao">
-                                    <span>` + jsUcfirst(item.name) + `</span>
-                                    <span>` + item.content + `:</span>
-                                    <span class="id_bai_viet">` + item.id_bai_viet +`</span>
-                                    <span>` + jsUcfirst(item.tieu_de) + `</span>
-                                </div>`;
+                    if (item.more_cont == "no") {
+                        html_con += `<div class="content-thongbao">
+                                        <span>` + jsUcfirst(item.name) + `</span>
+                                        <span>` + item.content + `:</span>
+                                        <span class="id_bai_viet">` + item.id_bai_viet +`</span>
+                                        <span>` + jsUcfirst(item.tieu_de) + `</span>
+                                    </div>`;
+                    } else {
+                        html_con += `<div class="content-thongbao">
+                                        <span>` + jsUcfirst(item.name) + `</span>
+                                        <span>` + item.content + `:</span>
+                                        <span class="id_bai_viet">` + item.id_bai_viet +`</span>
+                                        <span>` + jsUcfirst(item.tieu_de) + `</span>
+                                        <span>(` + jsUcfirst(item.more_cont) + `)</span>
+                                    </div>`;
+                    }
+                    
                     
                 });
 
@@ -154,15 +165,37 @@ $(document).ready(function() {
         load_thong_bao();
     });
 
-
+    // khi click vào logo thì về trang home
     $('.logo .col-4 img').click(function(event) {
         /* Act on the event */
         location.assign('home.html');
     });
 
+    // khi click vào thông báo
     $("body").on("click", ".list-thongbao .content-thongbao", function(){
         
         location.assign('./chi_tiet.html?idpost=' + $(this).children('.id_bai_viet').text())
+    });
+
+    // khi click vào trang cá nhân
+    $('.info-me-header').click(function(event) {
+        /* Act on the event */
+        // lấy id người đăng nhập
+        event.preventDefault();
+        var link = $(this);
+        $.ajax({
+            url : 'module/function/chi_tiet_user.php',
+            type : 'post',
+            dataType : 'json',
+            data : {
+            },
+            success : function (result){
+                location.assign("personalinfo.html?idUser=" + result['id-user']);
+            },
+            error : function (result) {
+                //alert("lỗi");
+            }
+        });
     });
     
 });

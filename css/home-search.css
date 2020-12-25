@@ -123,23 +123,100 @@ label.label-choose-room {
 
 /* phan danh sach bai dang */
 .summary {
-  background-color: #d2d2d2;
+  background-color: #f0f2f5;
 }
 
 .link-search {
   display: block;
-  background-color: #d2d2d2;
+  background-color: #f0f2f5;
   font-weight: bold;
 }
 
+/*đường dẫn*/
+
+.bullet-none {
+    list-style-type: none;
+    margin-left: -65px;
+}
+
+.po_relative {
+    margin-left: 10px;
+    float: left;
+    position: relative;
+    padding: 0px;
+    display: list-item;
+    text-align: -webkit-match-parent;
+    cursor: pointer;
+}
+
+.po_relative .line_font span {
+    background-color: #4584FF;
+    color: white;
+}
+.po_relative .line_font {
+    white-space: nowrap;
+    font-size: 17px;
+    line-height: 39px;
+    font-weight: normal;
+    margin-left: 15px;
+    padding: 0px 8px 0px 0px;
+    background: #4584FF;
+    cursor: pointer;
+    padding-left: 6px;
+}
+.fl {
+    float: left;
+}
+.cl_333 {
+    color: #333;
+    font-size: 17px;
+}
+.po_background_right {
+    position: absolute;
+    background: url(../picture/right.png) no-repeat;
+    background-size: cover;
+    right: -15.7px;
+    top: 0px;
+    z-index: 13;
+}
+
+.po_absolute_left {
+    width: 16px;
+    height: 39px;
+    position: absolute;
+}
+
+.po_absolute_right {
+    width: 16px;
+    height: 39px;
+    position: absolute;
+}
+.po_background_left {
+    background: url(../picture/left.png) no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    left: 0px;
+    top: 0px;
+    z-index: 12;
+}
+
 .result-summary {
+  margin-top: 30px;
   display: block;
-  background-color: #d2d2d2;
+  background-color: #3d67a7;
   font-weight: 600;
+  width: 204px;
+  border-bottom-right-radius: 10px;
+  /* border-top-right-radius: 17px; */
+  border-bottom-left-radius: 10px;
+  text-align: center;
+  padding-top: 3px;
+  padding-bottom: 4px;
+  color: white;
 }
 
 .post-content {
-  padding: 60px 120px 32px 120px;
+  padding: 50px 120px 32px 120px;
 }
 
 .idPost {
@@ -303,6 +380,12 @@ i.far.fa-heart {
   }
 }
 
+@media (min-width: 700px) and (max-width: 1199px) {
+  .po_relative .line_font {
+      font-size: 14px;
+  }
+}
+
 @media (max-width: 991px) {
   .post-content {
     padding: 20px 7px 20px 7px;
@@ -416,6 +499,22 @@ i.far.fa-heart {
     height: 457px;
   }
 }
+
+@media (max-width: 780px) {
+  .po_relative .line_font {
+      font-size: 10px;
+  }
+  .container, .container-sm {
+      max-width: 90%;
+  }
+
+}
+
+/*@media (min-width: 576px) {
+  .container, .container-sm {
+      max-width: 90%;
+  }
+}*/
 
 @media (max-width: 515px) {
   .telephone-div {

@@ -81,24 +81,11 @@ function load_post() {
     data: {
     },
     success: function (result) {
-      $.ajax({
-        url: "module/function/find-post.php",
-        type: "post",
-        dataType: "json",
-        data: {
-        },
-        success: function(result1) {
-
-        },
-        error: function(result1) {
-
-        }
-      });
       var postHtml = `<div class="list-table">`;
       $.each(result, function (key, item) {
         // item.gia_phong = convertPrice(item.gia_phong);
         postHtml +=
-          `<div class="d-flex baidang">
+          `<div class="d-flex wow zoomIn baidang">
                         <!-- ảnh -->
                         <div class="img-div">
                           <a class="link-img" href="#">
@@ -149,6 +136,14 @@ function load_post() {
                         </div>
                       </div>`;
       });
+
+      // nếu không có bài viết nào thì ẩn phân trang
+      if (postHtml == `<div class="list-table">`) {
+        $('.paging').addClass('d-none');
+      } else {
+        $('.paging').removeClass('d-none');
+      }
+
       postHtml += `</div>
                 </div>`;
       // lấy số trang trong biến session
@@ -237,10 +232,10 @@ function load_post_per_page(pageNumber) {
             dataType: "json",
             data: {},
             success: function (result) {
-              var citySearch = (result['citySearch'] == "Thành phố") ? "" : ("/" + result['citySearch']);
-              var districtSearch = (result['districtSearch'] == "Quận(Huyện)") ? "" : ("/" + result['districtSearch']);
-              var type_roomSearch = (result['type_roomSearch'] == "Tất cả") ? "" : ("/" + result['type_roomSearch']);
-              var priceSearch = "/";
+              var citySearch = (result['citySearch'] == "Thành phố") ? "" : (result['citySearch']);
+              var districtSearch = (result['districtSearch'] == "Quận(Huyện)") ? "" : (result['districtSearch']);
+              var type_roomSearch = (result['type_roomSearch'] == "Tất cả") ? "" : (result['type_roomSearch']);
+              var priceSearch = "";
               var minpriceSearch = result['minpriceSearch'];
               var maxpriceSearch = result['maxpriceSearch'];
 
@@ -248,22 +243,63 @@ function load_post_per_page(pageNumber) {
                 if(maxpriceSearch == "Tất cả") {
                   priceSearch += "Tất cả";
                 } else {
-                  priceSearch += "Giá dưới " + minpriceSearch + " triệu";
+                  priceSearch += "Giá dưới " + maxpriceSearch + " triệu";
                 }
               } else if(minpriceSearch != "Tất cả") {
                 if(maxpriceSearch == "Tất cả") {
                   priceSearch += "Giá trên " + minpriceSearch + " triệu";
+                }else if(minpriceSearch == maxpriceSearch){
+                  priceSearch += "Giá " + minpriceSearch + " triệu";
                 } else {
-                  priceSearch += "Giá từ " + minpriceSearch + " đến dưới " + maxpriceSearch + " triệu";
+                  priceSearch += "Giá từ " + minpriceSearch + " đến " + maxpriceSearch + " triệu";
                 }
               }
 
-              var summaryHTML = `<div class="link-search">
-                                  Trang chủ/Tìm kiếm`+ citySearch + districtSearch + type_roomSearch + priceSearch +`
-                                </div>
-                                <div class="result-summary">
-                                  Kết quả: `+totalPost+` bài đăng
-                                </div>`
+              var summaryHTML = `<ol class="bullet-none">
+                                    <li class="po_relative box_shadow_top_header">
+                                        <a class="line_font cl_333 fl lpath">
+                                            <span>Tìm kiếm</span>
+                                        </a>
+                                        <span class="po_absolute_right po_background_right"></span>
+                                    </li>`;
+              if (citySearch != "") {
+                summaryHTML += `<li class="po_relative box_shadow_top_header">
+                                <a class="line_font cl_333 fl lpath">
+                                    <span>` + citySearch +`</span>
+                                </a>
+                                <span class="po_absolute_left po_background_left"></span>
+                                <span class="po_absolute_right po_background_right"></span>
+                            </li>`;
+              }
+              if (districtSearch != "") {
+                summaryHTML += `<li class="po_relative box_shadow_top_header">
+                                <a class="line_font cl_333 fl lpath">
+                                    <span>` + districtSearch +`</span>
+                                </a>
+                                <span class="po_absolute_left po_background_left"></span>
+                                <span class="po_absolute_right po_background_right"></span>
+                            </li>`;
+              }
+              if (type_roomSearch != "") {
+                summaryHTML += `<li class="po_relative box_shadow_top_header">
+                                <a class="line_font cl_333 fl lpath">
+                                    <span>` + type_roomSearch +`</span>
+                                </a>
+                                <span class="po_absolute_left po_background_left"></span>
+                                <span class="po_absolute_right po_background_right"></span>
+                            </li>`;
+              }
+              
+              summaryHTML += `<li class="po_relative box_shadow_top_header">
+                                <a class="line_font cl_333 fl lpath">
+                                    <span>` + priceSearch +`</span>
+                                </a>
+                                <span class="po_absolute_left po_background_left"></span>
+                                <span class="po_absolute_right po_background_right"></span>
+                            </li>`;
+              summaryHTML += `</ol><br/>`;
+
+              summaryHTML += `<div class="result-summary">Kết quả: `+totalPost+` bài đăng</div>`;
               $(".summary").html(summaryHTML);
               
             },
@@ -274,17 +310,17 @@ function load_post_per_page(pageNumber) {
           load_post();
         } 
       } else if(result == 0) {
-        
+        // hiển thị lúc không tìm kiếm được gì
         $.ajax({
           url: "module/function/fetch-input-from-session.php",
           type: "post",
           dataType: "json",
           data: {},
           success: function (result) {
-            var citySearch = (result['citySearch'] == "Thành phố") ? "" : ("/" + result['citySearch']);
-            var districtSearch = (result['districtSearch'] == "Quận(Huyện)") ? "" : ("/" + result['districtSearch']);
-            var type_roomSearch = (result['type_roomSearch'] == "Tất cả") ? "" : ("/" + result['type_roomSearch']);
-            var priceSearch = "/";
+            var citySearch = (result['citySearch'] == "Thành phố") ? "" : (result['citySearch']);
+            var districtSearch = (result['districtSearch'] == "Quận(Huyện)") ? "" : (result['districtSearch']);
+            var type_roomSearch = (result['type_roomSearch'] == "Tất cả") ? "" : (result['type_roomSearch']);
+            var priceSearch = "";
             var minpriceSearch = result['minpriceSearch'];
             var maxpriceSearch = result['maxpriceSearch'];
 
@@ -292,24 +328,64 @@ function load_post_per_page(pageNumber) {
               if(maxpriceSearch == "Tất cả") {
                 priceSearch += "Tất cả";
               } else {
-                priceSearch += "Giá dưới " + minpriceSearch + " triệu";
+                priceSearch += "Giá dưới " + maxpriceSearch + " triệu";
               }
             } else if(minpriceSearch != "Tất cả") {
               if(maxpriceSearch == "Tất cả") {
                 priceSearch += "Giá trên " + minpriceSearch + " triệu";
+              }else if(minpriceSearch == maxpriceSearch){
+                priceSearch += "Giá " + minpriceSearch + " triệu";
               } else {
-                priceSearch += "Giá từ " + minpriceSearch + " đến dưới " + maxpriceSearch + " triệu";
+                priceSearch += "Giá từ " + minpriceSearch + " đến " + maxpriceSearch + " triệu";
               }
             }
 
-            var summaryHTML = `<div class="link-search">
-                                Trang chủ/Tìm kiếm`+ citySearch + districtSearch + type_roomSearch + priceSearch +`
-                              </div>
-                              <div class="result-summary">
-                                Kết quả: 0 bài đăng
-                              </div>`
-            $(".summary").html(summaryHTML);
+            var summaryHTML = `<ol class="bullet-none">
+                                  <li class="po_relative box_shadow_top_header">
+                                      <a class="line_font cl_333 fl lpath">
+                                          <span>Tìm kiếm</span>
+                                      </a>
+                                      <span class="po_absolute_right po_background_right"></span>
+                                  </li>`;
+            if (citySearch != "") {
+              summaryHTML += `<li class="po_relative box_shadow_top_header">
+                              <a class="line_font cl_333 fl lpath">
+                                  <span>` + citySearch +`</span>
+                              </a>
+                              <span class="po_absolute_left po_background_left"></span>
+                              <span class="po_absolute_right po_background_right"></span>
+                          </li>`;
+            }
+            if (districtSearch != "") {
+              summaryHTML += `<li class="po_relative box_shadow_top_header">
+                              <a class="line_font cl_333 fl lpath">
+                                  <span>` + districtSearch +`</span>
+                              </a>
+                              <span class="po_absolute_left po_background_left"></span>
+                              <span class="po_absolute_right po_background_right"></span>
+                          </li>`;
+            }
+            if (type_roomSearch != "") {
+              summaryHTML += `<li class="po_relative box_shadow_top_header">
+                              <a class="line_font cl_333 fl lpath">
+                                  <span>` + type_roomSearch +`</span>
+                              </a>
+                              <span class="po_absolute_left po_background_left"></span>
+                              <span class="po_absolute_right po_background_right"></span>
+                          </li>`;
+            }
             
+            summaryHTML += `<li class="po_relative box_shadow_top_header">
+                              <a class="line_font cl_333 fl lpath">
+                                  <span>` + priceSearch +`</span>
+                              </a>
+                              <span class="po_absolute_left po_background_left"></span>
+                              <span class="po_absolute_right po_background_right"></span>
+                          </li>`;
+            summaryHTML += `</ol><br/>`;
+
+            summaryHTML += `<div class="result-summary">Kết quả: 0 bài đăng</div>`;
+            $(".summary").html(summaryHTML);
           },
           error: function (result) {
             alert("không thể update dữ liệu");
@@ -718,12 +794,12 @@ $(document).ready(function () {
       dataType: "text",
       data: {},
       success: function (result) {
-        if (result > 0) {
+        if (result >= 0) {
           // số trang một bài(nếu chỉnh thì phải chỉnh cả trong find-post.php)
           var post_per_page = 8;
           var totalPost = result;
           var totalPage = Math.ceil(totalPost / post_per_page);
-          if(pageNumber1 > totalPage) {
+          if(pageNumber1 > totalPage || totalPost == "0") {
             $(".next").css("cursor", "not-allowed");
           }
         } else if(result == 0) {
@@ -745,12 +821,12 @@ $(document).ready(function () {
       dataType: "text",
       data: {},
       success: function (result) {
-        if (result > 0) {
+        if (result >= 0) {
           // số trang một bài(nếu chỉnh thì phải chỉnh cả trong find-post.php)
           var post_per_page = 8;
           var totalPost = result;
           var totalPage = Math.ceil(totalPost / post_per_page);
-          if(pageNumber1 > totalPage) {
+          if(pageNumber1 > totalPage || totalPost == "0") {
             $(".goPageTail").css("cursor", "not-allowed");
           }
         } else if(result == 0) {
@@ -803,7 +879,7 @@ $(document).ready(function () {
           var post_per_page = 8;
           var totalPost = result;
           var totalPage = Math.ceil(totalPost / post_per_page);
-          if(pageNumber <= totalPage) {
+          if(pageNumber < totalPage) {
             load_post_per_page(totalPage);
             $("html").scrollTop(0);
           }
@@ -831,11 +907,11 @@ $(document).ready(function () {
           var post_per_page = 8;
           var totalPost = result;
           var totalPage = Math.ceil(totalPost / post_per_page);
-          if(pageNumber <= totalPage) {
+          if(pageNumber < totalPage) {
             load_post_per_page(pageNumber + 1);
             $("html").scrollTop(0);
           }
-        } else if(result == 0) {
+        } else if(result == 0 || result == undefined) {
           /* alert("không có kết quả tìm kiếm nào phù hợp"); */
         }
       },

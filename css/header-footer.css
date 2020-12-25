@@ -248,8 +248,12 @@ button.navbar-toggler:focus {
 }
 
 .list-thongbao .content-thongbao span:nth-child(4) {
-    font-weight: 560;
-    font-size: 17px;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+.list-thongbao .content-thongbao span:nth-child(5) {
+    font-size: 15px;
 }
 
 .thongbao .dropdown-menu {
@@ -267,6 +271,7 @@ button.navbar-toggler:focus {
 .navbar-toggler {
     margin-top: 4px;
 }
+
 
 
 
@@ -377,12 +382,12 @@ button.navbar-toggler:focus {
 @media screen and (max-width: 560px) {
     /*chỉnh từ đây*/
     .logo span, .logo .nav-item a {
-        font-size: 15px;
+        font-size: 21px;
         font-weight: 600;
     }
 
     .list-thongbao {
-        width: 200px;
+        width: 240px;
     }
 }
 
